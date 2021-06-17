@@ -41,7 +41,7 @@ async function getAllOrders() {
 async function insertOrder(order) {
     var sql = `INSERT INTO orders(createdAt, updatedAt, customerId) 
                VALUES('${order.createdAt}', '${order.updatedAt}', '${order.customerId}');`
-    console.log(sql)    
+    console.log(sql);
     var con = db.createConnection(dbhost_ra1);
     let promise = new Promise((resolve, reject) => {
         con.connect(function (err) {
@@ -62,18 +62,18 @@ async function insertOrder(order) {
             }
             // console.log(data)
             return(-1);
-        })
+        });
     }); // define the Promise with any async code
   
     let result = await promise; // define that some output will be returned when the Promise is resolved
-    return(result)
+    return(result);
 
 };
 
 
 async function deleteOrder(id) {
     var sql = `DELETE FROM orders WHERE id = ${id};`
-    console.log(sql)    
+    console.log(sql);
     var con = db.createConnection(dbhost_ra1);
     let promise = new Promise((resolve, reject) => {
         con.connect(function (err) {
@@ -94,16 +94,16 @@ async function deleteOrder(id) {
             }
             // console.log(data)
             return(-1);
-        })
+        });
     }); // define the Promise with any async code
   
     let result = await promise; // define that some output will be returned when the Promise is resolved
-    return(result)
+    return(result);
 };
 
 async function editOrder(id) {
     var sql = `SELECT FROM orders WHERE id = ${id};`
-    console.log(sql)    
+    console.log(sql);
     var con = db.createConnection(dbhost_ra1);
     let promise = new Promise((resolve, reject) => {
         con.connect(function (err) {
@@ -124,11 +124,11 @@ async function editOrder(id) {
             }
             // console.log(data)
             return(-1);
-        })
+        });
     }); // define the Promise with any async code
   
     let result = await promise; // define that some output will be returned when the Promise is resolved
-    return(result)
+    return(result);
 
 };
 

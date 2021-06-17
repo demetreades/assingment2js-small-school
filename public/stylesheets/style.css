@@ -44,9 +44,8 @@ nav {
 
 main {
   grid-area: main;
-  padding: 40px;
-  margin: 10px auto ;
-  /* background-color: #805757; */
+  padding: 20px 40px;
+  margin: 0px auto ;
 }
 
 
@@ -80,7 +79,7 @@ nav p {
 }
 
 ol {
-  margin: 40px auto;
+  margin: 0px auto;
   background-color: rgb(211, 220, 228);
   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
 }
@@ -88,7 +87,6 @@ ol {
 .express {
   display: flex;
   flex-direction: column;
-  /* margin: 0px auto; */
   background-color: rgb(211, 220, 228);
   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
   align-items: center;
@@ -97,7 +95,6 @@ ol {
 .express h1 {
   padding-top: 40px;
   padding: 20px;
-  /* margin: 40px; */
 }
 
 .express p {
@@ -110,9 +107,7 @@ ol div p {
 }
 
 li {
-  /* margin: 8px; */
   display: flex;
-  /* padding: 4px 6px; */
   width: 100%;
   padding: 8px 14px;
 }

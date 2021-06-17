@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var studentService = require('../services/studentService')
-var Student = require('../models/student').Student
+const express = require('express');
+const router = express.Router();
+const studentService = require('../services/studentService')
+const Student = require('../models/student').Student
 
 
 /* GET all students */
@@ -33,35 +33,39 @@ router.get('/delete/:id', function(req, res, next) {
   })
 })
 
-
-
 /* GET update student */
 // http://localhost:3000/students/update/:id
 router.get('/update/:id', function(req, res, next) {
-  // studentService.selectById(req.params.id, 'students', 'SELECT').then((result) => {
-  
-  // }) 
-  res.render('editStudent', { title: 'Update Students' })
-  // edw twra ti????
+  studentService.selectById(req.params.id, 'SELECT', 'students').then((result) => {
+   //   console.log(result);
+     let yStudent = new Student(result[0].id, result[0].student_first, result[0].student_last, result[0].hobby)
+     console.log(yStudent.toString());
+     res.render('editStudent', { yStudent });
+  })
+
 })
-  // get from the studentService the row with :id <--- findStudentById(id)
-  // when we have this Student object
-  // render the page 'editStudent', aStudent
-  // res.render('editStudent', {title: 'Update Student', paok: 'forza paok'})
 
 /* POST update student */
 // http://localhost:3000/students/update
 router.post('/update', function(req, res, next) {
+   let editStudent = new Student(req.body.id, req.body.fname, req.body.lname, req.body.hobby)
+   console.log(editStudent);
+   studentService.updateStudent(editStudent).then((result)=>{
+      if(result.affectedRows == 1){
+         studentService.getAllStudents().then((result) =>{
+         res.render('students', {title:'Students', studentsArray: {data: result}})
+      });
+      } else {
+         res.render('error')
+      }
+   });
 
-  // edw twra ti????
-
-})
-
+});
 
 /* POST a student */
 router.post('/', function(req, res, next) {
   // console.log(req.body)
-  let aStudent = new Student(null,req.body.fname, req.body.lname, req.body.hobby)
+  let aStudent = new Student(req.body.id, req.body.fname, req.body.lname, req.body.hobby)
   // INSERT INTO db this aStudent
   studentService.insertStudent(aStudent).then((result) => {
     if(result.affectedRows == 1) {
@@ -73,7 +77,7 @@ router.post('/', function(req, res, next) {
     }
     console.log(result)
     
-  })
-})
+  });
+});
 
 module.exports = router
