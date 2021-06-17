@@ -4,7 +4,7 @@
 If we have downloaded a node project from internet we need to install dependencies
 
 ---
-
+![sample](./public/images/sample.png)
 
 ## 0!. Clone repo and cd into `/myapp/` folder
 
