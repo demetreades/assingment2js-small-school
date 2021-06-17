@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // !!
-// define the endpoints (urls) 
+// define the endpoints (URLs) 
 app.use('/', indexRouter);            // controller index    - /
 app.use('/users', usersRouter);       // controller users    - /users
 app.use('/students', studentsRouter)  // controller students - /students

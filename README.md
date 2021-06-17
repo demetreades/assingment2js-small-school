@@ -1,5 +1,5 @@
 # myapp
- Generated with express-generator
+Generated with express-generator
 
 If we have downloaded a node project from internet we need to install dependencies
 
@@ -35,9 +35,9 @@ If you cloned the repo you need to install dependencies first, from `package.jso
 
 <br>
 
-list of current active urls:
+List of current active urls:
 
-| urls     |    /                         | 
+| URLs    |    /                         | 
 |:----------|:-----------------------------|
 |[localhost:3000](http://localhost:3000) | home | 
 |[localhost:3000/students/](http://localhost:3000/students/) |  students/ | 
