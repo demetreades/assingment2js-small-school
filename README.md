@@ -9,6 +9,8 @@ If we have downloaded a node project from internet we need to install dependenci
 
 ![sample](./public/images/sample.png)
 
+<br>
+
 ## 0!. Clone repo and cd into `/myapp/` folder
 
 `pwd` for current path
@@ -19,14 +21,11 @@ If we have downloaded a node project from internet we need to install dependenci
 
 `cd myapp` if you are not already into
 
-<br>
-
 ## 1. Install node modules
 
 If we create a new project from scratch we need to perform the following actions: 
 
 `npm install`
-
 
 ## 2. Start www
 
@@ -36,20 +35,34 @@ If we create a new project from scratch we need to perform the following actions
 
 <br>
 
-| urls        |    /  | 
-|----------|:-------------:|
+| urls     |    /                         | 
+|----------|:----------------------------:|
 |[localhost:3000](http://localhost:3000) | home | 
 |[localhost:3000/students/](http://localhost:3000/students/) |  students/ | 
 |[localhost:3000/students/new](http://localhost:3000/students/new) |  students/new/ | 
 |[localhost:3000/students/update](http://localhost:3000/students/update) | students/update/ | 
-|[localhost:3000/students/delete](http://localhost:3000/students/update) | students/delete | 
+|[localhost:3000/students/delete](http://localhost:3000/students/update) | students/delete/ | 
 |[localhost:3000/orders/](http://localhost:3000/orders/) |  orders/ | 
 |[localhost:3000/orders/new](http://localhost:3000/orders/new) |  orders/new/ | 
 |[localhost:3000/orders/update](http://localhost:3000/orders/update) | orders/update/ | 
-|[localhost:3000/orders/delete](http://localhost:3000/orders/update) | orders/delete | 
+|[localhost:3000/orders/delete](http://localhost:3000/orders/update) | orders/delete/ | 
 
 <br>
 
 <br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+🤿 
 
 enjoy
