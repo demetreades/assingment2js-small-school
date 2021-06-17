@@ -21,7 +21,7 @@ router.get('/new', function(req, res, next) {
 /* GET a delete action with :id */
 // http://localhost:3000/students/delete/1
 router.get('/delete/:id', function(req, res, next) {
-  studentService.deleteStudent(req.params.id).then((result) => {
+  studentService.selectById(req.params.id, 'DELETE', 'students').then((result) => {
     if(result.affectedRows == 1) {
       studentService.getAllStudents().then((result) => {
         res.render('students', { title: 'Students', studentsArray: {data: result} })
@@ -38,7 +38,7 @@ router.get('/delete/:id', function(req, res, next) {
 /* GET update student */
 // http://localhost:3000/students/update/:id
 router.get('/update/:id', function(req, res, next) {
-  // studentService.findStudentById(req.params.id).then((result) => {
+  // studentService.selectById(req.params.id, 'students', 'SELECT').then((result) => {
   
   // }) 
   res.render('editStudent', { title: 'Update Students' })
