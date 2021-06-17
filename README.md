@@ -11,7 +11,7 @@ If we have downloaded a node project from internet we need to install dependenci
 
 <br>
 
-## 0!. Clone repo and cd into `/myapp/` folder
+## 1. Clone repo and cd into `/myapp/` folder
 
 `pwd` for current path
 
@@ -21,22 +21,24 @@ If we have downloaded a node project from internet we need to install dependenci
 
 `cd myapp` if you are not already into
 
-## 1. Install node modules
+## 2. Install dependencies
 
-If we create a new project from scratch we need to perform the following actions: 
+If you cloned the repo you need to install dependencies first, from `package.json` 
 
 `npm install`
 
-## 2. Start www
+## 3. Run app
 
 `npm start `
 
-## 3. Navigate to:
+## 4 Navigate to:
 
 <br>
 
+list of current active urls:
+
 | urls     |    /                         | 
-|----------|:----------------------------:|
+|:----------|:-----------------------------|
 |[localhost:3000](http://localhost:3000) | home | 
 |[localhost:3000/students/](http://localhost:3000/students/) |  students/ | 
 |[localhost:3000/students/new](http://localhost:3000/students/new) |  students/new/ | 
@@ -46,6 +48,14 @@ If we create a new project from scratch we need to perform the following actions
 |[localhost:3000/orders/new](http://localhost:3000/orders/new) |  orders/new/ | 
 |[localhost:3000/orders/update](http://localhost:3000/orders/update) | orders/update/ | 
 |[localhost:3000/orders/delete](http://localhost:3000/orders/update) | orders/delete/ | 
+
+<br>
+
+<br>
+
+<br>
+
+<br>
 
 <br>
 

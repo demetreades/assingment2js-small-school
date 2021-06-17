@@ -50,16 +50,6 @@ router.post('/', function(req, res, next) {
   })
 })
 
-/* GET update order */
-// http://localhost:3000/orders/new/ 
-// router.get('/new/', function(req, res, next) {
-//   res.render('newOrder', {title: 'Insert Orders'})
-// });
-
-
-// router.post('/update', function(req, res, next) {
-//   res.render('editOrder', {title: 'Update Orders'})
-// });
 
 /* POST update order */
 // http://localhost:3000/orders/update

@@ -1,4 +1,4 @@
-var db = require("mysql2")
+var db = require("mysql2");
 var dbhost_ra1 = {
     host: "ra1.anystream.eu",
     port: "5420",
@@ -6,6 +6,8 @@ var dbhost_ra1 = {
     password: "cb12ptjs",
     database: "cb12ptjs"
 };
+
+// const dbcon = require('./db');
 
 async function getAllOrders() {
     var sql = "SELECT * FROM `cb12ptjs`.`orders`;";

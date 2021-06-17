@@ -33,11 +33,29 @@ router.get('/delete/:id', function(req, res, next) {
   })
 })
 
+
+
 /* GET update student */
 // http://localhost:3000/students/update/:id
 router.get('/update/:id', function(req, res, next) {
-  res.render('editStudent', {title: 'Update Student'})
-});
+  // studentService.findStudentById(req.params.id).then((result) => {
+  
+  // }) 
+  res.render('editStudent', { title: 'Update Students' })
+  // edw twra ti????
+})
+  // get from the studentService the row with :id <--- findStudentById(id)
+  // when we have this Student object
+  // render the page 'editStudent', aStudent
+  // res.render('editStudent', {title: 'Update Student', paok: 'forza paok'})
+
+/* POST update student */
+// http://localhost:3000/students/update
+router.post('/update', function(req, res, next) {
+
+  // edw twra ti????
+
+})
 
 
 /* POST a student */

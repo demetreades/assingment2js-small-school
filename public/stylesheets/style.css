@@ -11,6 +11,10 @@ body {
   
 }
 
+del {
+  color: #e0e0e0;
+}
+
 .container {
   display: grid;
   height: 100vh;

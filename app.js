@@ -24,12 +24,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+// !!
 // define the endpoints (urls) 
 app.use('/', indexRouter);            // controller index    - /
 app.use('/users', usersRouter);       // controller users    - /users
 app.use('/students', studentsRouter)  // controller students - /students
-app.use('/orders', ordersRouter)      // controller students - /students
+app.use('/orders', ordersRouter)      // controller orders   - /orders
+
+//
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

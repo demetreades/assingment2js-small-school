@@ -9,16 +9,8 @@
   </head>
   <body>
     <div class="container">
-      
-    <aside>
-        <li><del><a href="/">home</a></del></li>
-        <li><a href="/students">students</a></li>
-        <li><a href="/students/new">add</a></li>
 
-        <li><a href="/orders">orders</a></li>
-        <li><a href="/orders/new">add</a></li>
-    </aside>
-
+     
     <nav>
       <div class="nav-class">
         <h1><%= title %></h1>
@@ -26,6 +18,16 @@
         <p><%= course %></p>
       </div>
     </nav>
+
+    <aside>
+      <li><del><a href="/">home</a></del></li>
+      <li><a href="/students">students</a></li>
+      <li><a href="/students/new">add</a></li>
+      
+      <li><a href="/orders">orders</a></li>
+      <li><a href="/orders/new">add</a></li>
+    </aside>
+    
     
     <main>
       <div class="express">
@@ -36,12 +38,14 @@
         <div class="blue2"></div>
       </div>
     </main>
-
+    
+    <%- // partial('./parcials/footer.ejs') %>  
     <footer>
       <p>small project , <a href="/" target="/">HOME</a></p>
     </footer> 
-
-    </div>
-    <!-- <script src="../public/javascripts/script.js"></script> -->
+    
+  </div>
+  <!-- <script src="../public/javascripts/script.js"></script> -->
   </body>
-</html>
+  </html>
+  
