@@ -36,7 +36,7 @@ router.get('/delete/:id', function(req, res, next) {
 /* GET update student */
 // http://localhost:3000/students/update/:id
 router.get('/update/:id', function(req, res, next) {
-  studentService.selectById(req.params.id, 'SELECT', 'students').then((result) => {
+  studentService.selectById(req.params.id, 'SELECT', 'students *').then((result) => {
    //   console.log(result);
      let yStudent = new Student(result[0].id, result[0].student_first, result[0].student_last, result[0].hobby)
      console.log(yStudent.toString());
