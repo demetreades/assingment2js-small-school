@@ -5,6 +5,7 @@ If we have downloaded a node project from internet we need to install dependenci
 
 ---
 
+
 ## 0!. Clone repo and cd into `/myapp/` folder
 
 `pwd` for current path
@@ -19,20 +20,16 @@ If we have downloaded a node project from internet we need to install dependenci
 
 ## 1. Install node modules
 
-`npm install`
-
-<br>
-
 If we create a new project from scratch we need to perform the following actions: 
+
+`npm install`
 
 
 ## 2. Start www
 
 `npm start `
 
-<br>
-
-## 3. navigate to:
+## 3. Navigate to:
 
 <br>
 
