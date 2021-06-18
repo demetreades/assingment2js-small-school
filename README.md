@@ -1,9 +1,13 @@
-# myapp
+class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/myapp)
+
+
+PORT: `3000`
+
+<br>
+
+# Express CRUD application
 Generated with express-generator
 
-If we have downloaded a node project from internet we need to install dependencies
-
----
 
 <br>
 
@@ -23,13 +27,13 @@ If we have downloaded a node project from internet we need to install dependenci
 
 ## 2. Install dependencies
 
-If you cloned the repo you need to install dependencies first, from `package.json` 
+If you cloned the repo you need to install dependencies first as described in the `package.json` 
 
 `npm install`
 
 ## 3. Run app
 
-`npm start `
+`npm start ` at port: `3000`
 
 ## 4 Navigate to:
 
@@ -37,17 +41,17 @@ If you cloned the repo you need to install dependencies first, from `package.jso
 
 List of current active urls:
 
-| URLs    |    /                         | 
-|:----------|:-----------------------------|
-|[localhost:3000](http://localhost:3000) | home | 
+| URLs      |             Endpoints           | 
+|:----------|:--------------------------------|
+|[localhost:3000](http://localhost:3000) | /  | 
 |[localhost:3000/students/](http://localhost:3000/students/) |  students/ | 
 |[localhost:3000/students/new](http://localhost:3000/students/new) |  students/new/ | 
 |[localhost:3000/students/update](http://localhost:3000/students/update) | students/update/ | 
 |[localhost:3000/students/delete](http://localhost:3000/students/update) | students/delete/ | 
-|[localhost:3000/orders/](http://localhost:3000/orders/) |  orders/ | 
+<!-- |[localhost:3000/orders/](http://localhost:3000/orders/) |  orders/ | 
 |[localhost:3000/orders/new](http://localhost:3000/orders/new) |  orders/new/ | 
 |[localhost:3000/orders/update](http://localhost:3000/orders/update) | orders/update/ | 
-|[localhost:3000/orders/delete](http://localhost:3000/orders/update) | orders/delete/ | 
+|[localhost:3000/orders/delete](http://localhost:3000/orders/update) | orders/delete/ |  -->
 
 <br>
 

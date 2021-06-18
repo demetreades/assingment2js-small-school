@@ -8,7 +8,6 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   background-image: radial-gradient(#444df7f5 1px, #e0e0e0 1px);
   background-size: 26px 26px;
-  
 }
 
 del {
@@ -21,7 +20,7 @@ del {
   grid-template-columns: 150px 1fr 1fr 1fr;
   grid-template-rows: 0.4fr 1fr 1fr 1fr 0.1fr;
   grid-template-areas: 
-  "nav    nav    nav    nav"
+  "aside  nav    nav    nav"
   "aside  main   main   main"
   "aside  main   main   main"
   "aside  main   main   main"
@@ -42,13 +41,67 @@ nav {
   z-index: 1;
 }
 
+/* table */
+
+table {
+  background-color: #85a9f0;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #0045ce;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+/* table typography */
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+thead th, tfoot th {
+  font-family: 'Rock Salt', cursive;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
+
 main {
   grid-area: main;
   padding: 20px 40px;
   margin: 0px auto ;
 }
-
-
 
 aside {
   height: 100%;

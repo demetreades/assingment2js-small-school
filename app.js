@@ -6,11 +6,10 @@ var logger = require('morgan');
 
 
 // declare the controllers
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var studentsRouter = require('./routes/students')
-var ordersRouter = require('./routes/orders')
-// var trainersRouter = require('./routes/trainers')
+var indexRouter = require('./controllers/index');
+var usersRouter = require('./controllers/users');
+var studentsRouter = require('./controllers/students')
+// var trainersRouter = require('./controllers/trainers')
 
 var app = express();
 
@@ -24,14 +23,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// !!
-// define the endpoints (URLs) 
-app.use('/', indexRouter);            // controller index    - /
-app.use('/users', usersRouter);       // controller users    - /users
-app.use('/students', studentsRouter)  // controller students - /students
-app.use('/orders', ordersRouter)      // controller orders   - /orders
 
-//
+// define the endpoints (urls)
+app.use('/', indexRouter);           // controller index    - /
+app.use('/users', usersRouter);      // controller users    - /users
+app.use('/students', studentsRouter) // controller students - /students
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
