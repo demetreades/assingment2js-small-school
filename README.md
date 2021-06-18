@@ -11,7 +11,7 @@ Generated with express-generator
 
 <br>
 
-![sample](./public/images/sample.png)
+![sample](./public/img/sample.png)
 
 <br>
 
