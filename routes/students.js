@@ -14,14 +14,14 @@ router.get('/', function(req, res, next) {
 /* GET a new student - has an HTML form */
 // http://localhost:3000/students/new
 router.get('/new', function(req, res, next) {
-  res.render('newStudent', { title: 'Insert Students' })
+  res.render('newStudent')
 })
 
 
 /* GET a delete action with :id */
 // http://localhost:3000/students/delete/1
 router.get('/delete/:id', function(req, res, next) {
-  studentService.selectById(req.params.id, 'DELETE', 'students').then((result) => {
+  studentService.deleteStudent(req.params.id).then((result) => {
     if(result.affectedRows == 1) {
       studentService.getAllStudents().then((result) => {
         res.render('students', { title: 'Students', studentsArray: {data: result} })
@@ -36,30 +36,32 @@ router.get('/delete/:id', function(req, res, next) {
 /* GET update student */
 // http://localhost:3000/students/update/:id
 router.get('/update/:id', function(req, res, next) {
-  studentService.selectById(req.params.id, 'SELECT', 'students *').then((result) => {
-   //   console.log(result);
-     let yStudent = new Student(result[0].id, result[0].student_first, result[0].student_last, result[0].hobby)
-     console.log(yStudent.toString());
-     res.render('editStudent', { yStudent });
-  })
-
-})
+  // get from the studentService the row with :id <--- findStudentById(id)
+  studentService.findStudentById(req.params.id).then((result) => {
+    if(result.id  == req.params.id) { // (result.id > 0)
+      console.log(result);
+      res.render('editStudent', { result });
+    }
+  });
+  // when we have this Student object
+  // render the page 'editStudent', aStudent
+});
 
 /* POST update student */
 // http://localhost:3000/students/update
 router.post('/update', function(req, res, next) {
-   let editStudent = new Student(req.body.id, req.body.fname, req.body.lname, req.body.hobby)
-   console.log(editStudent);
-   studentService.updateStudent(editStudent).then((result)=>{
-      if(result.affectedRows == 1){
-         studentService.getAllStudents().then((result) =>{
-         res.render('students', {title:'Students', studentsArray: {data: result}})
+  // 1. call updateStudent(student)
+  let student = new Student(req.body.id, req.body.fname, req.body.lname, req.body.hobby)
+  studentService.updateStudent(student).then((result) => {
+    if(result.affectedRows == 1) {
+      studentService.getAllStudents().then((result) => {
+        res.render('students', { title: 'Students', studentsArray: {data: result} })
       });
-      } else {
-         res.render('error')
-      }
-   });
-
+    // } else {
+    //   res.render('newStudent')
+    }
+  });
+  // 2. render /students
 });
 
 /* POST a student */
