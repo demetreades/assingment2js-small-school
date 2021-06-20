@@ -1,4 +1,7 @@
-const app = require("../app");
+const _id = new WeakMap();
+const _student_first = new WeakMap();
+const _student_last = new WeakMap();
+const _hobby = new WeakMap();
 
 class Student {
     constructor(id, student_first, student_last, hobby) {
@@ -52,11 +55,10 @@ class Student {
     toString() {
         return `Student {id: ${this.id}, first name: ${this.student_first}, last name: ${this.student_last}, hobby: ${this.hobby}}`
     }
+};
 
-    capitalize() {
-        return this.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
-    }
-}
+const rokkas = new Student(2, 'kostas', 'rokkas', 'bbq');
+console.log(rokkas);
 
 
 module.exports = { Student }

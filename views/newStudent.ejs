@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/head')  %> 
+
     <title>Insert new Student</title>
-    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
+  <div class="container"> 
 
-    <nav>
-        <div class="nav-class">
-          <h1><%= title %></h1>
-          <p>Welcome to <%= title %></p>
-          <p><%=// course %></p>
-        </div>
-      </nav>
-  
-      <aside>
-        <li><del><a href="/">home</a></del></li>
-        <li><a href="/students">students</a></li>
-        <li><a href="/students/new">add</a></li>
-        <!-- <li><a href="/orders">orders</a></li> -->
-        <!-- <li><a href="/orders/new">add</a></li> -->
-      </aside>
-
-    <h3>Insert new Student</h3>
-    <form action="/students" method="post">
+    <%- include('partials/nav')  %> 
+    
+    <%- include('partials/aside')  %> 
+    
+    <main>
+      
+      <form action="/students" method="post">
+        <h3>Insert new Student</h3>
         First Name:<input type="text" name="fname" id=""><br>
         Last Name:<input type="text" name="lname" id=""><br>
         Hobby:<input type="text" name="hobby" id=""><br>
         <input type="submit" value="Add New Student">
-    </form>
+      </form>
 
-    <%- // partial('./parcials/footer.ejs') %>  
-    <footer>
-      <p>small project , <a href="/" target="/">HOME</a></p>
-    </footer> 
-
+    </main>
+      
+    <%- include('partials/footer')  %> 
+    
+  </div> 
     
 </body>
 </html>

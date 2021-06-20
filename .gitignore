@@ -2,7 +2,15 @@
 /package-lock.json
 /_README.md
 
+/sql
+
 /views/others
 /services/other
 /controllers/other
 /models/other
+/models/school.js
+/models/person.js
+/models/trainer.js
+/models/course.js
+/models/assignment.js
+/models/_student.js

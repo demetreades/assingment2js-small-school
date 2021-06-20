@@ -38,69 +38,36 @@ nav {
   background-color: #222121;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
   justify-content: flex-end;
-  z-index: 1;
 }
 
 /* table */
 
 table {
-  background-color: #85a9f0;
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  border: 3px solid #0045ce;
+  background-color: #dad5d5;
+  margin: auto 0px;
+  padding: 20px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
-thead th:nth-child(1) {
-  width: 30%;
+thead {
+  font-size: 25px;
+  color: rgb(0, 81, 255);
 }
 
-thead th:nth-child(2) {
-  width: 20%;
-}
-
-thead th:nth-child(3) {
-  width: 15%;
-}
-
-thead th:nth-child(4) {
-  width: 35%;
+nav a {
+  color: #e0e0e0;
 }
 
 th, td {
-  padding: 20px;
-}
-
-/* table typography */
-
-html {
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
-}
-
-thead th, tfoot th {
-  font-family: 'Rock Salt', cursive;
-}
-
-th {
-  letter-spacing: 2px;
-}
-
-td {
-  letter-spacing: 1px;
-}
-
-tbody td {
   text-align: center;
-}
-
-tfoot th {
-  text-align: right;
 }
 
 main {
   grid-area: main;
+
   padding: 20px 40px;
-  margin: 0px auto ;
+
+  /* margin: 0px auto ; */
 }
 
 aside {
@@ -139,10 +106,12 @@ ol {
 
 .express {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  
   flex-direction: column;
   background-color: rgb(211, 220, 228);
   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
-  align-items: center;
   
 }
 .express h1 {
@@ -203,8 +172,6 @@ li a {
   margin: 0px 4px;
 }
 
-
-
 footer {
   grid-area: footer;
   padding: 10px;
@@ -234,16 +201,18 @@ aside li {
 /* form */
 
 main h3 {
-  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
   background-color: #0045ce;
   padding: 34px 30px;
-  /* padding-bottom: 30px; */
   font-size: 16px;
   color: #e0e0e0;
+  margin-bottom: 22px;
 }
 
 form {
-  padding: 8px;
+  width: 300px;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(211, 220, 228);
   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
 }
@@ -252,6 +221,8 @@ form input {
   width: 100%;
   padding: 12px 0px;
   margin-bottom: 18px;
+  border-bottom: 1px solid grey;
+  outline: none;
 }
 
 form input[type="submit"] {
