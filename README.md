@@ -4,7 +4,7 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 # Express CRUD application
 
-PORT: `3000`
+PORT: `3300`
 
 Generated with express-generator [guide]()
 
@@ -34,7 +34,7 @@ If you cloned the repo you need to install dependencies first as described in th
 
 `npm start` listening at port: `3000`
 
-## 4 Navigate to:
+## 4. Navigate to:
 
 <br>
 
