@@ -6,7 +6,7 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 PORT: `3300`
 
-Generated with express-generator [guide]()
+Generated with express-generator [guide](https://github.com/demetreades/express-init)
 
 <br>
 
