@@ -12,44 +12,44 @@ class Student {
     }
 
     get id() {
-        return this._id;
+        return _id.get(this);
     }
 
     set id(value) {
-        this._id = value;
+        _id.set(this,value);
     }
 
     get student_first() {
-        return this._student_first;
+        return _student_first.get(this);
     }
 
     set student_first(value) {
         if(value.length < 2 || value.length > 25) {
             throw new Error('Invalid firstname')
         }
-        this._student_first = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+        _student_first.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
     }
 
     get student_last() {
-        return this._student_last;
+        return _student_last.get(this);
     }
 
     set student_last(value) {
         if(value.length < 2 || value.length > 25) {
             throw new Error('Invalid lastname')
         }
-        this._student_last = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+        _student_last.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
     }
 
     get hobby() {
-        return this._hobby;
+        return _hobby.get(this);
     }
 
     set hobby(value) {
         if(value.length < 2 || value.length > 25) {
             throw new Error('Invalid hobby')
         }
-        this._hobby = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+        _hobby.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
     }
 
     toString() {
@@ -58,7 +58,7 @@ class Student {
 };
 
 const rokkas = new Student(2, 'kostas', 'rokkas', 'bbq');
-console.log(rokkas);
+console.log(rokkas.toString());
 
 
 module.exports = { Student }

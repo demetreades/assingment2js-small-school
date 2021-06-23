@@ -6,7 +6,7 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 PORT: `3300`
 
-Generated with express-generator [guide](https://github.com/demetreades/express-init)
+Generated with [express-init](https://github.com/demetreades/express-init)
 
 <br>
 
@@ -14,7 +14,7 @@ Generated with express-generator [guide](https://github.com/demetreades/express-
 
 <br>
 
-## 1. Clone repo and cd into `/myapp/` folder
+## 1. Clone repo and cd into `/myapp` folder
 
 `pwd` for current path
 
@@ -32,7 +32,7 @@ If you cloned the repo you need to install dependencies first as described in th
 
 ## 3. Run app
 
-`npm start` listening at port: `3000`
+`npm start` listening at port: `3300`
 
 ## 4. Navigate to:
 
@@ -40,17 +40,13 @@ If you cloned the repo you need to install dependencies first as described in th
 
 List of current active urls:
 
-| URLs      |             Endpoints           | 
-|:----------|:--------------------------------|
-|[localhost:3000](http://localhost:3000) | /  | 
-|[localhost:3000/students/](http://localhost:3000/students/) |  students/ | 
-|[localhost:3000/students/new](http://localhost:3000/students/new) |  students/new/ | 
-|[localhost:3000/students/update](http://localhost:3000/students/update) | students/update/ | 
-|[localhost:3000/students/delete](http://localhost:3000/students/update) | students/delete/ | 
-<!-- |[localhost:3000/orders/](http://localhost:3000/orders/) |  orders/ | 
-|[localhost:3000/orders/new](http://localhost:3000/orders/new) |  orders/new/ | 
-|[localhost:3000/orders/update](http://localhost:3000/orders/update) | orders/update/ | 
-|[localhost:3000/orders/delete](http://localhost:3000/orders/update) | orders/delete/ |  -->
+|URLs       |Endpoints                         | 
+|:----------|:---------------------------------|
+|[localhost:3300](http://localhost:3300) |  /  | 
+|[localhost:3300/students/](http://localhost:3300/students/)             |  students/       | 
+|[localhost:3300/students/new](http://localhost:3300/students/new)       |  students/new/   |  
+|[localhost:3300/students/update](http://localhost:3300/students/update) | students/update/ | 
+|[localhost:3300/students/delete](http://localhost:3300/students/update) | students/delete/ | 
 
 <br>
 

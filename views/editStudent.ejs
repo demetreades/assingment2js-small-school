@@ -5,25 +5,30 @@
     <%- include('partials/head')  %> 
     
     <title>Edit a Student</title>
-
+    
 </head>
 <body>
-
-    <%- include('partials/nav', {title: 'Edit Student', course: })  %> 
-
-    <%- include('partials/aside')  %> 
-
-    <h3>Edit a Student</h3>
-    <form action="/students/update" method="post">
-        First Name:<input type="text" name="fname" id="" value=<%= result.student_first %>><br>
-        Last Name:<input type="text" name="lname" id="" value=<%= result.student_last %>><br>
-        Hobby:<input type="text" name="hobby" id="" value=<%= result.hobby %> size=25 maxlength=25><br>
-        <input type="text" name="id" id="" value=<%= result.id %> hidden readonly>
-        <input type="submit" value="Update Student">
-    </form>
-    <a href="/students">Back to Students</a>
-
-    <%- include('partials/footer')  %> 
-
-</body>
-</html>
+    <div class="container">
+        
+        
+        <%- include('partials/nav', {title: 'Edit Student'})  %> 
+        
+        <%- include('partials/aside')  %> 
+        
+        <main>
+            <form action="/students/update" method="post">
+                <h3>Edit a Student</h3>
+                First Name: <input type="text"   name="fname"  id="" value="<%= result.student_first %>"> <br>
+                Last Name:  <input type="text"   name="lname"  id="" value="<%= result.student_last %>"> <br>
+                Hobby:      <input type="text"   name="hobby"  id="" value="<%= result.hobby %>" size=25 maxlength=25> <br>
+                            <input type="text"   name="id"     id="" value="<%= result.id %>" hidden readonly>
+                            <input type="submit" name="submit" id="" value="Update Student">
+            </form>
+        </main>
+        
+        <%- include('partials/footer')  %> 
+        
+    </div>
+    </body>
+    </html>
+    
