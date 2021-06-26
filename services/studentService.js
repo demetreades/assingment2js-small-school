@@ -15,10 +15,9 @@ function sqlConnection(sql) {
     var con = db.createConnection(dbhost_ra1);
     let promise = new Promise((resolve, reject) => {
         con.connect(function (err) {
-            if(err) {
-                console.log("\n-------------------- Error Connecting! --------------------\n\n",err);
-            } else {
-                console.log("\n--------------------- SQL Connected ----------------------");
+            if(err) console.log("\n-------------------- Error Connecting! --------------------\n\n",err);
+            else {
+                console.log("\n--------------------- SQL Connected ----------------------\n");
                 con.query(sql, function(err, result, fields) {
                     if(err) throw err;
                     resolve(result);
@@ -29,8 +28,8 @@ function sqlConnection(sql) {
             }
         });
     });
+
     let result = promise;
-    console.log('sqlConnection() ===> ', result);
     return(result);
 }
 

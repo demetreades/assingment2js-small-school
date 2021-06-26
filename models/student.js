@@ -57,8 +57,4 @@ class Student {
     }
 };
 
-const rokkas = new Student(2, 'kostas', 'rokkas', 'bbq');
-console.log(rokkas.toString());
-
-
 module.exports = { Student }

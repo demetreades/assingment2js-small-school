@@ -6,6 +6,7 @@
 
 /views/others
 /services/other
+/services/_studentService.js
 /controllers/other
 /models/other
 /models/school.js
