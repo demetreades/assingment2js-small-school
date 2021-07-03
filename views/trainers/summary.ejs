@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%= title %></title>
     
     <%- include('../partials/head.ejs')  %> 
 
@@ -10,42 +9,43 @@
 
     <div class="container"> 
 
+      <%- include('../partials/header')  %> 
+
       <%- include('../partials/nav')  %> 
 
-      <%- include('../partials/aside')  %> 
-
       <main>
-
         <table>
-          
+
           <thead>
             <tr>
               <td>#</td>
               <td>Firstname</td>
               <td>Lastname</td>
-              <td>Tuition fees</td>
-              <td>Birthdate</td>
+              <td>Subject title</td>
+              <td>Subject details</td>
+              <td>Course</td>
               <td>Actions</td>
             </tr>
           </thead>
           
           <tbody>
-            <% if(studentsArray != undefined) { %>
-              <% studentsArray.data.forEach((student, index) => { %>
+            <% if(trainersArray != undefined) { %>
+              <% trainersArray.data.forEach((trainer, index) => { %>
                 <tr>
                   <td><%= index + 1 %></td>
-                  <td><%= student.first_name %></td>
-                  <td><%= student.last_name %></td>
-                  <td><%= student.tuition_fees %></td>
-                  <td><%= student.date_of_birth %></td>
+                  <td><%= trainer.first_name %></td>
+                  <td><%= trainer.last_name %></td>
+                  <td><%= trainer.title %></td>
+                  <td><%= trainer.details %></td>
+                  <td><%= trainer.description %></td>
                   <td>
                     <span>
-                      <a class="success" href='/students/update/<%= student.id %>'>
+                      <a class="success" href='/trainers/update/<%= trainer.id %>'>
                         <i class="fas fa-user-edit"></i>
                       </a>
                     </span>
                     <span>
-                      <a class="error" href='/students/delete/<%= student.id %>'>
+                      <a class="error" href='/trainers/delete/<%= trainer.id %>'>
                         <i class="far fa-trash-alt"></i>
                       </a>
                     </span>
@@ -53,14 +53,15 @@
                 </tr>
               <% }) %>
             <% } %> 
+
           </tbody>
-              
         </table>
       </main>
           
       <%- include('../partials/footer')  %> 
             
     </div>
+    
   </body>
 </html>
       

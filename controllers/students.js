@@ -6,22 +6,22 @@ const Student = require('../models/student').Student;
 
 router.get('/', function(req, res) {
   studentService.readAll().then((result) => {
-    res.render('students/summary', { title: 'Students', studentsArray: {data: result} });
+    res.render('students/summary', { title: 'Students summary', studentsArray: {data: result} });
   });
 });
 
 router.get('/new', function(req, res) {
-  res.render('students/new');
+  res.render('students/new', { title: 'Student insert' });
 });
 
 router.get('/delete/:id', function(req, res) {
   studentService.remove(req.params.id).then((result) => {
     if(result.affectedRows == 1) {
       studentService.readAll().then((result) => {
-        res.render('students/summary', { title: 'Students', studentsArray: {data: result} })
+        res.render('students/summary', { title: 'Students summary', studentsArray: {data: result} })
       });
     } else {
-      res.render('/students/summary');
+      res.render('/students/summary',{ title: 'Students summary'});
     }
   });
 });
@@ -29,7 +29,7 @@ router.get('/delete/:id', function(req, res) {
 router.get('/update/:id', function(req, res) {
   studentService.find(req.params.id).then((result) => {
     if(result.id  == req.params.id) {
-      res.render('./students/edit', { result });
+      res.render('./students/edit', { title: 'Student update', result });
     }
   });
 });
@@ -39,7 +39,7 @@ router.post('/update', function(req, res) {
   studentService.update(student).then((result) => {
     if(result.affectedRows == 1) {
       studentService.readAll().then((result) => {
-        res.render('students/summary', { title: 'Students', studentsArray: {data: result} });
+        res.render('students/summary', { title: 'Students summary', studentsArray: {data: result} });
       });
     }
   });
