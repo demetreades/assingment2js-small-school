@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <%- include('../partials/head')  %> 
+    
+  <title>Edit a Student</title>
+    
+</head>
+<body>
+  <div class="container">
+        
+    <%- include('../partials/header', {title: 'Edit Student'})  %> 
+        
+    <%- include('../partials/nav')  %> 
+        
+      <main>
+        <form action="/students/update" method="post">
+          <h3>Update Student: #<%= result.id %>. <%= result.fullName() %></h3>
+          <label for="first_name" class="">First name</label>
+          <input type="text" name="first_name" id="first_name" value="<%= result.firstName %>"><br>
+          <label for="last_name" class="">Last name</label>
+          <input type="text" name="last_name" id="last_name" value="<%= result.lastName %>"><br>
+          <label for="tuition_fees" class="">Tuition fees</label>
+          <input type="text" name="tuition_fees" id="tuition_fees" value="<%= result.tuitionFees %>"><br>
+          <label for="date_of_birth" class="">Date of birth</label>
+          <input type="date" name="date_of_birth" id="date_of_birth" min="1950-01-01" max="2003-01-01" value="<%= result.dateOfBirth %>"><br>
+          <input type="text" name="id" id="id" value="<%= result.id %>" hidden readonly>
+          <input type="submit" value="Update Student" class="">
+        </form>
+
+        <a href="/">Index</a><br>
+        <a href="/students" class="">Back to Students</a>
+      </main>
+        
+      <%- include('../partials/footer')  %> 
+        
+    </div>
+  </body>
+</html>

@@ -1,60 +1,52 @@
-const _id = new WeakMap();
-const _student_first = new WeakMap();
-const _student_last = new WeakMap();
-const _hobby = new WeakMap();
+const Person = require('./person').Person;
 
-class Student {
-    constructor(id, student_first, student_last, hobby) {
-        this.id = id;
-        this.student_first = student_first;
-        this.student_last = student_last;
-        this.hobby = hobby;
-    }
+const _tuitionFees = new WeakMap();
+const _dateOfBirth = new WeakMap();
 
-    get id() {
-        return _id.get(this);
-    }
+class Student extends Person {
+  constructor(id, firstName, lastName, tuitionFees, dateOfBirth) {
+    super(id, firstName, lastName);
+    this.tuitionFees = tuitionFees;
+    this.dateOfBirth = this.dateUtil.dateFormatter(new Date(dateOfBirth));
+  }
 
-    set id(value) {
-        _id.set(this,value);
+  get tuitionFees() {
+    return _tuitionFees.get(this);
+  }
+  set tuitionFees(value) {
+    if (isNaN(value) || value < 10 || value > 2500) {
+      throw new Error(`Invalid tuition fees (max 2500€)`);
     }
+    _tuitionFees.set(this, value);
+  }
 
-    get student_first() {
-        return _student_first.get(this);
+  get dateOfBirth() {
+    return _dateOfBirth.get(this);
+  }
+  set dateOfBirth(value) {
+    if (value > new Date('2004-01-01') || value < new Date('1949-01-01')) {
+      throw new Error(`Invalid birthdate`);
     }
+    _dateOfBirth.set(this, value);
+  }
 
-    set student_first(value) {
-        if(value.length < 2 || value.length > 25) {
-            throw new Error('Invalid firstname')
-        }
-        _student_first.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
-    }
-
-    get student_last() {
-        return _student_last.get(this);
-    }
-
-    set student_last(value) {
-        if(value.length < 2 || value.length > 25) {
-            throw new Error('Invalid lastname')
-        }
-        _student_last.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
-    }
-
-    get hobby() {
-        return _hobby.get(this);
-    }
-
-    set hobby(value) {
-        if(value.length < 2 || value.length > 25) {
-            throw new Error('Invalid hobby')
-        }
-        _hobby.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
-    }
-
-    toString() {
-        return `Student {id: ${this.id}, first name: ${this.student_first}, last name: ${this.student_last}, hobby: ${this.hobby}}`
-    }
+  toConsoleString = () => {
+    return (
+    `Student #${this.id} ${this.fullName()}   -   detail's:
+    
+    ---------------------
+    Firstname:   ${this.firstName}
+    Lastname:    ${this.lastName}
+    Tuition:     ${this.tuitionFees}€
+    Birthdate:   ${this.dateOfBirth}`
+    )
+  }
 };
 
-module.exports = { Student }
+// console.log('\n\n----------------------------------');
+// console.log('----------------------------------');
+// const paulos = new Student(24, "paulos", "paulopoulos", 22, new Date('1951-8-8'));
+// console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
+// console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
+
+module.exports = { Student };

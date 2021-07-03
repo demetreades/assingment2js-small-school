@@ -1,6 +1,26 @@
-<link rel="stylesheet" href="/style/style.css">
-<img src="/images/error_404.jpg" alt="error404" srcset="">
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= //error.stack %></pre>
-<script src="/javascripts/script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <%- include('./partials/head')  %> 
+    
+</head>
+<body>
+  <div class="container">
+        
+    <%- include('./partials/header')  %> 
+        
+    <%- include('./partials/nav')  %> 
+        
+      <main>
+        <h2>Something went wrong  !</h2>
+        <pre><%= message %></pre>
+        <pre><%= error.status %></pre>
+        <pre><%= error.stack %></pre>
+      </main>
+        
+      <%- include('./partials/footer')  %> 
+        
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <%- include('../partials/head')  %> 
+
+    <title>Insert new Student</title>
+  </head>
+  <body>
+    <div class="container"> 
+
+        <%- include('../partials/nav')  %> 
+      
+        <%- include('../partials/aside')  %> 
+      
+      <main>
+        
+        <form action="/students" method="post">
+          <h3>Insert New Student</h3>
+          <label for="first_name" class="">First name</label>
+          <input type="text" name="first_name" id="first_name" class=""><br>
+          <label for="last_name" class="">Last name</label>
+          <input type="text" name="last_name" id="last_name" class=""><br>
+          <label for="tuition_fees" class="">Tuition fees</label>
+          <input type="text" name="tuition_fees" id="tuition_fees" class=""><br>
+          <label for="date_of_birth" class="">Date of birth</label>
+          <input type="date" name="date_of_birth" id="date_of_birth" class=""><br>
+          <input type="submit" value="Add New Student" class="">
+        </form>
+        
+      </main>
+        
+      <%- include('../partials/footer')  %> 
+    
+    </div> 
+    
+  </body>
+</html>
+

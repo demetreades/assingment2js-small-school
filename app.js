@@ -7,7 +7,6 @@ var logger = require('morgan');
 
 // declare the controllers
 var indexRouter = require('./controllers/index');
-var usersRouter = require('./controllers/users');
 var studentsRouter = require('./controllers/students')
 // var trainersRouter = require('./controllers/trainers')
 
@@ -25,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // define the endpoints (urls)
-app.use('/', indexRouter);           // controller index    - /
-app.use('/users', usersRouter);      // controller users    - /users
-app.use('/students', studentsRouter) // controller students - /students
+app.use('/', indexRouter);           
+app.use('/students', studentsRouter) 
+// app.use('/trainers', trainersRouter) 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

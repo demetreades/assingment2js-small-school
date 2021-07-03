@@ -10,17 +10,20 @@
   <body>
     <div class="container">
 
-      <%- include('partials/nav')  %> 
+      <%- include('partials/header')  %> 
 
-      <%- include('partials/aside')  %> 
+      <%- include('partials/nav')  %> 
       
       <main>
         <div class="express">
-          <div class="blue1"></div>
+          <div class="big-blue"></div>
           <h1><%= title %></h1>
-          <p><%= title %> myapp</p>
           <p><%= course %></p>
-          <div class="blue2"></div>
+          <div class="index-links">
+            <a href="/students">Students summary</a>
+            <a href="/trainers">Trainers summary</a>
+          </div>
+          <div class="small-blue"></div>
         </div>
       </main>
       
