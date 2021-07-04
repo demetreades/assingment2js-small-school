@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <%- include('../partials/head.ejs')  %> 
+
+  </head>
+  <body>
+
+    <div class="container"> 
+      
+    <header>
+      <%- include('../partials/header')  %> 
+      <p>Edit or delete an entry</p>
+    </header>
+
+      <%- include('../partials/nav')  %> 
+
+      <main>
+        <table>
+
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>Firstname</td>
+              <td>Lastname</td>
+              <td>Subject title</td>
+              <td>Subject details</td>
+              <td>Course</td>
+              <td>Actions</td>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <% if(trainersArray != undefined) { %>
+              <% trainersArray.data.forEach((trainer, index) => { %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= trainer.first_name %></td>
+                  <td><%= trainer.last_name %></td>
+                  <td><%= trainer.title %></td>
+                  <td><%= trainer.details %></td>
+                  <td><%= trainer.description %></td>
+                  <td>
+                    <span>
+                      <a class="success" href='/trainers/update/<%= trainer.id %>'>
+                        <i class="fas fa-user-edit"></i>
+                      </a>
+                    </span>
+                    <span>
+                      <a class="error" href='/trainers/delete/<%= trainer.id %>'>
+                        <i class="far fa-trash-alt"></i>
+                      </a>
+                    </span>
+                  </td>
+                </tr>
+              <% }) %>
+            <% } %> 
+
+          </tbody>
+        </table>
+
+        <a class="add-entry"href="/trainers/new"><i class="fas fa-user-plus"></i></a>
+
+      </main>
+          
+      <%- include('../partials/footer')  %> 
+            
+    </div>
+    
+  </body>
+</html>
+      
