@@ -2,7 +2,7 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 <br>
 
-# Express CRUD application
+# Express CRUD small school project
 
 PORT: `4000`
 
@@ -10,7 +10,7 @@ Generated with [express-init](https://github.com/demetreades/express-init)
 
 <br>
 
-![sample](./public/img/sample.png)
+![sample](./public/img/diagram.png)
 
 <br>
 
@@ -24,39 +24,42 @@ Generated with [express-init](https://github.com/demetreades/express-init)
 
 `cd myapp` if you are not already into
 
+<br>
+
 ## 2. Install dependencies
 
 If you cloned the repo you need to install dependencies first as described in the `package.json` 
 
 `npm install`
 
+<br>
+
+## 4. Generate database
+
+_Still under construction_
+
+run: `node ./database/init` to create, make tables, use and populate database, but connection still hangs so you need manually to abort via `CTRL+C` unfortunately.
+
+It will be fixed in the future  
+
+<br>
+
 ## 3. Run app
 
-`npm start` listening at port: `3300`
+`npm start` listening at port: `4000`
+
+<br>
 
 ## 4. Navigate to:
 
-<br>
 
 List of current active urls:
 
-|URLs       |Endpoints                         | 
-|:----------|:---------------------------------|
-|[localhost:3300](http://localhost:3300) |  /  | 
-|[localhost:3300/students/](http://localhost:3300/students/)             |  students/       | 
-|[localhost:3300/students/new](http://localhost:3300/students/new)       |  students/new/   |  
-|[localhost:3300/students/update](http://localhost:3300/students/update) | students/update/ | 
-|[localhost:3300/students/delete](http://localhost:3300/students/update) | students/delete/ | 
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<br>
+|URLs       |Endpoints                                      |                |
+|:----------|:----------------------------------------------|----------------|
+|[localhost:4000](http://localhost:4000) |        /         |                |
+|[localhost:4000/students/](http://localhost:4000/students/)|    students/   | 
+|[localhost:4000/trainers/](http://localhost:4000/trainers/)|    trainers/   | 
 
 <br>
 

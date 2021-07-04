@@ -71,23 +71,3 @@ router.post('/', function(req, res) {
 
 
 module.exports = router;
-
-
-// const subjects    = [];
-// const subjects_id = [];
-// const courses     = [];
-// const courses_id  = [];
-
-// data.forEach(trainer => {
-//   subjects_id.push(trainer.subjects_id);
-//   courses_id.push(trainer.courses_id);      
-//   subjects.push(trainer.details);
-//   courses.push(trainer.description);      
-// });
-
-// const result  = { 
-//   subjects_id: [...new Set(subjects_id)], 
-//   subjects:    [...new Set(subjects)   ], 
-//   courses_id:  [...new Set(courses_id) ],
-//   courses:     [...new Set(courses)    ]
-// }

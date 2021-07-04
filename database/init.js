@@ -1,14 +1,5 @@
-// require('events').EventEmitter.prototype._maxListeners = 25;
-
 const SQL_DATA = require('./data').SQL_DATA;
 const con = require('./db.js').db;
-// const sqlConnection = require('../services/connection').sqlConnection; // apo edw...
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of
-
-// for await (variable of iterable) {
-  // statement
-// }
 
 
 console.log

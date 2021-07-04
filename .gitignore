@@ -2,3 +2,4 @@
 /package-lock.json
 /views/other
 /database/_other-sql
+/database/_init.js
