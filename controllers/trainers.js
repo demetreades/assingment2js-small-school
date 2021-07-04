@@ -1,5 +1,6 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router();3
+
 const trainerService = require('../services/trainerService');
 const courseService = require('../services/courseService');
 const subjectService = require('../services/subjectService');
@@ -68,6 +69,5 @@ router.post('/', function(req, res) {
     }
   });
 });
-
 
 module.exports = router;

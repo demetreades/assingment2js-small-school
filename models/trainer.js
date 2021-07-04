@@ -14,6 +14,7 @@ class Trainer extends Person {
   get subjectsId() {
     return _subjectsId.get(this);
   }
+
   set subjectsId(value) {
     if(this.subjectsId !== undefined) {
       if(isNaN(value) || value < 1) {
@@ -26,6 +27,7 @@ class Trainer extends Person {
   get coursesId() {
     return _coursesId.get(this);
   }
+  
   set coursesId(value) {
     if(this.coursesId !== undefined) {
       if(isNaN(value) || value < 1) {

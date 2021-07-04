@@ -1,4 +1,3 @@
-const sqlConnection = require('./connection').sqlConnection;
 const Trainer = require('../models/trainer').Trainer;
 
 
@@ -17,9 +16,6 @@ async function readAll() {
 };
 
 async function insert(trainer) {
-
-  console.log(trainer.toConsoleString());
-
   let sql = `INSERT INTO small_school.trainers(first_name, last_name, subjects_id, courses_id) VALUES (
             '${trainer.firstName}', '${trainer.lastName}', '${trainer.subjectsId}', '${trainer.coursesId}');`;
   console.log('\nQuery: \t', sql);

@@ -1,6 +1,3 @@
-const sqlConnection = require('./connection').sqlConnection;
-
-
 async function readAll() {
   let sql = "SELECT subjects.id, subjects.details FROM small_school.subjects;";
   console.log('\nQuery: \t', sql);

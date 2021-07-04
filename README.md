@@ -55,9 +55,9 @@ It will be fixed in the future
 
 List of current active urls:
 
-|URLs       |Endpoints                                      |                |
-|:----------|:----------------------------------------------|----------------|
-|[localhost:4000](http://localhost:4000) |        /         |                |
+|URLs                                                       |Endpoints       |
+|:----------------------------------------------------------|:---------------|
+|[localhost:4000](http://localhost:4000)                    |        /       |
 |[localhost:4000/students/](http://localhost:4000/students/)|    students/   | 
 |[localhost:4000/trainers/](http://localhost:4000/trainers/)|    trainers/   | 
 

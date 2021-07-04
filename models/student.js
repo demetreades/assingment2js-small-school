@@ -13,6 +13,7 @@ class Student extends Person {
   get tuitionFees() {
     return _tuitionFees.get(this);
   }
+
   set tuitionFees(value) {
     if (isNaN(value) || value < 10 || value > 2500) {
       throw new Error(`Invalid tuition fees (max 2500€)`);
@@ -23,6 +24,7 @@ class Student extends Person {
   get dateOfBirth() {
     return _dateOfBirth.get(this);
   }
+  
   set dateOfBirth(value) {
     if (value > new Date('2004-01-01') || value < new Date('1949-01-01')) {
       throw new Error(`Invalid birthdate`);

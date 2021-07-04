@@ -1,11 +1,20 @@
 const DateUtil = require('./dateutil').DateUtil;
 
 const _id = new WeakMap();
+const _dateUtil = new WeakMap();
 
 class Entity {
   constructor(id) {
     this.id        = id;
     this.dateUtil  = new DateUtil;
+  }
+
+  get dateUtil() {
+    return _dateUtil.get(this);
+  }
+
+  set dateUtil(value) {
+    _dateUtil.set(this, value);
   }
 
   get id() {

@@ -2,17 +2,14 @@ const Entity = require('./entity').Entity;
 
 const _title       = new WeakMap();
 const _details = new WeakMap();
-// const _startDate   = new WeakMap();
-// const _endDate     = new WeakMap();
+const _startDate   = new WeakMap();
+const _endDate     = new WeakMap();
 
 class Subject extends Entity {
-  // constructor(id, title, description, startDate, endDate) {
-  constructor(id, title, details) {
+  constructor(id, title, description, startDate, endDate) {
     super(id)
     this.title   = title;
     this.details = details;
-    // this.startDate   = this.dateUtil.dateFormatter(new Date(startDate));
-    // this.endDate     = this.dateUtil.dateFormatter(new Date(endDate));
   }
   
   get title() {
@@ -37,27 +34,27 @@ class Subject extends Entity {
     _details.set(this,value);
   }
 
-  // get startDate() {
-  //   return _startDate.get(this);
-  // }
+  get startDate() {
+    return _startDate.get(this);
+  }
   
-  // set startDate(value) {
-  //   if (value >= this.startDate || value < this.today) {
-  //     throw new Error(`Invalid subject's start date`);
-  //   }
-  //   _startDate.set(this,value);
-  // }
+  set startDate(value) {
+    if (value >= this.startDate || value < this.today) {
+      throw new Error(`Invalid subject's start date`);
+    }
+    _startDate.set(this,value);
+  }
 
-  // get endDate() {
-  //   return _endDate.get(this);
-  // }
+  get endDate() {
+    return _endDate.get(this);
+  }
 
-  // set endDate(value) {
-  //   if (value <= this.startDate || value < this.today) {
-  //     throw new Error(`Invalid subject's end date`);
-  //   }
-  //   _endDate.set(this,value);
-  // }
+  set endDate(value) {
+    if (value <= this.startDate || value < this.today) {
+      throw new Error(`Invalid subject's end date`);
+    }
+    _endDate.set(this,value);
+  }
 
   toConsoleString = () => {
     return (

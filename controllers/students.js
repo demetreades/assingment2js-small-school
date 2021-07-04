@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
+
 const studentService = require('../services/studentService');
+
 const Student = require('../models/student').Student;
 
 
@@ -57,6 +59,5 @@ router.post('/', function(req, res) {
     }
   });
 });
-
 
 module.exports = router;

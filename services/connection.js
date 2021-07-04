@@ -1,6 +1,5 @@
 const db = require("mysql2");
 
-// TODO: na ginei module sto /lib me onoma db
 const credentials = {
   host: "localhost",
   user: "root",

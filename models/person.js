@@ -13,6 +13,7 @@ class Person extends Entity {
   get firstName() {
     return _firstName.get(this);
   }
+
   set firstName(value) {
     this.nameChecker(value, 2, 25);
     _firstName.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
@@ -21,6 +22,7 @@ class Person extends Entity {
   get lastName() {
     return _lastName.get(this);
   }
+  
   set lastName(value) {
     this.nameChecker(value, 2, 25);
     _lastName.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
