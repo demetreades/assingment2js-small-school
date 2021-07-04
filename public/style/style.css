@@ -303,7 +303,8 @@ select {
 }
 
 form input[type="submit"] {
-  padding: 24px 0px;
+  padding: 20px 0px;
+  font-size: 14px;
   margin-top: 8px;
   margin-bottom: 0px;
   background-color: #0045ce;

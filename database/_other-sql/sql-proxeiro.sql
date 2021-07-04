@@ -1,6 +1,7 @@
 
 
 
+-- SELECT DATE_FORMAT(date_of_birth, '%d-%m-%Y') AS date_of_birth FROM students;
 
 -- 542:   RENTAL SP
 

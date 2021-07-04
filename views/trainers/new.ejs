@@ -14,29 +14,34 @@
       </header>
       
         <%- include('../partials/nav')  %> 
-      
+        
       <main>
         
         <form action="/trainers" method="post">
           <h3>Insert New Trainer</h3>
+
           <label for="first_name">First name</label>
           <input type="text" name="first_name" id="first_name" pattern="[A-Za-z]{2,25}" placeholder="Insert firstname" required><br>
+
           <label for="last_name">Last name</label>
           <input type="text" name="last_name" id="last_name" pattern="[A-Za-z]{2,25}" minlength="2" maxlength="25" placeholder="Insert lastname" required><br>
-          <label for="subject">Subject</label>
-          <select name="subject" id="subject">
-            <option value="0" default>Choose a subject</option>
-            <% trainersArray.data.forEach(subject => { %>
+
+          <label for="subjects">Subject</label>
+          <select name="subjects" id="subjects" required>
+            <option value="" selected disabled hidden>Choose a subject</option>
+            <% subjects.forEach(subject => { %>
               <option value="<%= subject.id %>"> <%= subject.details %>  </option>
             <% }) %>
           </select>
-          <label for="course">Course</label>
-          <select name="course" id="course">
-            <option value="0" default>Choose a course</option>
-            <% trainersArray.data.forEach(course => { %>
+
+          <label for="courses">Course</label>
+          <select name="courses" id="courses" required>
+            <option value="" selected disabled hidden>Choose a course</option>
+            <% courses.forEach(course => { %>
               <option value="<%= course.id %>"> <%= course.description %>  </option>
             <% }) %>
           </select>
+
           <input type="submit" value="Add">
 
 
