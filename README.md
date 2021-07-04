@@ -4,7 +4,7 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 # Express CRUD application
 
-PORT: `3300`
+PORT: `4000`
 
 Generated with [express-init](https://github.com/demetreades/express-init)
 
