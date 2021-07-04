@@ -1,7 +1,6 @@
 const DateUtil = require('./dateutil').DateUtil;
 
 const _id = new WeakMap();
-// const _createdAt = new WeakMap();
 
 class Entity {
   constructor(id) {

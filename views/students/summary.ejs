@@ -8,8 +8,11 @@
   <body>
 
     <div class="container"> 
-
+      
+    <header>
       <%- include('../partials/header')  %> 
+      <p>Edit or delete an entry</p>
+    </header>
 
       <%- include('../partials/nav')  %> 
 
@@ -54,9 +57,14 @@
 
           </tbody>
         </table>
+
+        <a class="add-entry"href="/students/new"><i class="fas fa-user-plus"></i></a>
+        
       </main>
           
       <%- include('../partials/footer')  %> 
+      
+
             
     </div>
 

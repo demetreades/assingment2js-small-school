@@ -8,9 +8,13 @@
 
   </head>
   <body>
-    <div class="container">
 
-      <%- include('partials/header')  %> 
+    <div class="container">
+      <header>
+        <%- include('partials/header')  %> 
+        <p>Welcome to <%= course %> </p>
+      </header>
+      
 
       <%- include('partials/nav')  %> 
       
@@ -20,8 +24,8 @@
           <h1><%= title %></h1>
           <p><%= course %></p>
           <div class="index-links">
-            <a href="/students">Students summary</a>
-            <a href="/trainers">Trainers summary</a>
+            <a href="/students"><i class="fas fa-user-graduate"></i>Students summary</a>
+            <a href="/trainers"><i class="fas fa-chalkboard-teacher"></i>Trainers summary</a>
           </div>
           <div class="small-blue"></div>
         </div>

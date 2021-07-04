@@ -1,22 +1,24 @@
 const Entity = require('./entity').Entity;
 
 const _title       = new WeakMap();
-const _description = new WeakMap();
-const _startDate   = new WeakMap();
-const _endDate     = new WeakMap();
+const _details = new WeakMap();
+// const _startDate   = new WeakMap();
+// const _endDate     = new WeakMap();
 
 class Subject extends Entity {
-  constructor(id, title, description, startDate, endDate) {
+  // constructor(id, title, description, startDate, endDate) {
+  constructor(id, title, details) {
     super(id)
-    this.title       = title;
-    this.description = description;
-    this.startDate   = this.dateUtil.dateFormatter(new Date(startDate));
-    this.endDate     = this.dateUtil.dateFormatter(new Date(endDate));
+    this.title   = title;
+    this.details = details;
+    // this.startDate   = this.dateUtil.dateFormatter(new Date(startDate));
+    // this.endDate     = this.dateUtil.dateFormatter(new Date(endDate));
   }
   
   get title() {
     return _title.get(this);
   }
+
   set title(value) {
     if(value.length < 2) {
       throw new Error('Invalid title name');
@@ -24,37 +26,40 @@ class Subject extends Entity {
     _title.set(this,value);
   }
 
-  get description() {
-    return _description.get(this);
+  get details() {
+    return _details.get(this);
   }
-  set description(value) {
+
+  set details(value) {
     if(value.length < 2) {
-      throw new Error('Invalid description name');
+      throw new Error('Invalid details name');
     }
-    _description.set(this,value);
+    _details.set(this,value);
   }
 
-  get startDate() {
-    return _startDate.get(this);
-  }
-  set startDate(value) {
-    if (value >= this.startDate || value < this.today) {
-      throw new Error(`Invalid subject's start date`);
-    }
-    _startDate.set(this,value);
-  }
+  // get startDate() {
+  //   return _startDate.get(this);
+  // }
+  
+  // set startDate(value) {
+  //   if (value >= this.startDate || value < this.today) {
+  //     throw new Error(`Invalid subject's start date`);
+  //   }
+  //   _startDate.set(this,value);
+  // }
 
-  get endDate() {
-    return _endDate.get(this);
-  }
-  set endDate(value) {
-    if (value <= this.startDate || value < this.today) {
-      throw new Error(`Invalid subject's end date`);
-    }
-    _endDate.set(this,value);
-  }
+  // get endDate() {
+  //   return _endDate.get(this);
+  // }
 
-  toString = () => {
+  // set endDate(value) {
+  //   if (value <= this.startDate || value < this.today) {
+  //     throw new Error(`Invalid subject's end date`);
+  //   }
+  //   _endDate.set(this,value);
+  // }
+
+  toConsoleString = () => {
     return (
       `Subject #${this.id} ${this.title}   -   details:
       

@@ -1,16 +1,13 @@
 const sqlConnection = require('./connection').sqlConnection;
-
-const Student    = require('../models/student').Student;
-// const Trainer    = require('../models/trainer').Trainer;
-// const Subject    = require('../models/subject').Subject;
-const DateUtil   = require('../models/dateutil').DateUtil;
-// const Assignment = require('../models/assignment').Assignment;
+const Student       = require('../models/student').Student;
+const DateUtil      = require('../models/dateutil').DateUtil;
 
 
 async function readAll() {
   let sql = "SELECT id, first_name, last_name, tuition_fees, DATE_FORMAT(date_of_birth, '%d-%m-%Y') AS date_of_birth  FROM students;";
   console.log('\nQuery: \t', sql);
   let result = await sqlConnection(sql);
+  console.log(result); // <========================================
   return(result);
 };
 

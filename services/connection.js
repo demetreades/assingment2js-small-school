@@ -9,7 +9,7 @@ const credentials = {
 };
    
 
-function sqlConnection(sql) {
+async function sqlConnection(sql) {
   const con = db.createConnection(credentials);
   const promise = new Promise((resolve, reject) => {
     con.connect(function (err) {
@@ -27,7 +27,7 @@ function sqlConnection(sql) {
       }
     });
   });
-  const result = promise;
+  const result = await promise;
   return(result);
 };
 

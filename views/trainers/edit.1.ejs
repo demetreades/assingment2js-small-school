@@ -31,7 +31,17 @@
           <label for="subject">Subject</label>
           <select name="subject" id="subject">
             <option value="0" default>Choose a subject</option>
-            <option value="<%= result.subjects_id %>"> <%= result.details %></option>
+            <% result.forEach(subject => { %>
+              <option value="<%= result.subjects_id %>"> <%= result.details %>  </option>
+            <% }) %>
+          </select>
+
+          <label for="course">Course</label>
+          <select name="course" id="course">
+            <option value="0" default>Choose a course</option>
+            <% result.forEach(course => { %>
+              <option value="<%= result.courses_id %>"> <%= result.description %>  </option>
+            <% }) %>
           </select>
 
           <input type="text" name="id" id="id" value="<%= result.id %>" hidden readonly>

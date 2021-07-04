@@ -45,7 +45,7 @@ class Student extends Person {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const paulos = new Student(24, "paulos", "paulopoulos", 22, new Date('1951-8-8'));
+// const paulos = new Student(24, "paulos", "paulopoulos", '2222', new Date('1951-8-8'));
 // console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
 // console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
 
