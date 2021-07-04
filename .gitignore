@@ -1,5 +1,5 @@
 /node_modules
 /package-lock.json
+
 /views/other
-/database/_other-sql
-/database/_init.js
+/database/other

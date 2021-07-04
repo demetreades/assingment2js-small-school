@@ -1,7 +1,4 @@
 class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/myapp)
-
-<br>
-
 # Express CRUD small school project
 
 PORT: `4000`
@@ -38,7 +35,7 @@ If you cloned the repo you need to install dependencies first as described in th
 
 _Still under construction_
 
-run: `node ./database/init` to create, make tables, use and populate database, but connection still hangs so you need manually to abort via `CTRL+C` unfortunately.
+run: `node ./database/init` to create , use schema, create and populate tables, but connection still hangs so you need manually to abort via `CTRL+C` after completion unfortunately.
 
 It will be fixed in the future  
 

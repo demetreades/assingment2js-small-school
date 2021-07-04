@@ -61,7 +61,7 @@ router.post('/', function(req, res) {
   const trainer = new Trainer(req.body.id, req.body.first_name, req.body.last_name, req.body.subjects, req.body.courses); 
   trainerService.insert(trainer).then((result) => {
     if(result.affectedRows == 1) {
-      trainerService.readAll().then((result) => {
+      trainerService.view().then((result) => {
         res.render('trainers/summary', { title: 'Trainers', trainersArray: {data: result} });
       });
     } else {

@@ -1,3 +1,5 @@
+const sqlConnection = require('./connection').sqlConnection;
+
 const Trainer = require('../models/trainer').Trainer;
 
 

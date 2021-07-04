@@ -35,7 +35,7 @@ const SQL_DATA = {
   ,
   'CREATE VIEW `all_students` AS SELECT `students`.`id`, `students`.`first_name`, `students`.`last_name`, `courses`.`description`, `students`.`date_of_birth`, `students`.`tuition_fees` FROM `courses` JOIN `course_title` ON `courses`.`title_id` = `course_title`.`id` JOIN `course_stream` ON `courses`.`stream_id` = `course_stream`.`id` JOIN `course_type` ON `courses`.`type_id` = `course_type`.`id` JOIN `assignments_student` ON `courses`.`id` = `assignments_student`.`courses_id` JOIN `students` ON `assignments_student`.`students_id`  = `students`.`id` GROUP BY `students`.`id`;'
   ,
-  'CREATE VIEW `all_trainers` AS SELECT `trainers`.`id`, `trainers`.`first_name`, `trainers`.`last_name`, `subjects`.`id` AS `subjects_id`, `subjects`.`title`, `subjects`.`details`, `courses`.`id` AS `courses_id`, `courses`.`description` FROM `small_school`.`trainers` LEFT JOIN `subjects` ON `subjects`.`id` = `trainers`.`subjects_id` LEFT JOIN `courses` ON `courses`.`id` = `trainers`.`courses_id`;'
+  'CREATE VIEW `all_trainers` AS SELECT `trainers`.`id`, `trainers`.`first_name`, `trainers`.`last_name`, `subjects`.`id` AS `subjects_id`, `subjects`.`details`, `courses`.`id` AS `courses_id`, `courses`.`description` FROM `small_school`.`trainers` LEFT JOIN `subjects` ON `subjects`.`id` = `trainers`.`subjects_id` LEFT JOIN `courses` ON `courses`.`id` = `trainers`.`courses_id`;'
   ,
   'CREATE VIEW `all_assignments` AS SELECT `assignments`.`id`,`assignments`.`title`, `assignments`.`description`, `assignments_type`.`type` FROM `small_school`.`assignments` JOIN `assignments_type` ON `assignments_type`.`id` = `assignments`.`assignments_type_id`;'
   ],
