@@ -114,8 +114,7 @@ table {
   background-color: rgb(211, 220, 228);
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
   border-collapse: collapse;
-  margin: 60px auto;
-  margin-bottom: 80px;
+  margin: 10px auto;
 }
 
 thead {
@@ -155,6 +154,7 @@ th, td {
 
 main {
   grid-area: main;
+  padding: 20px;
 }
 
 main h3 {
@@ -185,17 +185,14 @@ main h3 {
 }
 
 .index-links {
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
-.index-links p {
-  margin: 18px;
-}
-
 .index-links a {
   color: #0045ce;
+  padding: 8px;
   display: block;
 }
 

@@ -1,15 +1,15 @@
-const db = require("mysql2");
+const mysql = require("mysql2");
 
 const credentials = {
-  host: "localhost",
-  user: "root",
-  password: "1212",
-  database: "small_school"
+  // host: "YourHost",
+  // user: "YourUser",
+  // password: "YourPass",
+  // database: "YourDB"
 };
    
 
 async function sqlConnection(sql) {
-  const con = db.createConnection(credentials);
+  const con = mysql.createConnection(credentials);
   const promise = new Promise((resolve, reject) => {
     con.connect(function (err) {
       if(err) console.log("\n-------------------- Error Connecting! --------------------\n\n",err);

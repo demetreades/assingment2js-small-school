@@ -3,6 +3,7 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 PORT: `4000`
 
+
 Generated with [express-init](https://github.com/demetreades/express-init)
 
 <br>
@@ -35,15 +36,23 @@ If you cloned the repo you need to install dependencies first as described in th
 
 _Still under construction_
 
-run: `node ./database/init` to create , use schema, create and populate tables, but connection still hangs so you need manually to abort via `CTRL+C` after completion unfortunately.
+Firstly insert your `MySQL` credentials into `node ./database/init.js` and then run it: to create , use schema, create and populate tables. 
 
-It will be fixed in the future  
+Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. 
+
+_It will be fixed in the future._ 
+
+<br>
+
+You also need to change credentianls at `/services/connection.js`. for the main connection with the newly created database.
 
 <br>
 
 ## 3. Run app
 
-`npm start` listening at port: `4000`
+Run `npm start` 
+
+The app listening at port: `4000`
 
 <br>
 

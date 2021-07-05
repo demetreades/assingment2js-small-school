@@ -33,7 +33,7 @@ class Person extends Entity {
   }
 
   nameChecker = (value, minChars, maxChars) => {
-    const validCharacters = /^[a-zA-Z]+$/
+    const validCharacters = /^[α-ωΑ-Ωa-zA-Z]+$/
     if(!value.match(validCharacters)) {
       throw new Error(`Invalid characters inserted`)
     }

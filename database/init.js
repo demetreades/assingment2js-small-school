@@ -1,6 +1,14 @@
 const SQL_DATA = require('./data').SQL_DATA;
-const con = require('./db.js').db;
 
+const mysql = require('mysql2');
+
+
+const con = mysql.createConnection({
+  // host: "YourHost",
+  // user: "YourUser",
+  // password: "YourPass",
+  // port: "YourPort"
+});
 
 console.log
 (`\n------------------- Initializing -------------------
