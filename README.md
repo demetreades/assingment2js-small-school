@@ -3,12 +3,12 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 PORT: `4000`
 
-View with Firefox for proper styling
+View with Firefox for proper styling.
 
 <br>
 
 
-Generated with [express-init](https://github.com/demetreades/express-init)
+Generated with [express-init](https://github.com/demetreades/express-init).
 
 <br>
 
@@ -18,19 +18,19 @@ Generated with [express-init](https://github.com/demetreades/express-init)
 
 ## 1. Clone repo and cd into `/myapp` folder
 
-`pwd` for current path
+`pwd` for current path.
 
 `git clone https://github.com/demetreades/myapp.git`
 
-`dir` or `ls` for files list
+`dir` or `ls` for files list.
 
-`cd myapp` if you are not already into
+`cd myapp` if you are not already into.
 
 <br>
 
 ## 2. Install dependencies
 
-If you cloned the repo you need to install dependencies first as described in the `package.json` 
+If you cloned the repo you need to install dependencies first as described in the `package.json`. 
 
 `npm install`
 
@@ -52,11 +52,11 @@ You also need to change credentianls at `/services/connection.js`. for the main 
 
 <br>
 
-## 3. Run app
+## 3. Start app
 
 Run `npm start` 
 
-The app listening at port: `4000`
+The app listening at PORT: `4000`
 
 <br>
 
