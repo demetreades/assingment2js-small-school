@@ -3,7 +3,7 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 PORT: `4000`
 
-View it with with Firefox for proper styling
+View with Firefox for proper styling
 
 <br>
 
