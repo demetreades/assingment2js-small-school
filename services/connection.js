@@ -1,19 +1,12 @@
 const mysql = require("mysql2");
 
 const credentials = {
-  host: "localhost",
-  user: "root",
-  password: "1212",
+  // host: "YourHost",
+  // user: "YourUser",
+  // password: "YourPass",
+  // port: "YourPort",
   database: "small_school"
 };
-   
-// const credentials = {
-//   // host: "YourHost",
-//   // user: "YourUser",
-//   // password: "YourPass",
-//   // port: "YourPort",
-//   database: "small_school"
-// };
    
 
 async function sqlConnection(sql) {
