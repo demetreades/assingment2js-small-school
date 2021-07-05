@@ -41,7 +41,7 @@ class Student extends Person {
     Lastname:    ${this.lastName}
     Tuition:     ${this.tuitionFees}€
     Birthdate:   ${this.dateOfBirth}`
-    )
+    );
   }
 };
 

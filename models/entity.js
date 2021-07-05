@@ -24,7 +24,7 @@ class Entity {
   set id(value) {
     if(this.id !== undefined) {
       if (isNaN(value) || value < 1) {
-        throw new Error('Invalid id')
+        throw new Error('Invalid id');
       }
     }
     _id.set(this, value);

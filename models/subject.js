@@ -67,7 +67,7 @@ class Subject extends Entity {
       -----------------------
       Starts:       ${this.startDate}
       Ends:         ${this.endDate}`
-    )
+    );
   }
 
 };

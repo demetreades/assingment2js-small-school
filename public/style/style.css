@@ -42,6 +42,27 @@ pre {
   padding: 10px;
 }
 
+li {
+  display: flex;
+  width: 100%;
+  padding: 8px 14px;
+}
+
+li p {
+  width: 100%;
+  padding-right: 60px;
+}
+
+li a {
+  margin: 0px 4px;
+}
+
+a {
+  padding: 4px;
+}
+
+
+/* =================== */
 
 header {
   grid-area: header;
@@ -70,6 +91,7 @@ header p {
   color: #e0e0e0;
 }
 
+/* =================== */
 
 nav {
   height: 100%;
@@ -95,26 +117,14 @@ nav li {
 }
 
 
-.big-blue {
-  width: 100%;
-  padding: 35px 0px ;
-  background-color: #0045ce;
-  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
-}
-
-.small-blue {
-  width: 100%;
-  padding: 10px 0px ;
-  background-color: #0045ce;
-  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
-}
-
+/* =================== */
 
 table {
   background-color: rgb(211, 220, 228);
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
   border-collapse: collapse;
   margin: 10px auto;
+  width: auto;
 }
 
 thead {
@@ -157,6 +167,9 @@ main {
   padding: 20px;
 }
 
+
+/* =================== */
+
 main h3 {
   background-color: #0045ce;
   padding: 34px 30px;
@@ -164,6 +177,9 @@ main h3 {
   color: #e0e0e0;
   margin-bottom: 22px;
 }
+
+
+/* =================== */
 
 .express {
   display: flex;
@@ -184,6 +200,23 @@ main h3 {
   padding: 4px;
 }
 
+.big-blue {
+  width: 100%;
+  padding: 35px 0px ;
+  background-color: #0045ce;
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.small-blue {
+  width: 100%;
+  padding: 10px 0px ;
+  background-color: #0045ce;
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =================== */
+
 .index-links {
   font-size: 18px;
   margin-top: 20px;
@@ -203,20 +236,7 @@ i:hover ,
 }
 
 
-li {
-  display: flex;
-  width: 100%;
-  padding: 8px 14px;
-}
-
-li p {
-  width: 100%;
-  padding-right: 60px;
-}
-
-a {
-  padding: 4px;
-}
+/* =================== */
 
 .error {
   color: #DA1E28 !important;
@@ -243,9 +263,8 @@ a {
   background-color: #24a14738; 
 }
 
-li a {
-  margin: 0px 4px;
-}
+
+/* =================== */
 
 footer {
   grid-area: footer;
@@ -270,6 +289,9 @@ footer p {
 footer a {
   color: #e0e0e0;
 }
+
+
+/* =================== */
 
 .add-entry {
   color: rgb(0, 81, 255);

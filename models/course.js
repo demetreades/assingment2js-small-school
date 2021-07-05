@@ -19,6 +19,7 @@ class Course extends Entity {
   get title() {
     return _title.get(this);
   }
+  
   set title(value) {
     if(value.length < 2 || value.length > 25) {
       throw new Error('Invalid title name');
@@ -29,6 +30,7 @@ class Course extends Entity {
   get stream() {
     return _stream.get(this);
   }
+
   set stream(value) {
     if(value.length < 2 || value.length > 25) {
       throw new Error('Invalid stream name');
@@ -39,6 +41,7 @@ class Course extends Entity {
   get type() {
     return _type.get(this);
   }
+  
   set type(value) {
     if(value.length < 2 || value.length > 25) {
       throw new Error('Invalid type name');
@@ -49,6 +52,7 @@ class Course extends Entity {
   get startDate() {
     return _startDate.get(this);
   }
+
   set startDate(value) {
     if (value < this.today) {
       throw new Error(`Invalid start date`);
@@ -59,6 +63,7 @@ class Course extends Entity {
   get endDate() {
     return _endDate.get(this);
   }
+
   set endDate(value) {
     if (value < this.today || value < this.startDate) {
       throw new Error(`Invalid end date`);
@@ -81,7 +86,7 @@ class Course extends Entity {
       -----------------------
       Starts:       ${this.startDate}
       Ends:         ${this.endDate}`
-    )
+    );
   }
   
 };

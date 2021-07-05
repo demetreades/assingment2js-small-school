@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  
+  <head>
 
-  <%- include('./partials/head')  %> 
+    <%- include('./partials/head')  %> 
     
-</head>
-<body>
+  </head>
+  <body>
+
   <div class="container">
-  <header>
-    <%- include('./partials/header')  %> 
-    <p><%= message %></p>
-  </header>      
+
+    <header>
+      <%- include('./partials/header')  %> 
+      <p><%= message %></p>
+    </header>      
         
-    <%- include('./partials/nav')  %> 
+      <%- include('./partials/nav')  %> 
         
       <main>
         <h2>Something went wrong  !</h2>
@@ -24,5 +27,6 @@
       <%- include('./partials/footer')  %> 
         
     </div>
+
   </body>
 </html>

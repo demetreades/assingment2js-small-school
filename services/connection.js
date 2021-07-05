@@ -1,12 +1,19 @@
 const mysql = require("mysql2");
 
 const credentials = {
-  // host: "YourHost",
-  // user: "YourUser",
-  // password: "YourPass",
-  // port: "YourPort",
+  host: "localhost",
+  user: "root",
+  password: "1212",
   database: "small_school"
 };
+   
+// const credentials = {
+//   // host: "YourHost",
+//   // user: "YourUser",
+//   // password: "YourPass",
+//   // port: "YourPort",
+//   database: "small_school"
+// };
    
 
 async function sqlConnection(sql) {
@@ -27,8 +34,10 @@ async function sqlConnection(sql) {
       }
     });
   });
+
   const result = await promise;
   return(result);
+  
 };
 
 module.exports = { sqlConnection };

@@ -3,6 +3,10 @@ class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/
 
 PORT: `4000`
 
+View it with with Firefox for proper styling
+
+<br>
+
 
 Generated with [express-init](https://github.com/demetreades/express-init)
 

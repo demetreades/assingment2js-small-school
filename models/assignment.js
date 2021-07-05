@@ -26,6 +26,7 @@ class Assignment extends Entity {
   get title() {
     return _title.get(this);
   }
+  
   set title(value) {
     if(value.length < 2 || value.length > 50) {
       throw new Error('Invalid title');
@@ -36,6 +37,7 @@ class Assignment extends Entity {
   get description() {
     return _description.get(this);
   }
+
   set description(value) {
     if(this.description !== undefined) {
       if(value.length < 2 || value.length > 100) {
@@ -48,6 +50,7 @@ class Assignment extends Entity {
   get subDateTime() {
     return _subDateTime.get(this);
   }
+
   set subDateTime(value) {
     if (value < this.today) {
       throw new Error(`Invalid subject's start date`);
@@ -58,6 +61,7 @@ class Assignment extends Entity {
   get oralMark() {
     return _oralMark.get(this);
   }
+
   set oralMark(value) {
     if(this.oralMark !== undefined) { 
       if(isNaN(value) || value < 0 || value > 100) {
@@ -70,6 +74,7 @@ class Assignment extends Entity {
   get assignmentMark() {
     return _assignmentMark.get(this);
   }
+
   set assignmentMark(value) {
     if(this.assignmentMark !== undefined) { 
       if(isNaN(value) || value < 0 || value > 100) {
@@ -81,7 +86,8 @@ class Assignment extends Entity {
 
   get totalMarks() {
     return _totalMarks.get(this);
-  } 
+  }
+   
   set totalMarks(value) {
     if(this.totalMark !== undefined) { 
       if(isNaN(value) || value < 0 || value > 100) {
@@ -106,7 +112,7 @@ class Assignment extends Entity {
       Assignment's mark    ${this.assignmentMark}
       ------------------------
       Total marks          ${this.totalMarks}`
-    )
+    );
   }
 };
 

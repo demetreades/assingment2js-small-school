@@ -18,7 +18,7 @@ class Trainer extends Person {
   set subjectsId(value) {
     if(this.subjectsId !== undefined) {
       if(isNaN(value) || value < 1) {
-        throw new Error('Invalid subject')
+        throw new Error('Invalid subject');
       }
     }
     _subjectsId.set(this,value);
@@ -47,7 +47,7 @@ class Trainer extends Person {
       Subjects:   ${this.subjectsId}
       -----------------------
       Course:     ${this.coursesId}`
-    )
+    );
   }
   
 };
