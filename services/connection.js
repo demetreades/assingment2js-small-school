@@ -4,7 +4,8 @@ const credentials = {
   // host: "YourHost",
   // user: "YourUser",
   // password: "YourPass",
-  // database: "YourDB"
+  // port: "YourPort",
+  database: "small_school"
 };
    
 
