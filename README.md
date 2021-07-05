@@ -40,7 +40,7 @@ If you cloned the repo you need to install dependencies first as described in th
 
 _Still under construction_
 
-Firstly insert your `MySQL` credentials into `node ./database/init.js` and then run it: to create , use schema, create and populate tables. 
+Firstly insert your `MySQL` credentials into `/database/init.js` and then run it: `node ./database/init.js` to create , use schema, create and populate tables. 
 
 Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. 
 
