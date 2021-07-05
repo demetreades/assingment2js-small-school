@@ -65,7 +65,7 @@ The app listening at PORT: `4000`
 
 List of current active urls:
 
-|URLs                                                       |Endpoints       |
+| URLs                                                      | Endpoints      |
 |:----------------------------------------------------------|:---------------|
 |[localhost:4000](http://localhost:4000)                    |        /       |
 |[localhost:4000/students/](http://localhost:4000/students/)|    students/   | 
