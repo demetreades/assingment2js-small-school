@@ -31,32 +31,31 @@
           <label for="subjects">Subject</label>
           <select name="subjects" id="subjects" required>
             <option value="" disabled hidden>Choose a subject</option>
-            <% subjects.forEach(subject => { %>
-
-              <!-- na to kanw me ternary -->
-              <% if (trainer.subjectsId == subject.id) { %>
-                <% selected = 'selected'%> 
-                <% } else { %>
-                  <% selected = '' %> 
-              <% } %> 
-
-              <option value="<%= subject.id %>" <%= selected %> > <%= subject.details %></option>
-            <% }) %>
+            <% if(subjects != undefined) { %>  
+              <% subjects.forEach(subject => { %>
+                <% if (trainer.subjectsId == subject.id) { %>
+                  <% selected = 'selected'%> 
+                  <% } else { %>
+                    <% selected = '' %> 
+                <% } %> 
+                <option value="<%= subject.id %>" <%= selected %> > <%= subject.details %></option>
+              <% }) %>
+            <% } %> 
           </select>
 
           <label for="courses">Course</label>
           <select name="courses" id="courses" required>
-            <option value=" " disabled hidden>Choose a course</option>
-            <% courses.forEach(course => { %>
-             
-              <% if (trainer.coursesId == course.id) { %>
-                <% selected = 'selected'%> 
-                <% } else { %>
-                  <% selected = '' %> 
-              <% } %> 
-
-              <option value="<%= course.id %>" <%= selected %> > <%= course.description %></option>
-            <% }) %>
+            <option value="" disabled hidden>Choose a course</option>
+            <% if(courses != undefined) { %>
+              <% courses.forEach(course => { %>
+                <% if (trainer.coursesId == course.id) { %>
+                  <% selected = 'selected'%> 
+                  <% } else { %>
+                    <% selected = '' %> 
+                <% } %> 
+                <option value="<%= course.id %>" <%= selected %> > <%= course.description %></option>
+              <% }) %>
+            <% } %> 
           </select>
 
           <input type="text" name="id" id="id" value="<%= trainer.id %>" hidden readonly>

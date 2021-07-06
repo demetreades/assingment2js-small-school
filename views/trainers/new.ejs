@@ -29,17 +29,21 @@
           <label for="subjects">Subject</label>
           <select name="subjects" id="subjects" required>
             <option value="" selected disabled hidden>Choose a subject</option>
-            <% subjects.forEach(subject => { %>
-              <option value="<%= subject.id %>"> <%= subject.details %></option>
-            <% }) %>
+            <% if(subjects != undefined) { %>
+              <% subjects.forEach(subject => { %>
+                <option value="<%= subject.id %>"> <%= subject.details %></option>
+              <% }) %>
+            <% } %>   
           </select>
 
           <label for="courses">Course</label>
           <select name="courses" id="courses" required>
             <option value="" selected disabled hidden>Choose a course</option>
-            <% courses.forEach(course => { %>
-              <option value="<%= course.id %>"> <%= course.description %></option>
-            <% }) %>
+            <% if(courses != undefined) { %>
+              <% courses.forEach(course => { %>
+                <option value="<%= course.id %>"> <%= course.description %></option>
+              <% }) %>
+            <% } %>   
           </select>
 
           <input type="submit" value="Add">

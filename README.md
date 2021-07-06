@@ -16,23 +16,23 @@ Generated with [express-init](https://github.com/demetreades/express-init).
 
 <br>
 
-## 1. Clone repo and cd into `/myapp` folder
+## 1. Clone repository
 
 `pwd` for current path.
 
 `git clone https://github.com/demetreades/myapp.git`
 
-`dir` or `ls` for files list.
+`ls` for file list.
 
-`cd myapp` if you are not already into.
+`cd /myapp` if you are not already into.
 
 <br>
 
 ## 2. Install dependencies
 
-If you cloned the repo you need to install dependencies first as described in the `package.json`. 
+If you cloned the repo you need to install dependencies first as listed in the `package.json`. 
 
-`npm install`
+Run `npm install`
 
 <br>
 
@@ -40,15 +40,13 @@ If you cloned the repo you need to install dependencies first as described in th
 
 _Still under construction_
 
-Firstly insert your `MySQL` credentials into `/database/init.js` and then run it: `node ./database/init.js` to create , use schema, create and populate tables. 
+- First insert your `MySQL` credentials into `/database/init.js` and then run it: `node ./database/init` to make and use schema, create and populate tables. 
 
-Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. 
-
-_It will be fixed in the future._ 
+  Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. _It will be ***fixed in the future***._ 
 
 <br>
 
-You also need to change credentianls at `/services/connection.js`. for the main connection with the newly created database.
+- You also need to change credentials at `/services/connection.js`. for the main  connection with the newly created database.
 
 <br>
 

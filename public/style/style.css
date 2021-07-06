@@ -150,6 +150,10 @@ table i {
   font-size: 18px;
 }
 
+table tbody tr td {
+  font-size: 14px;
+}
+
 td:last-child {
   border-left: 1px solid #ddd;
 }
@@ -197,6 +201,7 @@ main h3 {
 }
 
 .express p {
+  font-size: 18px;
   padding: 4px;
 }
 
@@ -312,6 +317,10 @@ form {
   padding: 4px;
 }
 
+label {
+  width: 100%;
+}
+
 form input, 
 select {
   width: 100%;
@@ -351,6 +360,14 @@ input {
   text-indent: 10px;
 }
 
-label {
-  width: 100%;
+/* input number - arrows removed */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
