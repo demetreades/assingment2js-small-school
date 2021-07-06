@@ -360,13 +360,12 @@ input {
   text-indent: 10px;
 }
 
-/* input number - arrows removed */
+/* input number - buttons */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 input[type=number] {
   -moz-appearance: textfield;
 }

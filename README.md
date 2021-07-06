@@ -5,6 +5,8 @@ PORT: `4000`
 
 View with Firefox for proper styling.
 
+![sample](./public/img/sample.png)
+
 <br>
 
 
@@ -12,7 +14,7 @@ Generated with [express-init](https://github.com/demetreades/express-init).
 
 <br>
 
-![sample](./public/img/diagram.png)
+![diagram](./public/img/diagram.png)
 
 <br>
 
@@ -42,7 +44,7 @@ _Still under construction_
 
 - First insert your `MySQL` credentials into `/database/init.js` and then run it: `node ./database/init` to make and use schema, create and populate tables. 
 
-  Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. _It will be ***fixed in the future***._ 
+  Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. _will be ***fixed in the future***._ 
 
 <br>
 
@@ -53,8 +55,6 @@ _Still under construction_
 ## 3. Start app
 
 Run `npm start` 
-
-The app listening at PORT: `4000`
 
 <br>
 
