@@ -27,7 +27,7 @@ router.get('/delete/:id', (req, res) => {
     if(result.affectedRows == 1) {
         res.redirect('/trainers');
     } else {
-      res.render('error');
+      res.render('/error');
     };
   });
 });
@@ -48,10 +48,8 @@ router.post('/update', (req, res) => {
   const trainer = new Trainer(req.body.id, req.body.first_name, req.body.last_name, req.body.subjects, req.body.courses);
   trainerService.update(trainer).then((result) => {
     if(result.affectedRows == 1) {
-      trainerService.view().then((result) => {
-        res.render('trainers/summary', { title: 'Trainers', trainersArray: {data: result} });
-      });
-    }
+      res.redirect('/trainers');
+    };
   });
 });
 
@@ -59,12 +57,10 @@ router.post('/', (req, res) => {
   const trainer = new Trainer(req.body.id, req.body.first_name, req.body.last_name, req.body.subjects, req.body.courses); 
   trainerService.insert(trainer).then((result) => {
     if(result.affectedRows == 1) {
-      trainerService.view().then((result) => {
-        res.render('trainers/summary', { title: 'Trainers', trainersArray: {data: result} });
-      });
+      res.redirect('/trainers');
     } else {
       res.render('/trainers/new');
-    }
+    };
   });
 });
 

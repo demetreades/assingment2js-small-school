@@ -21,8 +21,8 @@ router.get('/delete/:id', (req, res) => {
     if(result.affectedRows == 1) {
         res.redirect('/students');
     } else {
-      res.render('error');
-    }
+      res.render('/error');
+    };
   });
 });
 
@@ -30,7 +30,7 @@ router.get('/update/:id', (req, res) => {
   studentService.find(req.params.id).then((result) => {
     if(result.id  == req.params.id) {
       res.render('./students/edit', { title: 'Student update', result });
-    }
+    };
   });
 });
 
@@ -38,10 +38,8 @@ router.post('/update', (req, res) => {
   const student = new Student(req.body.id, req.body.first_name, req.body.last_name, req.body.tuition_fees, req.body.date_of_birth);
   studentService.update(student).then((result) => {
     if(result.affectedRows == 1) {
-      studentService.readAll().then((result) => {
-        res.render('students/summary', { title: 'Students summary', studentsArray: {data: result} });
-      });
-    }
+      res.redirect('/students');
+    };
   });
 });
 
@@ -49,12 +47,10 @@ router.post('/', (req, res) => {
   const student = new Student(req.body.id, req.body.first_name, req.body.last_name, req.body.tuition_fees, req.body.date_of_birth);
   studentService.insert(student).then((result) => {
     if(result.affectedRows == 1) {
-      studentService.readAll().then((result) => {
-        res.render('students/summary', { title: 'Students', studentsArray: {data: result} });
-      });
+      res.redirect('/students');
     } else {
       res.render('/students/new');
-    }
+    };
   });
 });
 
