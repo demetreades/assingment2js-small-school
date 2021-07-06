@@ -39,7 +39,7 @@ Run `npm install`
 
 <br>
 
-## 4. Generate database
+## 3. Generate database
 
 _Still under construction_
 
@@ -53,14 +53,13 @@ _Still under construction_
 
 <br>
 
-## 3. Start app
+## 4. Start app
 
 Run `npm start` 
 
 <br>
 
-## 4. Navigate to:
-
+## 5. Navigate to:
 
 List of current active urls:
 
