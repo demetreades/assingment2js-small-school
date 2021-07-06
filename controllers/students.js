@@ -19,11 +19,9 @@ router.get('/new', (req, res) => {
 router.get('/delete/:id', (req, res) => {
   studentService.remove(req.params.id).then((result) => {
     if(result.affectedRows == 1) {
-      studentService.readAll().then((result) => {
-        res.render('students/summary', { title: 'Students summary', studentsArray: {data: result} })
-      });
+        res.redirect('/students');
     } else {
-      res.render('/students/summary',{ title: 'Students summary'});
+      res.render('error');
     }
   });
 });

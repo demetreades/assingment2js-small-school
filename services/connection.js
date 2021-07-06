@@ -19,7 +19,7 @@ const credentials = {
 
 async function sqlConnection(sql) {
   const con = mysql.createConnection(credentials);
-  const promise = new Promise((resolve, reject) => {
+  return await new Promise((resolve, reject) => {
     con.connect( (err) => {
       if(err) console.log("\n-------------------- Error Connecting! --------------------\n\n",err);
       else {
@@ -32,13 +32,9 @@ async function sqlConnection(sql) {
           if(err) throw err;
           console.log("-------------------- SQL Disconnected --------------------\n");
         });
-      }
+      };
     });
   });
-
-  const result = await promise;
-  return(result);
-  
 };
 
 module.exports = { sqlConnection };

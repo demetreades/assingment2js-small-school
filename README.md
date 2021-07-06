@@ -15,6 +15,7 @@ Generated with [express-init](https://github.com/demetreades/express-init).
 <br>
 
 ![diagram](./public/img/diagram.png)
+<small>ER diagram</small>
 
 <br>
 
@@ -44,7 +45,7 @@ _Still under construction_
 
 - First insert your `MySQL` credentials into `/database/init.js` and then run it: `node ./database/init` to make and use schema, create and populate tables. 
 
-  Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. _will be ***fixed in the future***._ 
+  Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. _***will be fixed in the future***._ 
 
 <br>
 

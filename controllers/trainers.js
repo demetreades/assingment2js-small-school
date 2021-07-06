@@ -25,12 +25,10 @@ router.get('/new', (req, res) => {
 router.get('/delete/:id', (req, res) => {
   trainerService.remove(req.params.id).then((result) => {
     if(result.affectedRows == 1) {
-      trainerService.view().then((result) => {
-        res.render('trainers/summary', { title: 'Trainers summary', trainersArray: {data: result} })
-      });
+        res.redirect('/trainers');
     } else {
-      res.render('/trainers/summary',{ title: 'Trainers summary'});
-    }
+      res.render('error');
+    };
   });
 });
 
