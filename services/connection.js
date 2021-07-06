@@ -6,7 +6,6 @@ const credentials = {
   // user: "YourUser",
   // password: "YourPass",
   // port: "YourPort",
-  database: "small_school"
 };
    
 

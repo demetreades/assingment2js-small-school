@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 
 const con = mysql.createConnection({
-  // host: "YourHost",
+  // host: "localhost",
   // user: "YourUser",
   // password: "YourPass",
   // port: "YourPort"
@@ -34,6 +34,6 @@ function databaseInit(array) {
           console.log(`.${index + 1}\t. ${text} \t- \tSuccessful!! `);
         });
       });
-    }
+    };
   });
 };
