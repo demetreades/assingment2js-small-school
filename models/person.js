@@ -15,7 +15,7 @@ class Person extends Entity {
   }
 
   set firstName(value) {
-    this.nameChecker(value, 2, 25);
+    this.characterChecker(value, 2, 25);
     _firstName.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
   }
   
@@ -24,22 +24,12 @@ class Person extends Entity {
   }
   
   set lastName(value) {
-    this.nameChecker(value, 2, 25);
+    this.characterChecker(value, 2, 25);
     _lastName.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
   }
 
   fullName = () => {
     return `${this.firstName} ${this.lastName}`;
-  }
-
-  nameChecker = (value, minChars, maxChars) => {
-    const validCharacters = /[α-ωΑ-ΩA-Za-z]/;
-    if(!value.match(validCharacters)) {
-      throw new Error(`Invalid characters inserted`);
-    }
-    if(value.length < minChars || value.length > maxChars) {
-      throw new Error('Invalid length');
-    }
   }
 
 };

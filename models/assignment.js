@@ -28,9 +28,7 @@ class Assignment extends Entity {
   }
   
   set title(value) {
-    if(value.length < 2 || value.length > 50) {
-      throw new Error('Invalid title');
-    }
+    this.characterChecker(value, 2, 25);
     _title.set(this,value);
   }
 
@@ -40,9 +38,7 @@ class Assignment extends Entity {
 
   set description(value) {
     if(this.description !== undefined) {
-      if(value.length < 2 || value.length > 100) {
-        throw new Error('Invalid description');
-      }
+      this.characterChecker(value, 2, 100);
     }
     _description.set(this,value);
   }

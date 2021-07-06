@@ -17,9 +17,7 @@ class Subject extends Entity {
   }
 
   set title(value) {
-    if(value.length < 2) {
-      throw new Error('Invalid title name');
-    }
+    this.characterChecker(value, 2, 25);
     _title.set(this,value);
   }
 
@@ -28,9 +26,7 @@ class Subject extends Entity {
   }
 
   set details(value) {
-    if(value.length < 2) {
-      throw new Error('Invalid details name');
-    }
+    this.characterChecker(value, 2, 100);
     _details.set(this,value);
   }
 

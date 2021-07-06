@@ -21,9 +21,7 @@ class Course extends Entity {
   }
   
   set title(value) {
-    if(value.length < 2 || value.length > 25) {
-      throw new Error('Invalid title name');
-    }
+    this.characterChecker(value, 2, 25);
     _title.set(this,value.toUpperCase());
   }
 
@@ -32,9 +30,7 @@ class Course extends Entity {
   }
 
   set stream(value) {
-    if(value.length < 2 || value.length > 25) {
-      throw new Error('Invalid stream name');
-    }
+    this.characterChecker(value, 2, 25);
     _stream.set(this,value);
   }
 
@@ -43,9 +39,7 @@ class Course extends Entity {
   }
   
   set type(value) {
-    if(value.length < 2 || value.length > 25) {
-      throw new Error('Invalid type name');
-    }
+    this.characterChecker(value, 2, 25);
     _type.set(this,value);
   }
 
