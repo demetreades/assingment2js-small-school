@@ -58,7 +58,7 @@ _**Still under construction**_
 
 <br>
 
-2. You also need to change credentials at `/services/connection.js` for the main  connection with the newly created database, for the server to start properly via start script.
+2. You also need to change credentials at `/database/connection.js` for the main  connection with the newly created database, for the server to start properly via start script.
 
 <br>
 
@@ -83,7 +83,7 @@ List of current active endpoints:
 
 <br>
 
-class repo: [David Oster myapp](https://github.com/davidoster/myapp)
+Class repo: [David Oster myapp](https://github.com/davidoster/myapp)
 
 <br>
 
