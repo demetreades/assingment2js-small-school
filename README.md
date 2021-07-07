@@ -1,16 +1,15 @@
-class repo: [https://github.com/davidoster/myapp](https://github.com/davidoster/myapp)
 # Express CRUD small school project
-
-PORT: `4000`
-
-View with Firefox for proper styling.
-
-![sample](./public/img/sample.png)
 
 <br>
 
+PORT: `4000`
 
-Generated with [express-init](https://github.com/demetreades/express-init).
+Generated with [express-init](https://github.com/demetreades/express-init) template.
+
+<br>
+
+![sample](./public/img/sample.png)
+<small>View with Firefox for proper styling</small>
 
 <br>
 
@@ -18,6 +17,14 @@ Generated with [express-init](https://github.com/demetreades/express-init).
 <small>ER diagram</small>
 
 <br>
+
+### Requires:
+1. [Node.js 14.17+](https://nodejs.org/en/download/)
+
+2.  [MySQL 8.0.25+](https://dev.mysql.com/downloads/)
+
+<br>
+
 
 ## 1. Clone repository
 
@@ -35,33 +42,38 @@ Generated with [express-init](https://github.com/demetreades/express-init).
 
 If you cloned the repo you need to install dependencies first as listed in the `package.json`. 
 
-Run `npm install`
+run: `npm install`
 
 <br>
 
 ## 3. Generate database
 
-_Still under construction_
+_**Still under construction**_
 
-- First insert your `MySQL` credentials into `/database/init.js` and then run it: `node ./database/init` to make and use schema, create and populate tables. 
+1. Firstly insert your database credentials into `/database/init.js` 
 
-  Connection hangs so you need manually to abort via `CTRL+C` after completion unfortunately. _***will be fixed in the future***._ 
-
-<br>
-
-- You also need to change credentials at `/services/connection.js`. for the main  connection with the newly created database.
+    Then run: `npm run db-generate` script to generate, use schema, create and populate tables. 
+    
+    Connection hangs so you need manually to abort via `CTRL+C` after completion. _**will be fixed in the future**._ 
 
 <br>
 
-## 4. Start app
-
-Run `npm start` 
+2. You also need to change credentials at `/services/connection.js` for the main  connection with the newly created database, for the server to start properly via start script.
 
 <br>
 
-## 5. Navigate to:
+## 4. Start server
 
-List of current active urls:
+run: `npm start` 
+
+<br>
+
+## 5. Navigation
+
+List of current active endpoints:
+
+<br>
+
 
 | URLs                                                      | Endpoints      |
 |:----------------------------------------------------------|:---------------|
@@ -71,6 +83,12 @@ List of current active urls:
 
 <br>
 
+class repo: [David Oster myapp](https://github.com/davidoster/myapp)
+
+<br>
+
+<br>
+
 <br>
 
 <br>
@@ -78,6 +96,7 @@ List of current active urls:
 <br>
 
 <br>
+
 
 🤿 
 
