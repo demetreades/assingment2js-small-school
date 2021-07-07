@@ -1,14 +1,6 @@
-const mysql = require("mysql2");
+const mysql = require('mysql2');
+const credentials = require('./credentials').credentials;
 
-   
-const credentials = {
-  // host: "YourHost",
-  // user: "YourUser",
-  // password: "YourPass",
-  // port: "YourPort",
-  port: "small_school",
-};
-   
 
 async function sqlConnection(sql) {
   const con = mysql.createConnection(credentials);

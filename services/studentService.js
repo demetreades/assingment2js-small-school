@@ -1,4 +1,4 @@
-const sqlConnection = require('./connection').sqlConnection;
+const sqlConnection = require('../database/connection').sqlConnection;
 
 const Student  = require('../models/student').Student;
 const DateUtil = require('../models/dateutil').DateUtil;

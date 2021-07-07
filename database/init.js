@@ -2,7 +2,6 @@ const SQL_DATA = require('./data').SQL_DATA;
 
 const mysql = require('mysql2');
 
-
 const con = mysql.createConnection({
   // host: "localhost",
   // user: "YourUser",

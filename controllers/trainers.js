@@ -40,7 +40,7 @@ router.get('/update/:id', (req, res) => {
           res.render('./trainers/edit', { title: 'Trainers update', trainer, courses, subjects });
         });
       });
-    }
+    };
   });
 });
 
