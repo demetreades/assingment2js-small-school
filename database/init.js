@@ -3,10 +3,10 @@ const SQL_DATA = require('./data').SQL_DATA;
 const mysql = require('mysql2');
 
 const con = mysql.createConnection({
-  // host: "localhost",
-  // user: "YourUser",
-  // password: "YourPass",
-  // port: "YourPort"
+  // host:     'enter your host here',
+  // user:     'enter your username here',
+  // password: 'enter your password here',
+  // port:     'enter your port here'
 });
 
 console.log

@@ -21,7 +21,7 @@ Generated with [express-init](https://github.com/demetreades/express-init) templ
 ### Requires:
 1. [Node.js 14.17+](https://nodejs.org/en/download/)
 
-2.  [MySQL 8.0.25+](https://dev.mysql.com/downloads/)
+2. [MySQL 8.0.25+](https://dev.mysql.com/downloads/)
 
 <br>
 
@@ -50,7 +50,7 @@ run: `npm install`
 
 _**Still under construction**_
 
-1. Firstly insert your database credentials into `/database/init.js` 
+1. Firstly fill your local credentials into `/database/init.js` 
 
     Then run: `npm run db-generate` script to generate, use schema, create and populate tables. 
     
@@ -58,7 +58,7 @@ _**Still under construction**_
 
 <br>
 
-2. You also need to insert your local credentials at `/database/credentials.js` for the main  connection with the newly created database, for the server to start properly via start script.
+2. You also need to fill again your local credentials at `/database/credentials.js` for the main  connection with the newly created database, for the server to start properly via start script.
 
 <br>
 
