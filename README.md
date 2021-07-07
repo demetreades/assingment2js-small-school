@@ -58,7 +58,7 @@ _**Still under construction**_
 
 <br>
 
-2. You also need to change credentials at `/database/connection.js` for the main  connection with the newly created database, for the server to start properly via start script.
+2. You also need to change credentials at `/database/credentials.js` for the main  connection with the newly created database, for the server to start properly via start script.
 
 <br>
 
