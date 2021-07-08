@@ -33,31 +33,35 @@
           
           <tbody>
             <% if(trainersArray != undefined) { %>
-              <% trainersArray.data.forEach((trainer, index) => { %>
+              <% if (trainersArray.data.length === 0) { %>
                 <tr>
-                  <td><%= index + 1 %></td>
-                  <td><%= trainer.first_name %></td>
-                  <td><%= trainer.last_name %></td>
-                  <td><%= trainer.details %></td>
-                  <td><%= trainer.description %></td>
-                  <td>
-                    <span>
-                      <a class="success" href='/trainers/update/<%= trainer.id %>'>
-                        <i class="fas fa-user-edit"></i>
-                      </a>
-                    </span>
-                    <span>
-                      <a class="error" href='/trainers/delete/<%= trainer.id %>'>
-                        <i class="far fa-trash-alt"></i>
-                      </a>
-                    </span>
-                  </td>
+                  <td style="text-align: center;" colspan="6">No Data</td>
                 </tr>
-              <% }) %>
+                <% } else {%>
+                <% trainersArray.data.forEach((trainer, index) => { %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= trainer.first_name %></td>
+                    <td><%= trainer.last_name %></td>
+                    <td><%= trainer.details %></td>
+                    <td><%= trainer.description %></td>
+                    <td>
+                      <span>
+                        <a class="success" href='/trainers/update/<%= trainer.id %>'>
+                          <i class="fas fa-user-edit"></i>
+                        </a>
+                      </span>
+                      <span>
+                        <a class="error" href='/trainers/delete/<%= trainer.id %>'>
+                          <i class="far fa-trash-alt"></i>
+                        </a>
+                      </span>
+                    </td>
+                  </tr>
+                <% }) %>
+              <% } %> 
             <% } %> 
-
           </tbody>
-
         </table>
 
         <a class="add-entry"href="/trainers/new">

@@ -33,29 +33,34 @@
           
           <tbody>
             <% if(studentsArray != undefined) { %>
-              <% studentsArray.data.forEach((student, index) => { %>
+              <% if (studentsArray.data.length === 0) { %>
                 <tr>
-                  <td><%= index + 1 %></td>
-                  <td><%= student.first_name %></td>
-                  <td><%= student.last_name %></td>
-                  <td><%= student.tuition_fees %></td>
-                  <td><%= student.date_of_birth %></td>
-                  <td>
-                    <span>
-                      <a class="success" href='/students/update/<%= student.id %>'>
-                        <i class="fas fa-user-edit"></i>
-                      </a>
-                    </span>
-                    <span>
-                      <a class="error" href='/students/delete/<%= student.id %>'>
-                        <i class="far fa-trash-alt"></i>
-                      </a>
-                    </span>
-                  </td>
+                  <td style="text-align: center;" colspan="6">No Data</td>
                 </tr>
-              <% }) %>
+              <% } else {%>
+                <% studentsArray.data.forEach((student, index) => { %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= student.first_name %></td>
+                    <td><%= student.last_name %></td>
+                    <td><%= student.tuition_fees %></td>
+                    <td><%= student.date_of_birth %></td>
+                    <td>
+                      <span>
+                        <a class="success" href='/students/update/<%= student.id %>'>
+                          <i class="fas fa-user-edit"></i>
+                        </a>
+                      </span>
+                      <span>
+                        <a class="error" href='/students/delete/<%= student.id %>'>
+                          <i class="far fa-trash-alt"></i>
+                        </a>
+                      </span>
+                    </td>
+                  </tr>
+                <% }) %>
+              <% } %> 
             <% } %> 
-
           </tbody>
         </table>
 
