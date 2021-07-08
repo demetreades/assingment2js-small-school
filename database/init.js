@@ -3,10 +3,9 @@ const SQL_DATA = require('./data').SQL_DATA;
 const mysql = require('mysql2');
 
 const con = mysql.createConnection({
-  // host:     'enter your host here',
-  // user:     'enter your username here',
-  // password: 'enter your password here',
-  // port:     'enter your port here'
+  host:     '127.0.0.1',
+  // user:     'enter your MySQL user here',
+  // password: 'enter your MySQL password here',
 });
 
 console.log

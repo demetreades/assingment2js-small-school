@@ -45,7 +45,16 @@ router.get('/update/:id', (req, res) => {
 });
 
 router.post('/update', (req, res) => {
-  const trainer = new Trainer(req.body.id, req.body.first_name, req.body.last_name, req.body.subjects, req.body.courses); 
+
+  const trainer = new Trainer
+  (
+    req.body.id,
+    req.body.first_name,
+    req.body.last_name,
+    req.body.subjects,
+    req.body.courses
+  ); 
+  
   trainerService.update(trainer).then((result) => {
     if(result.affectedRows == 1) {
       res.redirect('/trainers');
@@ -54,7 +63,16 @@ router.post('/update', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const trainer = new Trainer(req.body.id, req.body.first_name, req.body.last_name, req.body.subjects, req.body.courses); 
+  
+  const trainer = new Trainer
+  (
+    req.body.id,
+    req.body.first_name,
+    req.body.last_name,
+    req.body.subjects,
+    req.body.courses
+  ); 
+  
   trainerService.insert(trainer).then((result) => {
     if(result.affectedRows == 1) {
       res.redirect('/trainers');

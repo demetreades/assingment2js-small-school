@@ -1,9 +1,9 @@
 const credentials = {
-  // host:     'enter your host here',
-  // user:     'enter your username here',
-  // password: 'enter your password here',
-  // port:     'enter your port here',
-  database:    'small_school'
+  host:     '127.0.0.1',
+  // user:     'enter your MySQL username here',
+  // password: 'enter your MySQL password here',
+  database: 'small_school'
 };
+
 
 module.exports = { credentials };

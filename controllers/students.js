@@ -35,7 +35,16 @@ router.get('/update/:id', (req, res) => {
 });
 
 router.post('/update', (req, res) => {
-  const student = new Student(req.body.id, req.body.first_name, req.body.last_name, req.body.tuition_fees, req.body.date_of_birth);
+  
+  const student = new Student
+  (
+    req.body.id, 
+    req.body.first_name, 
+    req.body.last_name, 
+    req.body.tuition_fees, 
+    req.body.date_of_birth
+  );
+  
   studentService.update(student).then((result) => {
     if(result.affectedRows == 1) {
       res.redirect('/students');
@@ -44,7 +53,16 @@ router.post('/update', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const student = new Student(req.body.id, req.body.first_name, req.body.last_name, req.body.tuition_fees, req.body.date_of_birth);
+  
+  const student = new Student
+  (
+    req.body.id, 
+    req.body.first_name, 
+    req.body.last_name, 
+    req.body.tuition_fees, 
+    req.body.date_of_birth
+  );
+  
   studentService.insert(student).then((result) => {
     if(result.affectedRows == 1) {
       res.redirect('/students');
