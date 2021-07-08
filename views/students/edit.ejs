@@ -17,21 +17,21 @@
       <main>
         
         <form action="/students/update" method="post">
-          <h3>Edit Student <br>
+          <h3>Edit Student 
             #<%= result.id %> <%= result.fullName() %>
           </h3>
 
           <label for="first_name">First name</label>
-          <input type="text" name="first_name" id="first_name" pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= result.firstName %>" required><br>
+          <input type="text" name="first_name" id="first_name" pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= result.firstName %>" required>
 
           <label for="last_name">Last name</label>
-          <input type="text" name="last_name" id="last_name" pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= result.lastName %>" required><br>
+          <input type="text" name="last_name" id="last_name" pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= result.lastName %>" required>
 
           <label for="tuition_fees">Tuition fees</label>
-          <input type="number" name="tuition_fees" id="tuition_fees" pattern="([0-9]*[.])?[0-9]+" max="2500" value="<%= result.tuitionFees %>" required><br>
+          <input type="number" name="tuition_fees" id="tuition_fees" pattern="([0-9]*[.])?[0-9]+" max="2500" value="<%= result.tuitionFees %>" required>
 
           <label for="date_of_birth">Date of birth</label>
-          <input type="date" name="date_of_birth" id="date_of_birth" min="1950-01-01" max="2003-01-01" value="<%= result.dateOfBirth %>" required><br>
+          <input type="date" name="date_of_birth" id="date_of_birth" min="1950-01-01" max="2003-01-01" value="<%= result.dateOfBirth %>" required>
 
           <input type="text" name="id" id="id" value="<%= result.id %>" hidden readonly>
           

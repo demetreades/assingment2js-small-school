@@ -18,15 +18,15 @@
 
         <form action="/trainers/update" method="post">
 
-          <h3>Edit Trainer <br>
+          <h3>Edit Trainer 
             #<%= trainer.id %> <%= trainer.fullName() %> 
           </h3>
 
           <label for="first_name">First name</label>
-          <input type="text" name="first_name" id="first_name"  pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= trainer.firstName %>"><br>
+          <input type="text" name="first_name" id="first_name"  pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= trainer.firstName %>">
 
           <label for="last_name">Last name</label>
-          <input type="text" name="last_name" id="last_name"  pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= trainer.lastName %>"><br>
+          <input type="text" name="last_name" id="last_name"  pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= trainer.lastName %>">
 
           <label for="subjects">Subject</label>
           <select name="subjects" id="subjects" required>

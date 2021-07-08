@@ -11,14 +11,18 @@ class DateUtil {
   }
 
   timeFormatter = (date) => {
-    const hh    = date.getHours().toString().padStart(2, '0');
-    const mm    = date.getMinutes().toString().padStart(2, '0');
-    const ss    = date.getSeconds().toString().padStart(2, '0');
+    const hh  = date.getHours().toString().padStart(2, '0');
+    const mm  = date.getMinutes().toString().padStart(2, '0');
+    const ss  = date.getSeconds().toString().padStart(2, '0');
     return `${hh}:${mm}:${ss}`;
   }
 
   dateTime = (date) => {
     return `${this.dateFormatter(date)} ${this.timeFormatter(date)}`;
+  }
+  
+  getAdulthood = () => {
+    return this.dateFormatter(this.today).replace(this.today.getFullYear(), this.today.getFullYear() - 18);
   }
   
 };

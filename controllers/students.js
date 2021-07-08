@@ -3,7 +3,10 @@ const router  = express.Router();
 
 const studentService = require('../services/studentService');
 
-const Student = require('../models/student').Student;
+const Student  = require('../models/student').Student;
+const DateUtil = require('../models/dateutil').DateUtil;
+// const dateUtil = new DateUtil();
+
 
 
 router.get('/', (req, res) => {
