@@ -14,7 +14,8 @@ async function readAll() {
 async function insert(student) {
   let sql = 
   `INSERT INTO students(first_name, last_name, tuition_fees, discount, total, date_of_birth) 
-    VALUES(
+    VALUES
+    (
       '${student.firstName}',
       '${student.lastName}', 
       '${student.tuitionFees.amount}',
@@ -38,12 +39,12 @@ async function find(id) {
   let sql = `SELECT * FROM students WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
   let result = await sqlConnection(sql);
-  console.log('\nFIND', result );
   
   const dateUtil = new DateUtil();
   const formattedDate = dateUtil.dateFormatter(result[0].date_of_birth);
   
-  let student = new Student
+  let student = 
+  new Student
   (
    result[0].id,
    result[0].first_name,
@@ -56,15 +57,15 @@ async function find(id) {
 };
 
 async function update(student) {
-  console.log('UPDATEstudent', student.toConsoleString());
-  let sql = `UPDATE students SET 
-             first_name='${student.firstName}',
-             last_name='${student.lastName}', 
-             tuition_fees='${student.tuitionFees.amount}',
-             discount='${student.tuitionFees.discount}',
-             total='${student.tuitionFees.total}',
-             date_of_birth='${student.dateOfBirth}' 
-             WHERE id=${student.id};`;
+  let sql = 
+  `UPDATE students SET 
+  first_name='${student.firstName}',
+  last_name='${student.lastName}', 
+  tuition_fees='${student.tuitionFees.amount}',
+  discount='${student.tuitionFees.discount}',
+  total='${student.tuitionFees.total}',
+  date_of_birth='${student.dateOfBirth}' 
+  WHERE id=${student.id};`;
   console.log('\nQuery: \t', sql);
   let result = await sqlConnection(sql);
   return(result);
