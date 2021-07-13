@@ -21,7 +21,7 @@ const SQL_DATA = {
   ,
   "CREATE TABLE IF NOT EXISTS `small_school`.`trainers` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `first_name` VARCHAR(25) NOT NULL DEFAULT '', `last_name` VARCHAR(25) NOT NULL DEFAULT '', `subjects_id` INT, `courses_id` INT, CONSTRAINT `trainers_subjects_id__subjects_id` FOREIGN KEY (`subjects_id`) REFERENCES `subjects`(`id`), CONSTRAINT `trainers_courses_id__courses_id` FOREIGN KEY (`courses_id`) REFERENCES `courses`(`id`)); "
   ,
-  "CREATE TABLE IF NOT EXISTS `small_school`.`students` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `first_name` VARCHAR(25) NOT NULL DEFAULT '', `last_name` VARCHAR(25) NOT NULL DEFAULT '', `tuition_fees` DECIMAL(6,2) NOT NULL DEFAULT 2500, `date_of_birth` DATE NOT NULL DEFAULT '1900-01-01');"
+  "CREATE TABLE IF NOT EXISTS `small_school`.`students` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `first_name` VARCHAR(25) NOT NULL DEFAULT '', `last_name` VARCHAR(25) NOT NULL DEFAULT '', `tuition_fees` DECIMAL(6,2) NOT NULL DEFAULT 9999, `discount` SMALLINT NOT NULL DEFAULT 0, `total` DECIMAL(6,2) DEFAULT (tuition_fees), `date_of_birth` DATE NOT NULL DEFAULT '1900-01-01');"
   ,          
   "CREATE TABLE IF NOT EXISTS `small_school`.`assignments_type` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `type` VARCHAR(25) NOT NULL DEFAULT '');"
   ,

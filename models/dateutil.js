@@ -21,10 +21,18 @@ class DateUtil {
     return `${this.dateFormatter(date)} ${this.timeFormatter(date)}`;
   }
   
-  mixMaxBirthdate = (age) => {
+  minMaxBirthdate = (age) => {
     return this.dateFormatter(this.today).replace(this.today.getFullYear(), this.today.getFullYear() - age);
   }
   
 };
+
+// const dateUtil = new DateUtil();
+// console.log(dateUtil.dateFormatter(new Date('1999/01/01')));
+// console.log(dateUtil.minMaxBirthdate(18));
+// console.log(dateUtil.minMaxBirthdate(55));
+// console.log(dateUtil.dateFormatter(dateUtil.today));
+// console.log('\n--------------------------------------\n');
+// console.log('\n', dateUtil);
 
 module.exports = { DateUtil };

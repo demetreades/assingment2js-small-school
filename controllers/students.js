@@ -5,8 +5,6 @@ const studentService = require('../services/studentService');
 
 const Student  = require('../models/student').Student;
 const DateUtil = require('../models/dateutil').DateUtil;
-// const dateUtil = new DateUtil();
-
 
 
 router.get('/', (req, res) => {
@@ -16,7 +14,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  res.render('students/new', { title: 'Student insert' });
+  const dateUtil = new DateUtil();
+  res.render('students/new', { title: 'Student insert', dateUtil });
 });
 
 router.get('/delete/:id', (req, res) => {
@@ -44,8 +43,10 @@ router.post('/update', (req, res) => {
     req.body.first_name, 
     req.body.last_name, 
     req.body.tuition_fees, 
+    req.body.discount, 
     req.body.date_of_birth
   );
+  console.log('/update',student.toConsoleString());
   studentService.update(student).then((result) => {
     if(result.affectedRows == 1) {
       res.redirect('/students');
@@ -60,6 +61,7 @@ router.post('/', (req, res) => {
     req.body.first_name, 
     req.body.last_name, 
     req.body.tuition_fees, 
+    req.body.discount, 
     req.body.date_of_birth
   );
   studentService.insert(student).then((result) => {
