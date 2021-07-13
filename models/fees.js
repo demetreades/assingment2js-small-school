@@ -68,7 +68,7 @@ class Fees {
   }
 };
 
-const fees = new Fees(2500, 10)
-console.log(fees.toConsoleString());
+// const fees = new Fees(2500, 10)
+// console.log(fees.toConsoleString());
 
 module.exports = { Fees };
