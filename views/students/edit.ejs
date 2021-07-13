@@ -31,7 +31,7 @@
           <input type="number" name="tuition_fees" id="tuition_fees" pattern="([0-9]*[.])?[0-9]+" value="<%= result.tuitionFees.amount %>" required>
 
           <label for="discount">Discount</label>
-          <input type="number" name="discount" id="discount" pattern="[0-9]" value="<%= result.tuitionFees.discount %>" required>
+          <input type="number" name="discount" id="discount" pattern="[0-9]" min="0" max="100" value="<%= result.tuitionFees.discount %>" required>
 
           <label for="date_of_birth">Date of birth</label>
           <input type="date" name="date_of_birth" id="date_of_birth" min="<%= result.dateUtil.minMaxBirthdate(55) %>" max="<%= result.dateUtil.minMaxBirthdate(18) %>" value="<%= result.dateOfBirth %>" required>
