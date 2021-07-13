@@ -28,9 +28,10 @@ Generated with [express-init](https://github.com/demetreades/express-init) templ
 
 ## 1. Clone repository
 
-`pwd` for current path.
 
-`git clone https://github.com/demetreades/myapp.git`
+    git clone https://github.com/demetreades/myapp.git
+
+`pwd` for current path.
 
 `ls` for file list.
 
@@ -42,7 +43,7 @@ Generated with [express-init](https://github.com/demetreades/express-init) templ
 
 If you cloned the repo you need to install dependencies first as listed in the `package.json`. 
 
-run: `npm install`
+    npm install
 
 <br>
 
@@ -52,7 +53,9 @@ _**Still under construction**_
 
 1. Firstly fill your local credentials into `/database/init.js` 
 
-    Then run: `npm run db-generate` script to generate, use schema, create and populate tables. 
+        npm run db-generate
+
+    Run `db-generate` script to generate, use schema, create and populate tables. 
     
     Connection hangs so you need manually to abort via `CTRL+C` after completion. _**will be fixed in the future**._ 
 
@@ -64,7 +67,7 @@ _**Still under construction**_
 
 ## 4. Start server
 
-run: `npm start` 
+    npm start 
 
 <br>
 
