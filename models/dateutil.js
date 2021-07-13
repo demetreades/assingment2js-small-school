@@ -21,8 +21,8 @@ class DateUtil {
     return `${this.dateFormatter(date)} ${this.timeFormatter(date)}`;
   }
   
-  getAdulthood = () => {
-    return this.dateFormatter(this.today).replace(this.today.getFullYear(), this.today.getFullYear() - 18);
+  mixMaxBirthdate = (age) => {
+    return this.dateFormatter(this.today).replace(this.today.getFullYear(), this.today.getFullYear() - age);
   }
   
 };
