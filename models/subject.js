@@ -1,15 +1,18 @@
 const Entity = require('./entity').Entity;
+const validation = require('./validation');
 
-const _title       = new WeakMap();
-const _details = new WeakMap();
-const _startDate   = new WeakMap();
-const _endDate     = new WeakMap();
+const _title     = new WeakMap();
+const _details   = new WeakMap();
+const _startDate = new WeakMap();
+const _endDate   = new WeakMap();
 
 class Subject extends Entity {
-  constructor(id, title, description, startDate, endDate) {
+  constructor(id, title, details, startDate, endDate) {
     super(id)
-    this.title   = title;
-    this.details = details;
+    this.title     = title;
+    this.details   = details;
+    this.startDate = this.dateUtil.dateFormatter(new Date(startDate)); 
+    this.endDate   = this.dateUtil.dateFormatter(new Date(endDate));
   }
   
   get title() {
@@ -17,7 +20,7 @@ class Subject extends Entity {
   }
 
   set title(value) {
-    this.characterChecker(value, 2, 25);
+    validation.charLenghtChecker(value, 2, 25, `subject's title`);
     _title.set(this,value);
   }
 
@@ -26,7 +29,7 @@ class Subject extends Entity {
   }
 
   set details(value) {
-    this.characterChecker(value, 2, 100);
+    validation.charLenghtChecker(value, 2, 100, `subject's details`);
     _details.set(this,value);
   }
 
@@ -58,7 +61,7 @@ class Subject extends Entity {
       
       -----------------------
       Title:        ${this.title}
-      Description:  ${this.description}
+      Details:      ${this.details}
 
       -----------------------
       Starts:       ${this.startDate}
@@ -70,7 +73,7 @@ class Subject extends Entity {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const OOP = new Subject(24, 'OOP II', 'please add description', new Date('2021-1-1'), new Date('2021-1-8'));
+// const OOP = new Subject(24, 'OOP II', 'Please add details', '2021/1/1', '2021/1/8');
 // console.log('\n', OOP, '\n\nSub-OOP-clg------------------------');
 // console.log('\n', OOP.toConsoleString(), '\n\nSub-OOP-toString( )----------------\n\n');
 

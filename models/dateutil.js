@@ -1,6 +1,6 @@
 class DateUtil {
   constructor() {
-    this.today = new Date();
+    this.today = this.dateFormatter(new Date());
   }
 
   dateFormatter = (date) => {
@@ -22,7 +22,7 @@ class DateUtil {
   }
   
   minMaxBirthdate = (age) => {
-    return this.dateFormatter(this.today).replace(this.today.getFullYear(), this.today.getFullYear() - age);
+    return this.dateFormatter(new Date()).replace(new Date().getFullYear(), new Date().getFullYear() - age);
   }
   
 };

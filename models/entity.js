@@ -1,4 +1,5 @@
-const DateUtil = require('./dateutil').DateUtil;
+const DateUtil   = require('./dateutil').DateUtil;
+const validation = require('./validation');
 
 const _id       = new WeakMap();
 const _dateUtil = new WeakMap();
@@ -22,22 +23,10 @@ class Entity {
   }
 
   set id(value) {
-    if(this.id !== undefined) {
-      if (isNaN(value) || value < 1) {
-        throw new Error('Invalid id');
-      }
+    if(value !== undefined) {
+      validation.numberChecker(value, 1 , null, 'id')
     }
     _id.set(this, value);
-  }
-
-  characterChecker = (value, minChars, maxChars) => {
-    const validCharacters = /[α-ωΑ-ΩA-Za-z]/;
-    if(!value.match(validCharacters)) {
-      throw new Error(`Invalid characters inserted`);
-    }
-    if(value.length < minChars || value.length > maxChars) {
-      throw new Error('Invalid length');
-    }
   }
 
 };

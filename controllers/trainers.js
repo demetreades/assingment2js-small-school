@@ -28,7 +28,7 @@ router.get('/delete/:id', (req, res) => {
         res.redirect('/trainers');
     } else {
       res.render('/error');
-    };
+    }
   });
 });
 
@@ -40,7 +40,7 @@ router.get('/update/:id', (req, res) => {
           res.render('./trainers/edit', { title: 'Trainers update', trainer, courses, subjects });
         });
       });
-    };
+    }
   });
 });
 
@@ -56,7 +56,7 @@ router.post('/update', (req, res) => {
   trainerService.update(trainer).then((result) => {
     if(result.affectedRows == 1) {
       res.redirect('/trainers');
-    };
+    }
   });
 });
 
@@ -74,7 +74,7 @@ router.post('/', (req, res) => {
       res.redirect('/trainers');
     } else {
       res.render('/trainers/new');
-    };
+    }
   });
 });
 

@@ -1,4 +1,5 @@
 const Entity = require('./entity').Entity;
+const validation = require('./validation');
 
 const _title          = new WeakMap();
 const _description    = new WeakMap();
@@ -28,7 +29,7 @@ class Assignment extends Entity {
   }
   
   set title(value) {
-    this.characterChecker(value, 2, 25);
+    validation.charLenghtChecker(value, 2, 25, `assignment's title`);
     _title.set(this,value);
   }
 
@@ -38,7 +39,7 @@ class Assignment extends Entity {
 
   set description(value) {
     if(this.description !== undefined) {
-      this.characterChecker(value, 2, 100);
+      validation.charLenghtChecker(value, 2, 100, `assignment's description`);
     }
     _description.set(this,value);
   }
@@ -48,8 +49,8 @@ class Assignment extends Entity {
   }
 
   set subDateTime(value) {
-    if (value < this.today) {
-      throw new Error(`Invalid subject's start date`);
+    if (value > this.dateUtil.today) {
+      throw new Error(`Invalid subject's submittion date ${value} cannot exceed ${this.dateUtil.today}`);
     }
     _subDateTime.set(this,value);
   }
@@ -59,10 +60,8 @@ class Assignment extends Entity {
   }
 
   set oralMark(value) {
-    if(this.oralMark !== undefined) { 
-      if(isNaN(value) || value < 0 || value > 100) {
-        throw new Error('Invalid oral marks');
-      }
+    if(value !== undefined) { 
+      validation.numberChecker(value, 0, 100, 'oral mark');
     }
     _oralMark.set(this,value);
   }
@@ -72,10 +71,8 @@ class Assignment extends Entity {
   }
 
   set assignmentMark(value) {
-    if(this.assignmentMark !== undefined) { 
-      if(isNaN(value) || value < 0 || value > 100) {
-        throw new Error('Invalid assignment marks');
-      }
+    if(value !== undefined) { 
+      validation.numberChecker(value, 0, 100, 'assignments mark');
     }
     _assignmentMark.set(this,value);
   }
@@ -85,10 +82,8 @@ class Assignment extends Entity {
   }
    
   set totalMarks(value) {
-    if(this.totalMark !== undefined) { 
-      if(isNaN(value) || value < 0 || value > 100) {
-        throw new Error('Invalid total marks');
-      }
+    if(value !== undefined) { 
+      validation.numberChecker(value, 0, 100, 'total mark');
     }
     _totalMarks.set(this,value);
   }
@@ -97,12 +92,12 @@ class Assignment extends Entity {
     return (
       `Assignment #${this.id} ${this.title}    -    details:
       
-      -----------------------
+      ------------------------
       Title:            ${this.title}
       Description:      ${this.description} 
       Submittion date:  ${this.subDateTime}
       
-      Marks ~~~~~~~~~~~~~~~~~
+      Marks ~~~~~~~~~~~~~~~~~~
       
       Oral mark            ${this.oralMark} 
       Assignment's mark    ${this.assignmentMark}
@@ -112,10 +107,11 @@ class Assignment extends Entity {
   }
 };
 
-// console.log('\n\n----------------------------------');
-// console.log('----------------------------------');
-// const HTML1 = new Assignment(24, "HTML Assignment", "please add description", new Date('2021-8-8 23:59:00'), 100, 80);
-// console.log('\n', HTML1, '\n\nHTML1-clg------------------------');
-// console.log('\n', HTML1.toConsoleString(), '\n\nHTML1-toString( )----------------\n\n');
+console.log('\n\n----------------------------------');
+console.log('----------------------------------');
+const HTML1 = new Assignment(24, "HTML Assignment", "Please add description", '6/18/2021 23:59:20', 100, 80);
+console.log('\n', HTML1, '\n\nHTML1-clg------------------------');
+console.log('\n', HTML1.toConsoleString(), '\n\nHTML1-toString( )----------------\n\n');
+
 
 module.exports = { Assignment };

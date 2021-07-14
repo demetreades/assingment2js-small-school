@@ -5,7 +5,7 @@ const DateUtil = require('../models/dateutil').DateUtil;
 
 
 async function readAll() {
-  let sql = "SELECT id, first_name, last_name, total, DATE_FORMAT(date_of_birth, '%d-%m-%Y') AS date_of_birth  FROM students;";
+  let sql = "SELECT id, first_name, last_name, total, discount, DATE_FORMAT(date_of_birth, '%d-%m-%Y') AS date_of_birth  FROM students;";
   console.log('\nQuery: \t', sql);
   let result = await sqlConnection(sql);
   return(result);

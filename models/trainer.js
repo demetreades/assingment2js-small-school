@@ -1,4 +1,5 @@
 const Person = require('./person').Person;
+const validation = require('./validation');
 
 const _subjectsId  = new WeakMap();
 const _coursesId   = new WeakMap();
@@ -17,9 +18,7 @@ class Trainer extends Person {
 
   set subjectsId(value) {
     if(this.subjectsId !== undefined) {
-      if(isNaN(value) || value < 1) {
-        throw new Error('Invalid subject');
-      }
+      validation.numberChecker(value, 1, null, 'trainer\'s subject id')
     }
     _subjectsId.set(this,value);
   }
@@ -30,9 +29,7 @@ class Trainer extends Person {
   
   set coursesId(value) {
     if(this.coursesId !== undefined) {
-      if(isNaN(value) || value < 1) {
-        throw new Error('Invalid subject')
-      }
+      validation.numberChecker(value, 1, null, 'trainer\'s course id')
     }
     _coursesId.set(this,value);
   }

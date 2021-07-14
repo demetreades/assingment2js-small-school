@@ -24,7 +24,7 @@ router.get('/delete/:id', (req, res) => {
         res.redirect('/students');
     } else {
       res.render('/error');
-    };
+    }
   });
 });
 
@@ -32,7 +32,7 @@ router.get('/update/:id', (req, res) => {
   studentService.find(req.params.id).then((result) => {
     if(result.id  == req.params.id) {
       res.render('./students/edit', { title: 'Student update', result });
-    };
+    }
   });
 });
 
@@ -50,7 +50,7 @@ router.post('/update', (req, res) => {
   studentService.update(student).then((result) => {
     if(result.affectedRows == 1) {
       res.redirect('/students');
-    };
+    }
   });
 });
 
@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
       res.redirect('/students');
     } else {
       res.render('/students/new');
-    };
+    }
   });
 });
 

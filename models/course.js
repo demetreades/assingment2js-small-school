@@ -1,4 +1,5 @@
 const Entity = require('./entity').Entity;
+const validation = require('./validation');
 
 const _title     = new WeakMap();
 const _stream    = new WeakMap();
@@ -21,7 +22,7 @@ class Course extends Entity {
   }
   
   set title(value) {
-    this.characterChecker(value, 2, 25);
+    validation.charLenghtChecker(value, 2, 25, 'course title');
     _title.set(this,value.toUpperCase());
   }
 
@@ -30,7 +31,7 @@ class Course extends Entity {
   }
 
   set stream(value) {
-    this.characterChecker(value, 2, 25);
+    validation.charLenghtChecker(value, 2, 25, 'course stream');
     _stream.set(this,value);
   }
 
@@ -39,7 +40,7 @@ class Course extends Entity {
   }
   
   set type(value) {
-    this.characterChecker(value, 2, 25);
+    validation.charLenghtChecker(value, 2, 25, 'course type');
     _type.set(this,value);
   }
 
@@ -48,8 +49,8 @@ class Course extends Entity {
   }
 
   set startDate(value) {
-    if (value < this.today) {
-      throw new Error(`Invalid start date`);
+    if (value > this.dateUtil.today) {
+      throw new Error(`Invalid course start date ${value} cannot exceed ${this.dateUtil.today}`);
     }
     _startDate.set(this,value);
   }
@@ -59,8 +60,8 @@ class Course extends Entity {
   }
 
   set endDate(value) {
-    if (value < this.today || value < this.startDate) {
-      throw new Error(`Invalid end date`);
+    if (value < this.startDate) {
+      throw new Error(`Invalid course end date ${value} cannot exceed ${this.startDate} or ${this.dateUtil.today}`);
     }
     _endDate.set(this,value);
   }
@@ -74,12 +75,12 @@ class Course extends Entity {
       `Course #${this.id} ${this.fullTitle()}    -    detail's:
       
       -----------------------
-      Title:      ${this.title}
-      Stream:     ${this.stream}
-      Type:       ${this.type}
+      Title:   ${this.title}
+      Stream:  ${this.stream}
+      Type:    ${this.type}
       -----------------------
-      Starts:       ${this.startDate}
-      Ends:         ${this.endDate}`
+      Starts:  ${this.startDate}
+      Ends:    ${this.endDate}`
     );
   }
   
@@ -87,7 +88,7 @@ class Course extends Entity {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const CB69 = new Course(24, 'CB69', 'JavaScripta', 'No Time',  new Date('2021-1-1'), new Date('2021-7-1'));
+// const CB69 = new Course(24, 'CB69', 'JavaScripta', 'No Time',  '2021/1/1', '2021/9/1');
 // console.log('\n', CB69, '\n\nCB69-clg------------------------');
 // console.log('\n', CB69.toConsoleString(), '\n\nCB69-toString( )----------------\n\n');
 

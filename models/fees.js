@@ -1,3 +1,5 @@
+const validation = require('./validation');
+
 const _amount         = new WeakMap();
 const _discount       = new WeakMap();
 const _discountAmount = new WeakMap();
@@ -7,7 +9,7 @@ class Fees {
   constructor(amount, discount) {
     this.amount = amount;
     this.discount = discount;
-    this.discountAmount = amount * (this.discount / 100);
+    this.discountAmount = amount * (this.discount * 0.01);
     this.total = amount - this.discountAmount;
   }
 
@@ -16,9 +18,7 @@ class Fees {
   }
 
   set amount(value) {
-    if (isNaN(value) || value < 1) {
-      throw new Error(`Invalid tuition fees amount`);
-    }
+    validation.numberChecker(value, 0, null, 'fees amount');
     _amount.set(this,value);
   }
   
@@ -27,9 +27,7 @@ class Fees {
   }
 
   set discount(value) {
-    if (isNaN(value) || value > 100 || value < 0) {
-      throw new Error(`Invalid discount rate, ( range: 0 - 100% )`);
-    }
+    validation.numberChecker(value, 0, 100, 'fees discount rate');
     _discount.set(this, value);
   }
 
@@ -38,9 +36,7 @@ class Fees {
   }
 
   set discountAmount(value) {
-    if (isNaN(value) || value < 0) {
-      throw new Error(`Invalid discount Amount`);
-    }
+    validation.numberChecker(value, 1, null, 'fees discount amount');
     _discountAmount.set(this, value);
   }
 
@@ -49,9 +45,7 @@ class Fees {
   }
   
   set total(value) {
-    if (isNaN(value) || value < 0) {
-      throw new Error(`Invalid tuition total fees`);
-    }
+    validation.numberChecker(value, 0, null, 'total fees');
     _total.set(this, value);
   }
   

@@ -1,4 +1,5 @@
 const Entity = require('./entity').Entity;
+const validation = require('./validation');
 
 const _firstName = new WeakMap();
 const _lastName  = new WeakMap();
@@ -15,7 +16,8 @@ class Person extends Entity {
   }
 
   set firstName(value) {
-    this.characterChecker(value, 2, 25);
+    validation.charTypeChecker(value, 'firstname');
+    validation.charLenghtChecker(value, 2, 25, 'firstname');
     _firstName.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
   }
   
@@ -24,7 +26,8 @@ class Person extends Entity {
   }
   
   set lastName(value) {
-    this.characterChecker(value, 2, 25);
+    validation.charTypeChecker(value, 'firstname');
+    validation.charLenghtChecker(value, 2, 25, 'lastname');
     _lastName.set(this,value.charAt(0).toUpperCase() + value.slice(1).toLowerCase());
   }
 
