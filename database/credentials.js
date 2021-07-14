@@ -5,4 +5,5 @@ const credentials = {
   database: 'small_school'
 };
 
+
 module.exports = { credentials };

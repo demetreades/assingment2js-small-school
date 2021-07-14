@@ -17,10 +17,11 @@ async function sqlConnection(sql) {
           if(err) throw err;
           console.log("-------------------- SQL Disconnected --------------------\n");
         });
-      };
+      }
     });
   });
 };
+
 
 module.exports = { sqlConnection };
 

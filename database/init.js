@@ -26,9 +26,9 @@ function databaseInit(array) {
       array.forEach((query, index) => {
         con.query(query, function(err) {
           if (err) throw err;
-          if (array === SQL_DATA.schema) text = 'SQL_DATA.schema';
-          if (array === SQL_DATA.tables) text = 'SQL_DATA.tables';
-          if (array === SQL_DATA.views) text = 'SQL_DATA.views';
+          if (array === SQL_DATA.schema ) text = 'SQL_DATA.schema';
+          if (array === SQL_DATA.tables ) text = 'SQL_DATA.tables';
+          if (array === SQL_DATA.views  ) text = 'SQL_DATA.views';
           if (array === SQL_DATA.inserts) text = 'SQL_DATA.inserts';
           console.log(`.${index + 1}\t. ${text} \t- \tSuccessful!! `);
         });
