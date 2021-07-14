@@ -1,7 +1,7 @@
 const sqlConnection = require('../database/connection').sqlConnection;
 
 const Student  = require('../models/student').Student;
-const DateUtil = require('../models/dateutil').DateUtil;
+const DateUtil = require('../models/utilities/dateutil').DateUtil;
 
 
 async function readAll() {

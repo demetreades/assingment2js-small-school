@@ -3,7 +3,7 @@ const router  = express.Router();
 
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express CRUD small project', course: 'Javascripta No Time' });
+  res.render('index', { title: 'Express CRUD small project', course: 'Javascríptà No Time' });
 });
 
 module.exports = router;
