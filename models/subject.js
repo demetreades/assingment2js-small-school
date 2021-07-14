@@ -1,5 +1,6 @@
 const Entity = require('./entity').Entity;
-const validation = require('./validation');
+
+const validation = require('./utilities/validation');
 
 const _title     = new WeakMap();
 const _details   = new WeakMap();
@@ -20,7 +21,7 @@ class Subject extends Entity {
   }
 
   set title(value) {
-    validation.charLenghtChecker(value, 2, 25, `subject's title`);
+    validation.rangeChecker(value, 2, 25, `subject's title`);
     _title.set(this,value);
   }
 
@@ -29,29 +30,25 @@ class Subject extends Entity {
   }
 
   set details(value) {
-    validation.charLenghtChecker(value, 2, 100, `subject's details`);
+    validation.rangeChecker(value, 2, 100, `subject's details`);
     _details.set(this,value);
   }
-
+  
   get startDate() {
     return _startDate.get(this);
   }
   
   set startDate(value) {
-    if (value >= this.startDate || value < this.today) {
-      throw new Error(`Invalid subject's start date`);
-    }
+    validation.rangeChecker(value, null, this.dateUtil.today, `subject's start date`);
     _startDate.set(this,value);
   }
-
+  
   get endDate() {
     return _endDate.get(this);
   }
-
+  
   set endDate(value) {
-    if (value <= this.startDate || value < this.today) {
-      throw new Error(`Invalid subject's end date`);
-    }
+    validation.rangeChecker(value, this.startDate, this.dateUtil.today, `subject's end date`);
     _endDate.set(this,value);
   }
 
@@ -76,5 +73,6 @@ class Subject extends Entity {
 // const OOP = new Subject(24, 'OOP II', 'Please add details', '2021/1/1', '2021/1/8');
 // console.log('\n', OOP, '\n\nSub-OOP-clg------------------------');
 // console.log('\n', OOP.toConsoleString(), '\n\nSub-OOP-toString( )----------------\n\n');
+
 
 module.exports = { Subject };

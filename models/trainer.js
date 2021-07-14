@@ -1,5 +1,6 @@
 const Person = require('./person').Person;
-const validation = require('./validation');
+
+const validation = require('./utilities/validation');
 
 const _subjectsId  = new WeakMap();
 const _coursesId   = new WeakMap();
@@ -17,8 +18,9 @@ class Trainer extends Person {
   }
 
   set subjectsId(value) {
-    if(this.subjectsId !== undefined) {
-      validation.numberChecker(value, 1, null, 'trainer\'s subject id')
+    if(value !== undefined) {
+      validation.numTypeChecker(value, `trainer's subject id`);
+      validation.rangeChecker(value, 1, null, `trainer's subject id`);
     }
     _subjectsId.set(this,value);
   }
@@ -28,8 +30,9 @@ class Trainer extends Person {
   }
   
   set coursesId(value) {
-    if(this.coursesId !== undefined) {
-      validation.numberChecker(value, 1, null, 'trainer\'s course id')
+    if(value !== undefined) {
+      validation.numTypeChecker(value, `trainer's course id`);
+      validation.rangeChecker(value, 1, null, `trainer's course id`);
     }
     _coursesId.set(this,value);
   }
@@ -51,9 +54,10 @@ class Trainer extends Person {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const petros = new Trainer(24, "petros", "petropoulos", 1, 1, ['sub1','sub2','sub3','sub4']);
+// const petros = new Trainer(24, "petros", "petropoulos", 1, 1);
 // console.log('\n', petros, '\n\nPETROS-TRAINER-clg------------------------');
 // console.log('\n', petros.toConsoleString(), '\n\nPETROS-TRAINER-toString( )----------------\n\n');
+
 
 module.exports = { Trainer };
 

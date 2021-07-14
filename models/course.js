@@ -1,5 +1,6 @@
 const Entity = require('./entity').Entity;
-const validation = require('./validation');
+
+const validation = require('./utilities/validation');
 
 const _title     = new WeakMap();
 const _stream    = new WeakMap();
@@ -22,7 +23,7 @@ class Course extends Entity {
   }
   
   set title(value) {
-    validation.charLenghtChecker(value, 2, 25, 'course title');
+    validation.rangeChecker(value.length, 2, 25, `course's title`);
     _title.set(this,value.toUpperCase());
   }
 
@@ -31,7 +32,7 @@ class Course extends Entity {
   }
 
   set stream(value) {
-    validation.charLenghtChecker(value, 2, 25, 'course stream');
+    validation.rangeChecker(value.length, 2, 25, `course's stream`);
     _stream.set(this,value);
   }
 
@@ -40,29 +41,25 @@ class Course extends Entity {
   }
   
   set type(value) {
-    validation.charLenghtChecker(value, 2, 25, 'course type');
+    validation.rangeChecker(value.length, 2, 25, `course's type`);
     _type.set(this,value);
   }
-
+  
   get startDate() {
     return _startDate.get(this);
   }
-
+  
   set startDate(value) {
-    if (value > this.dateUtil.today) {
-      throw new Error(`Invalid course start date ${value} cannot exceed ${this.dateUtil.today}`);
-    }
+    validation.rangeChecker(value, null, this.dateUtil.today, `course's start date`);
     _startDate.set(this,value);
   }
-
+  
   get endDate() {
     return _endDate.get(this);
   }
-
+  
   set endDate(value) {
-    if (value < this.startDate) {
-      throw new Error(`Invalid course end date ${value} cannot exceed ${this.startDate} or ${this.dateUtil.today}`);
-    }
+    validation.rangeChecker(value, this.dateUtil.today, null,`course's end date`);
     _endDate.set(this,value);
   }
 
@@ -91,5 +88,6 @@ class Course extends Entity {
 // const CB69 = new Course(24, 'CB69', 'JavaScripta', 'No Time',  '2021/1/1', '2021/9/1');
 // console.log('\n', CB69, '\n\nCB69-clg------------------------');
 // console.log('\n', CB69.toConsoleString(), '\n\nCB69-toString( )----------------\n\n');
+
 
 module.exports = { Course };

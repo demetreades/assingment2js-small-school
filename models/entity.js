@@ -1,5 +1,6 @@
-const DateUtil   = require('./dateutil').DateUtil;
-const validation = require('./validation');
+const DateUtil   = require('./utilities/dateutil').DateUtil;
+
+const validation = require('./utilities/validation');
 
 const _id       = new WeakMap();
 const _dateUtil = new WeakMap();
@@ -24,11 +25,13 @@ class Entity {
 
   set id(value) {
     if(value !== undefined) {
-      validation.numberChecker(value, 1 , null, 'id')
+      validation.numTypeChecker(value, 'id');
+      validation.rangeChecker(value, 1 , null, 'id');
     }
     _id.set(this, value);
   }
 
 };
+
 
 module.exports = { Entity };

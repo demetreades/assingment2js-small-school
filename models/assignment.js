@@ -1,5 +1,6 @@
 const Entity = require('./entity').Entity;
-const validation = require('./validation');
+
+const validation = require('./utilities/validation');
 
 const _title          = new WeakMap();
 const _description    = new WeakMap();
@@ -29,7 +30,7 @@ class Assignment extends Entity {
   }
   
   set title(value) {
-    validation.charLenghtChecker(value, 2, 25, `assignment's title`);
+    validation.rangeChecker(value.length, 2, 25, `assignment's title`);
     _title.set(this,value);
   }
 
@@ -39,7 +40,7 @@ class Assignment extends Entity {
 
   set description(value) {
     if(this.description !== undefined) {
-      validation.charLenghtChecker(value, 2, 100, `assignment's description`);
+      validation.rangeChecker(value, 2, 100, `assignment's description`);
     }
     _description.set(this,value);
   }
@@ -49,9 +50,7 @@ class Assignment extends Entity {
   }
 
   set subDateTime(value) {
-    if (value > this.dateUtil.today) {
-      throw new Error(`Invalid subject's submittion date ${value} cannot exceed ${this.dateUtil.today}`);
-    }
+    validation.rangeChecker(value, null, this.dateUtil.today, 'subject submittion date');
     _subDateTime.set(this,value);
   }
 
@@ -61,29 +60,32 @@ class Assignment extends Entity {
 
   set oralMark(value) {
     if(value !== undefined) { 
-      validation.numberChecker(value, 0, 100, 'oral mark');
+      validation.numTypeChecker(value, `assignment's oral mark`);
+      validation.rangeChecker(value, 0, 100, `assignment's oral mark`);
     }
     _oralMark.set(this,value);
   }
-
+  
   get assignmentMark() {
     return _assignmentMark.get(this);
   }
-
+  
   set assignmentMark(value) {
     if(value !== undefined) { 
-      validation.numberChecker(value, 0, 100, 'assignments mark');
+      validation.numTypeChecker(value, `assignment's project mark`);
+      validation.rangeChecker(value, 0, 100, `assignment's project mark`);
     }
     _assignmentMark.set(this,value);
   }
-
+  
   get totalMarks() {
     return _totalMarks.get(this);
   }
-   
+  
   set totalMarks(value) {
     if(value !== undefined) { 
-      validation.numberChecker(value, 0, 100, 'total mark');
+      validation.numTypeChecker(value, `assignment's total mark`);
+      validation.rangeChecker(value, 0, 100, `assignment's total mark`);
     }
     _totalMarks.set(this,value);
   }
@@ -107,11 +109,11 @@ class Assignment extends Entity {
   }
 };
 
-console.log('\n\n----------------------------------');
-console.log('----------------------------------');
-const HTML1 = new Assignment(24, "HTML Assignment", "Please add description", '6/18/2021 23:59:20', 100, 80);
-console.log('\n', HTML1, '\n\nHTML1-clg------------------------');
-console.log('\n', HTML1.toConsoleString(), '\n\nHTML1-toString( )----------------\n\n');
+// console.log('\n\n----------------------------------');
+// console.log('----------------------------------');
+// const HTML1 = new Assignment(24, "HTML Assignment", "Please add description", '6/18/2021 23:59:20', 100, 80);
+// console.log('\n', HTML1, '\n\nHTML1-clg------------------------');
+// console.log('\n', HTML1.toConsoleString(), '\n\nHTML1-toString( )----------------\n\n');
 
 
 module.exports = { Assignment };

@@ -1,5 +1,7 @@
-const Person = require('./person').Person;
-const Fees   = require('./fees').Fees;
+const Person     = require('./person').Person;
+const Fees       = require('./fees').Fees;
+
+const validation = require('./utilities/validation');
 
 const _tuitionFees = new WeakMap();
 const _dateOfBirth = new WeakMap();
@@ -27,10 +29,7 @@ class Student extends Person {
   }
   
   set dateOfBirth(value) {
-    if (value > this.dateUtil.minMaxBirthdate(18) || value < this.dateUtil.minMaxBirthdate(55)) {
-      throw new Error(`Invalid date range ( range from ${this.dateUtil.minMaxBirthdate(55)} to ${this.dateUtil.minMaxBirthdate(18)} )`);
-      // throw new Error(`Invalid date range`);
-    }
+    validation.rangeChecker(value, this.dateUtil.minMaxBirthdate(55), this.dateUtil.minMaxBirthdate(18), `student's date of birth`)
     _dateOfBirth.set(this, value);
   }
 
@@ -51,8 +50,9 @@ class Student extends Person {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const paulos = new Student(33, "paULOs", "pauLOPoulos", 2500, 10, '1999-01-01');
+// const paulos = new Student(33, "paULOs", "pauLOPoulos", 2500, 10, '01/04/1984');
 // console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
 // console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
+
 
 module.exports = { Student };

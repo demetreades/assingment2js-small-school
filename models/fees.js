@@ -1,4 +1,4 @@
-const validation = require('./validation');
+const validation = require('./utilities/validation');
 
 const _amount         = new WeakMap();
 const _discount       = new WeakMap();
@@ -18,7 +18,8 @@ class Fees {
   }
 
   set amount(value) {
-    validation.numberChecker(value, 0, null, 'fees amount');
+    validation.numTypeChecker(value, 'fees amount');
+    validation.rangeChecker(value, 0, null, 'fees amount');
     _amount.set(this,value);
   }
   
@@ -27,7 +28,8 @@ class Fees {
   }
 
   set discount(value) {
-    validation.numberChecker(value, 0, 100, 'fees discount rate');
+    validation.numTypeChecker(value, 'fees discount rate');
+    validation.rangeChecker(value, 0, 100, 'fees discount rate');
     _discount.set(this, value);
   }
 
@@ -36,7 +38,8 @@ class Fees {
   }
 
   set discountAmount(value) {
-    validation.numberChecker(value, 1, null, 'fees discount amount');
+    validation.numTypeChecker(value, 1, null, 'fees discount amount');
+    validation.rangeChecker(value, 1, null, 'fees discount amount');
     _discountAmount.set(this, value);
   }
 
@@ -45,7 +48,8 @@ class Fees {
   }
   
   set total(value) {
-    validation.numberChecker(value, 0, null, 'total fees');
+    validation.numTypeChecker(value, 'total fees');
+    validation.rangeChecker(value, 0, null, 'total fees');
     _total.set(this, value);
   }
   
@@ -64,5 +68,6 @@ class Fees {
 
 // const fees = new Fees(2500, 10)
 // console.log(fees.toConsoleString());
+
 
 module.exports = { Fees };
