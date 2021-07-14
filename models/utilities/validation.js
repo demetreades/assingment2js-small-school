@@ -1,7 +1,7 @@
 function charTypeChecker (value, text) {
   const validCharacters = /^[Α-Ωα-ωA-Za-z]+$/;
   if(!value.match(validCharacters)) {
-    throw new Error(`Invalid characters ${value} inserted into ${text}`);
+    throw new Error(`Invalid characters "${value}" inserted into ${text}`);
   }
 };
 

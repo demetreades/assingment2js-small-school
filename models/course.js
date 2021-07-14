@@ -1,5 +1,6 @@
 const Entity = require('./entity').Entity;
 
+const properCase = require('./utilities/textutil').properCase;
 const validation = require('./utilities/validation');
 
 const _title     = new WeakMap();
@@ -24,7 +25,7 @@ class Course extends Entity {
   
   set title(value) {
     validation.rangeChecker(value.length, 2, 25, `course's title`);
-    _title.set(this,value.toUpperCase());
+    _title.set(this, value.toUpperCase());
   }
 
   get stream() {
@@ -33,7 +34,7 @@ class Course extends Entity {
 
   set stream(value) {
     validation.rangeChecker(value.length, 2, 25, `course's stream`);
-    _stream.set(this,value);
+    _stream.set(this, properCase(value));
   }
 
   get type() {
@@ -42,7 +43,7 @@ class Course extends Entity {
   
   set type(value) {
     validation.rangeChecker(value.length, 2, 25, `course's type`);
-    _type.set(this,value);
+    _type.set(this, properCase(value));
   }
   
   get startDate() {
@@ -51,7 +52,7 @@ class Course extends Entity {
   
   set startDate(value) {
     validation.rangeChecker(value, null, this.dateUtil.today, `course's start date`);
-    _startDate.set(this,value);
+    _startDate.set(this, value);
   }
   
   get endDate() {
@@ -60,7 +61,7 @@ class Course extends Entity {
   
   set endDate(value) {
     validation.rangeChecker(value, this.dateUtil.today, null,`course's end date`);
-    _endDate.set(this,value);
+    _endDate.set(this, value);
   }
 
   fullTitle = () => {
@@ -85,7 +86,7 @@ class Course extends Entity {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const CB69 = new Course(24, 'CB69', 'JavaScripta', 'No Time',  '2021/1/1', '2021/9/1');
+// const CB69 = new Course(24, 'cb69', 'javaScrIPTA', 'no TIMe',  '2021/1/1', '2021/9/1');
 // console.log('\n', CB69, '\n\nCB69-clg------------------------');
 // console.log('\n', CB69.toConsoleString(), '\n\nCB69-toString( )----------------\n\n');
 

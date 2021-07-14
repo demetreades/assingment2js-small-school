@@ -20,7 +20,7 @@ class Fees {
   set amount(value) {
     validation.numTypeChecker(value, 'fees amount');
     validation.rangeChecker(value, 0, null, 'fees amount');
-    _amount.set(this,value);
+    _amount.set(this, value);
   }
   
   get discount() {
@@ -38,8 +38,8 @@ class Fees {
   }
 
   set discountAmount(value) {
-    validation.numTypeChecker(value, 1, null, 'fees discount amount');
-    validation.rangeChecker(value, 1, null, 'fees discount amount');
+    validation.numTypeChecker(value, 'fees discount amount');
+    validation.rangeChecker(value, 0, null, 'fees discount amount');
     _discountAmount.set(this, value);
   }
 

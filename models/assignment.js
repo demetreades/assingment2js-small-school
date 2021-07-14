@@ -1,5 +1,6 @@
 const Entity = require('./entity').Entity;
 
+const properCase = require('./utilities/textutil').properCase;
 const validation = require('./utilities/validation');
 
 const _title          = new WeakMap();
@@ -19,11 +20,6 @@ class Assignment extends Entity {
     this.assignmentMark = assignmentMark;
     this.totalMarks     = this.marksCalc(oralMark, assignmentMark);
   }
-
-  marksCalc = (oral, assignment) => {
-    const totalMarks = ((oral * 40) + (assignment * 60)) / (40 + 60);
-    return totalMarks;
-  }
   
   get title() {
     return _title.get(this);
@@ -31,7 +27,7 @@ class Assignment extends Entity {
   
   set title(value) {
     validation.rangeChecker(value.length, 2, 25, `assignment's title`);
-    _title.set(this,value);
+    _title.set(this, properCase(value));
   }
 
   get description() {
@@ -42,7 +38,7 @@ class Assignment extends Entity {
     if(this.description !== undefined) {
       validation.rangeChecker(value, 2, 100, `assignment's description`);
     }
-    _description.set(this,value);
+    _description.set(this, properCase(value));
   }
 
   get subDateTime() {
@@ -51,7 +47,7 @@ class Assignment extends Entity {
 
   set subDateTime(value) {
     validation.rangeChecker(value, null, this.dateUtil.today, 'subject submittion date');
-    _subDateTime.set(this,value);
+    _subDateTime.set(this, value);
   }
 
   get oralMark() {
@@ -63,7 +59,7 @@ class Assignment extends Entity {
       validation.numTypeChecker(value, `assignment's oral mark`);
       validation.rangeChecker(value, 0, 100, `assignment's oral mark`);
     }
-    _oralMark.set(this,value);
+    _oralMark.set(this, value);
   }
   
   get assignmentMark() {
@@ -75,7 +71,7 @@ class Assignment extends Entity {
       validation.numTypeChecker(value, `assignment's project mark`);
       validation.rangeChecker(value, 0, 100, `assignment's project mark`);
     }
-    _assignmentMark.set(this,value);
+    _assignmentMark.set(this, value);
   }
   
   get totalMarks() {
@@ -87,7 +83,12 @@ class Assignment extends Entity {
       validation.numTypeChecker(value, `assignment's total mark`);
       validation.rangeChecker(value, 0, 100, `assignment's total mark`);
     }
-    _totalMarks.set(this,value);
+    _totalMarks.set(this, value);
+  }
+  
+  marksCalc = (oral, assignment) => {
+    const totalMarks = ((oral * 40) + (assignment * 60)) / (40 + 60);
+    return totalMarks;
   }
 
   toConsoleString = () => {
@@ -111,9 +112,9 @@ class Assignment extends Entity {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const HTML1 = new Assignment(24, "HTML Assignment", "Please add description", '6/18/2021 23:59:20', 100, 80);
-// console.log('\n', HTML1, '\n\nHTML1-clg------------------------');
-// console.log('\n', HTML1.toConsoleString(), '\n\nHTML1-toString( )----------------\n\n');
+// const landing = new Assignment(24, "create a landing page", "please add description", '6/18/2021 23:59:20', 100, 80);
+// console.log('\n', landing, '\n\nlanding-clg------------------------');
+// console.log('\n', landing.toConsoleString(), '\n\nlanding-toString( )----------------\n\n');
 
 
 module.exports = { Assignment };

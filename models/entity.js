@@ -8,7 +8,7 @@ const _dateUtil = new WeakMap();
 class Entity {
   constructor(id) {
     this.id        = id;
-    this.dateUtil  = new DateUtil;
+    this.dateUtil  = new DateUtil();
   }
 
   get dateUtil() {

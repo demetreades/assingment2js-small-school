@@ -1,5 +1,6 @@
 const Entity = require('./entity').Entity;
 
+const properCase = require('./utilities/textutil').properCase;
 const validation = require('./utilities/validation');
 
 const _title     = new WeakMap();
@@ -22,7 +23,7 @@ class Subject extends Entity {
 
   set title(value) {
     validation.rangeChecker(value, 2, 25, `subject's title`);
-    _title.set(this,value);
+    _title.set(this, properCase(value));
   }
 
   get details() {
@@ -31,7 +32,7 @@ class Subject extends Entity {
 
   set details(value) {
     validation.rangeChecker(value, 2, 100, `subject's details`);
-    _details.set(this,value);
+    _details.set(this, properCase(value));
   }
   
   get startDate() {
@@ -40,7 +41,7 @@ class Subject extends Entity {
   
   set startDate(value) {
     validation.rangeChecker(value, null, this.dateUtil.today, `subject's start date`);
-    _startDate.set(this,value);
+    _startDate.set(this, value);
   }
   
   get endDate() {
@@ -49,7 +50,7 @@ class Subject extends Entity {
   
   set endDate(value) {
     validation.rangeChecker(value, this.startDate, this.dateUtil.today, `subject's end date`);
-    _endDate.set(this,value);
+    _endDate.set(this, value);
   }
 
   toConsoleString = () => {
@@ -70,7 +71,7 @@ class Subject extends Entity {
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const OOP = new Subject(24, 'OOP II', 'Please add details', '2021/1/1', '2021/1/8');
+// const OOP = new Subject(24, 'Object Oriented Programming', 'Please ADD details', '2021/1/1', '2021/1/8');
 // console.log('\n', OOP, '\n\nSub-OOP-clg------------------------');
 // console.log('\n', OOP.toConsoleString(), '\n\nSub-OOP-toString( )----------------\n\n');
 
