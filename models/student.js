@@ -48,11 +48,11 @@ class Student extends Person {
   }
 };
 
-console.log('\n\n----------------------------------');
-console.log('----------------------------------');
-const paulos = new Student(33, "paULOs", "pauLOPoulos", 2500, 10, '01/04/1984');
-console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
-console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
+// console.log('\n\n----------------------------------');
+// console.log('----------------------------------');
+// const paulos = new Student(33, "paULOs", "pauLOPoulos", 2500, 10, '01/04/1984');
+// console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
+// console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
 
 
 module.exports = { Student };
