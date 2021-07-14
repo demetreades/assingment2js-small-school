@@ -1,2 +1,12 @@
 /node_modules
 /package-lock.json
+
+/controllers/assignments.js
+/controllers/courses.js
+/controllers/subjects.js
+
+/views/assignments
+/views/courses
+/views/subjects
+
+/services/assignmentService.js

@@ -6,7 +6,7 @@ async function sqlConnection(sql) {
   const con = mysql.createConnection(credentials);
   return await new Promise((resolve, reject) => {
     con.connect( (err) => {
-      if(err) console.log("\n-------------------- Error Connecting! --------------------\n\n",err);
+      if(err) console.log("\n-------------------- Error Connecting! --------------------\n\n", err);
       else {
         console.log("\n--------------------- SQL Connected ----------------------\n");
         con.query(sql, (err, result) => {

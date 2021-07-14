@@ -1,7 +1,6 @@
 const sqlConnection = require('../database/connection').sqlConnection;
 
 const Student  = require('../models/student').Student;
-const DateUtil = require('../models/utilities/dateutil').DateUtil;
 
 
 async function readAll() {
@@ -40,9 +39,6 @@ async function find(id) {
   console.log('\nQuery: \t', sql);
   let result = await sqlConnection(sql);
   
-  const dateUtil = new DateUtil();
-  const formattedDate = dateUtil.dateFormatter(result[0].date_of_birth);
-  
   let student = 
   new Student
   (
@@ -51,8 +47,10 @@ async function find(id) {
    result[0].last_name,
    result[0].tuition_fees,
    result[0].discount,
-   formattedDate
-   );
+   result[0].date_of_birth,
+  );
+   console.log(   result[0].date_of_birth,
+    );
   return(student);
 };
 
