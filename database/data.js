@@ -4,7 +4,6 @@ module.exports = {
     'CREATE DATABASE `small_school`;',
     'USE `small_school`;',
   ],
-
   tables: [
     'CREATE TABLE IF NOT EXISTS `small_school`.`course_title` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` VARCHAR(25) NOT NULL);',
     'CREATE TABLE IF NOT EXISTS `small_school`.`course_stream` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `stream` VARCHAR(25) NOT NULL);',
@@ -17,14 +16,12 @@ module.exports = {
     "CREATE TABLE IF NOT EXISTS `small_school`.`assignments` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` VARCHAR(50) NOT NULL DEFAULT '', `description` VARCHAR(100) DEFAULT 'please add description', `assignments_type_id` INT NOT NULL, CONSTRAINT `assignments_assignments_type_id__assignments_type_id` FOREIGN KEY (`assignments_type_id`) REFERENCES `assignments_type`(`id`));",
     "CREATE TABLE IF NOT EXISTS `small_school`.`assignments_student` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `assignments_id`  INT NOT NULL, `students_id` INT NOT NULL, `courses_id` INT NOT NULL, `sub_date` DATETIME NOT NULL DEFAULT '1900-01-01 00:00:00', `oral_mark` DECIMAL(3,1) DEFAULT 0, `assignment_mark` DECIMAL(3,1) DEFAULT 0, `total_mark` DECIMAL(3,1) DEFAULT 0, CONSTRAINT `assignments_student_assignments_id__assignments_id` FOREIGN KEY (`assignments_id`) REFERENCES `assignments`(`id`), CONSTRAINT `assignments_student_students_id__students_id` FOREIGN KEY (`students_id`) REFERENCES `students`(`id`), CONSTRAINT `assignments_student_courses_id__courses_id` FOREIGN KEY (`courses_id`) REFERENCES `courses`(`id`));",
   ],
-
   views: [
     'CREATE VIEW `all_courses` AS SELECT  `courses`.`id` , `course_title`.`title`, `course_stream`.`stream`, `course_type`.`type`, `courses`.`start_date`, `courses`.`end_date` FROM `small_school`.`courses` LEFT JOIN `course_title` ON `course_title`.`id` = `courses`.`title_id` LEFT JOIN `course_stream` ON `course_stream`.`id` = `courses`.`stream_id` LEFT JOIN `course_type` ON `course_type`.`id` = `courses`.`type_id`;',
     'CREATE VIEW `all_students` AS SELECT `students`.`id`, `students`.`first_name`, `students`.`last_name`, `courses`.`description`, `students`.`date_of_birth`, `students`.`tuition_fees` FROM `courses` JOIN `course_title` ON `courses`.`title_id` = `course_title`.`id` JOIN `course_stream` ON `courses`.`stream_id` = `course_stream`.`id` JOIN `course_type` ON `courses`.`type_id` = `course_type`.`id` JOIN `assignments_student` ON `courses`.`id` = `assignments_student`.`courses_id` JOIN `students` ON `assignments_student`.`students_id`  = `students`.`id` GROUP BY `students`.`id`;',
     'CREATE VIEW `all_trainers` AS SELECT `trainers`.`id`, `trainers`.`first_name`, `trainers`.`last_name`, `subjects`.`id` AS `subjects_id`, `subjects`.`details`, `courses`.`id` AS `courses_id`, `courses`.`description` FROM `small_school`.`trainers` LEFT JOIN `subjects` ON `subjects`.`id` = `trainers`.`subjects_id` LEFT JOIN `courses` ON `courses`.`id` = `trainers`.`courses_id`;',
     'CREATE VIEW `all_assignments` AS SELECT `assignments`.`id`,`assignments`.`title`, `assignments`.`description`, `assignments_type`.`type` FROM `small_school`.`assignments` JOIN `assignments_type` ON `assignments_type`.`id` = `assignments`.`assignments_type_id`;',
   ],
-
   inserts: [
     "INSERT INTO `small_school`.`course_title`(`title`) VALUES ('CB11'),('CB12'),('CB13'),('CB14');",
     "INSERT INTO `small_school`.`course_type`(`type`) VALUES ('Full time'),('Part time');",
