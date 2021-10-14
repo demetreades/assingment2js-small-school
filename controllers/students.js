@@ -3,8 +3,8 @@ const router = express.Router();
 
 const studentService = require('../services/studentService');
 
-const DateUtil = require('../models/utilities/dateutil').DateUtil;
-const Student = require('../models/student').Student;
+const { DateUtil } = require('../models/utilities/dateutil');
+const { Student } = require('../models/student');
 
 router.get('/', (req, res) => {
   studentService.readAll().then((result) => {
@@ -49,7 +49,7 @@ router.post('/update', (req, res) => {
   );
   console.log('/update', student.toConsoleString());
   studentService.update(student).then((result) => {
-    if (result.affectedRows == 1) {
+    if (result.affectedRows === 1) {
       res.redirect('/students');
     }
   });
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
     req.body.date_of_birth
   );
   studentService.insert(student).then((result) => {
-    if (result.affectedRows == 1) {
+    if (result.affectedRows === 1) {
       res.redirect('/students');
     } else {
       res.render('/students/new');
