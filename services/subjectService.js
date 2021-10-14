@@ -1,10 +1,11 @@
-const sqlConnection = require('../database/connection').sqlConnection;
+const { sqlConnection } = require('../database/connection');
 
 async function readAll() {
-  let sql = "SELECT subjects.id, subjects.details FROM small_school.subjects;";
+  const sql =
+    'SELECT subjects.id, subjects.details FROM small_school.subjects;';
   console.log('\nQuery: \t', sql);
-  let result = await sqlConnection(sql);
-  return(result);
-};
+  const result = await sqlConnection(sql);
+  return result;
+}
 
 module.exports = { readAll };

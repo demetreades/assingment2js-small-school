@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <%- include('../partials/header', {title: 'Edit Trainer'}) %>
+        <p>Form</p>
+      </header>
 
-  <%- include('../partials/head')  %> 
-    
-</head>
-<body>
-  <div class="container">
-  <header>
-    <%- include('../partials/header', {title: 'Edit Trainer'})  %> 
-    <p>Form</p>
-  </header>      
-        
-    <%- include('../partials/nav')  %> 
-        
+      <%- include('../partials/nav') %>
+
       <main>
-
         <form action="/trainers/update" method="post">
-
-          <h3>Edit Trainer 
-            #<%= trainer.id %> <%= trainer.fullName() %> 
-          </h3>
+          <h3>Edit Trainer #<%= trainer.id %> <%= trainer.fullName() %></h3>
 
           <label for="first_name">First name</label>
-          <input type="text" name="first_name" id="first_name"  pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= trainer.firstName %>">
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            pattern="[α-ωΑ-ΩA-Za-z]{2,25}"
+            value="<%= trainer.firstName %>"
+          />
 
           <label for="last_name">Last name</label>
-          <input type="text" name="last_name" id="last_name"  pattern="[α-ωΑ-ΩA-Za-z]{2,25}" value="<%= trainer.lastName %>">
+          <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            pattern="[α-ωΑ-ΩA-Za-z]{2,25}"
+            value="<%= trainer.lastName %>"
+          />
 
           <label for="subjects">Subject</label>
           <select name="subjects" id="subjects" required>
             <option value="" disabled hidden>Choose a subject</option>
-            <% if(subjects != undefined) { %>  
-              <% subjects.forEach(subject => { %>
-                <% if (trainer.subjectsId == subject.id) { %>
-                  <% selected = 'selected'%> 
-                  <% } else { %>
-                    <% selected = '' %> 
-                <% } %> 
-                <option value="<%= subject.id %>" <%= selected %> > <%= subject.details %></option>
-              <% }) %>
-            <% } %> 
+            <% if(subjects !== undefined) { %> <% subjects.forEach(subject => {
+            %> <% if (trainer.subjectsId == subject.id) { %> <% selected =
+            'selected'%> <% } else { %> <% selected = '' %> <% } %>
+            <option value="<%= subject.id %>" <%="selected" %>
+              > <%= subject.details %>
+            </option>
+            <% }) %> <% } %>
           </select>
 
           <label for="courses">Course</label>
           <select name="courses" id="courses" required>
             <option value="" disabled hidden>Choose a course</option>
-            <% if(courses != undefined) { %>
-              <% courses.forEach(course => { %>
-                <% if (trainer.coursesId == course.id) { %>
-                  <% selected = 'selected'%> 
-                  <% } else { %>
-                    <% selected = '' %> 
-                <% } %> 
-                <option value="<%= course.id %>" <%= selected %> > <%= course.description %></option>
-              <% }) %>
-            <% } %> 
+            <% if(courses != undefined) { %> <% courses.forEach(course => { %>
+            <% if (trainer.coursesId == course.id) { %> <% selected =
+            'selected'%> <% } else { %> <% selected = '' %> <% } %>
+            <option value="<%= course.id %>" <%="selected" %>
+              > <%= course.description %>
+            </option>
+            <% }) %> <% } %>
           </select>
 
-          <input type="text" name="id" id="id" value="<%= trainer.id %>" hidden readonly>
+          <input
+            type="text"
+            name="id"
+            id="id"
+            value="<%= trainer.id %>"
+            hidden
+            readonly
+          />
 
-          <input type="submit" value="Update">
-
+          <input type="submit" value="Update" />
         </form>
-
       </main>
-        
-      <%- include('../partials/footer')  %> 
-        
+
+      <%- include('../partials/footer') %>
     </div>
   </body>
 </html>

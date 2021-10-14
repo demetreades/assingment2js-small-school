@@ -10,11 +10,11 @@ app.set('port', port);
 const server = http.createServer(app);
 
 server.listen(port, () => {
-  console.log
-  (
+  console.log(
     `\n\t----------------------------
      \tServer started at PORT: ${port}
-     \t----------------------------\n`);
+     \t----------------------------\n`
+  );
 });
 
 server.on('error', onError);
@@ -39,9 +39,7 @@ function onError(error) {
     throw error;
   }
 
-  const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   switch (error.code) {
     case 'EACCES':
@@ -59,8 +57,6 @@ function onError(error) {
 
 function onListening() {
   const addr = server.address();
-  const bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }

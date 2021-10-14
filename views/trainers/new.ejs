@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <%- include('../partials/head')  %> 
+    <%- include('../partials/head') %>
 
     <title>Insert new Student</title>
   </head>
   <body>
-    <div class="container"> 
+    <div class="container">
       <header>
-        <%- include('../partials/header', {title: 'Trainer insert'})  %> 
+        <%- include('../partials/header', {title: 'Trainer insert'}) %>
         <p>Form</p>
       </header>
-      
-        <%- include('../partials/nav')  %> 
-        
+
+      <%- include('../partials/nav') %>
+
       <main>
-        
         <form action="/trainers" method="post">
           <h3>Insert New Trainer</h3>
 
           <label for="first_name">First name</label>
-          <input type="text" name="first_name" id="first_name" pattern="[α-ωΑ-ΩA-Za-z]{2,25}" placeholder="Insert firstname" required><br>
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            pattern="[α-ωΑ-ΩA-Za-z]{2,25}"
+            placeholder="Insert firstname"
+            required
+          /><br />
 
           <label for="last_name">Last name</label>
-          <input type="text" name="last_name" id="last_name" pattern="[α-ωΑ-ΩA-Za-z]{2,25}" placeholder="Insert lastname" required><br>
+          <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            pattern="[α-ωΑ-ΩA-Za-z]{2,25}"
+            placeholder="Insert lastname"
+            required
+          /><br />
 
           <label for="subjects">Subject</label>
           <select name="subjects" id="subjects" required>
             <option value="" selected disabled hidden>Choose a subject</option>
-            <% if(subjects != undefined) { %>
-              <% subjects.forEach(subject => { %>
-                <option value="<%= subject.id %>"> <%= subject.details %></option>
-              <% }) %>
-            <% } %>   
+            <% if(subjects != undefined) { %> <% subjects.forEach(subject => {
+            %>
+            <option value="<%= subject.id %>"><%= subject.details %></option>
+            <% }) %> <% } %>
           </select>
 
           <label for="courses">Course</label>
           <select name="courses" id="courses" required>
             <option value="" selected disabled hidden>Choose a course</option>
-            <% if(courses != undefined) { %>
-              <% courses.forEach(course => { %>
-                <option value="<%= course.id %>"> <%= course.description %></option>
-              <% }) %>
-            <% } %>   
+            <% if(courses != undefined) { %> <% courses.forEach(course => { %>
+            <option value="<%= course.id %>"><%= course.description %></option>
+            <% }) %> <% } %>
           </select>
 
-          <input type="submit" value="Add">
-
+          <input type="submit" value="Add" />
         </form>
-        
       </main>
-        
-      <%- include('../partials/footer')  %> 
-    
-    </div> 
-    
+
+      <%- include('../partials/footer') %>
+    </div>
   </body>
 </html>
-
