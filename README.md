@@ -4,12 +4,12 @@
 
 PORT: `4000`
 
-Generated with [express-init](https://github.com/demetreades/express-init) template.
+Generated with [express-generator](https://expressjs.com/en/starter/generator.html).
 
 <br>
 
 ![sample](./public/img/sample.png)
-<small>View with Firefox for proper styling</small>
+<small>View via Firefox for proper styling</small>
 
 <br>
 
@@ -19,15 +19,14 @@ Generated with [express-init](https://github.com/demetreades/express-init) templ
 <br>
 
 ### Requires:
+
 1. [Node.js 14.17+](https://nodejs.org/en/download/)
 
 2. [MySQL 8.0.25+](https://dev.mysql.com/downloads/)
 
 <br>
 
-
 ## 1. Clone repository
-
 
     git clone https://github.com/demetreades/myapp.git
 
@@ -41,33 +40,29 @@ Generated with [express-init](https://github.com/demetreades/express-init) templ
 
 ## 2. Install dependencies
 
-If you cloned the repo you need to install dependencies first as listed in the `package.json`. 
+If you cloned the repo you need to install dependencies first as listed in the `package.json`.
 
-    npm install
+    npm i or yarn
 
 <br>
 
 ## 3. Generate database
 
-_**Still under construction**_
+- Firstly fill your local credentials into `/database/seeder.js`
 
-1. Firstly fill your local credentials into `/database/init.js` 
+       npm run DATA:import
 
-        npm run db-generate
-
-    Run `db-generate` script to generate, use schema, create and populate tables. 
-    
-    Connection hangs so you need manually to abort via `CTRL+C` after completion. _**will be fixed in the future**._ 
+  Run `DATA:import` script to generate, use schema, create and populate tables.
 
 <br>
 
-2. You also need to fill again your local credentials at `/database/credentials.js` for the main  connection with the newly created database, for the server to start properly via start script.
+- You also need to fill again your local credentials at `/database/credentials.js` for the main connection with the newly created database, for the server to start properly via start script.
 
 <br>
 
 ## 4. Start server
 
-    npm start 
+    npm start
 
 <br>
 
@@ -77,12 +72,11 @@ List of current active endpoints:
 
 <br>
 
-
-| URLs                                                      | Endpoints      |
-|:----------------------------------------------------------|:---------------|
-|[localhost:4000](http://localhost:4000)                    |        /       |
-|[localhost:4000/students/](http://localhost:4000/students/)|    students/   | 
-|[localhost:4000/trainers/](http://localhost:4000/trainers/)|    trainers/   | 
+| URLs                                                        | Endpoints |
+| :---------------------------------------------------------- | :-------- |
+| [localhost:4000](http://localhost:4000)                     | /         |
+| [localhost:4000/students/](http://localhost:4000/students/) | students/ |
+| [localhost:4000/trainers/](http://localhost:4000/trainers/) | trainers/ |
 
 <br>
 
@@ -100,7 +94,6 @@ Class repo: [David Oster myapp](https://github.com/davidoster/myapp)
 
 <br>
 
-
-🤿 
+🤿
 
 enjoy
