@@ -1,16 +1,15 @@
-const Person = require('./person').Person;
+const { Person } = require('./person');
 
 const validation = require('./utilities/validation');
 
-const _subjectsId  = new WeakMap();
-const _coursesId   = new WeakMap();
-
+const _subjectsId = new WeakMap();
+const _coursesId = new WeakMap();
 
 class Trainer extends Person {
   constructor(id, firstName, lastName, subjectsId, coursesId) {
-    super(id, firstName, lastName); 
+    super(id, firstName, lastName);
     this.subjectsId = subjectsId;
-    this.coursesId  = coursesId;
+    this.coursesId = coursesId;
   }
 
   get subjectsId() {
@@ -18,39 +17,36 @@ class Trainer extends Person {
   }
 
   set subjectsId(value) {
-    if(value !== undefined) {
-      validation.numTypeChecker(value, `trainer's subject id`);
-      validation.rangeChecker(value, 1, null, `trainer's subject id`);
+    if (value !== undefined) {
+      validation.isNumber(value, `trainer's subject id`);
+      validation.isInRange(value, 1, null, `trainer's subject id`);
     }
-    _subjectsId.set(this,value);
+    _subjectsId.set(this, value);
   }
 
   get coursesId() {
     return _coursesId.get(this);
   }
-  
+
   set coursesId(value) {
-    if(value !== undefined) {
-      validation.numTypeChecker(value, `trainer's course id`);
-      validation.rangeChecker(value, 1, null, `trainer's course id`);
+    if (value !== undefined) {
+      validation.isNumber(value, `trainer's course id`);
+      validation.isInRange(value, 1, null, `trainer's course id`);
     }
-    _coursesId.set(this,value);
+    _coursesId.set(this, value);
   }
 
-  toConsoleString = () => {
-    return (
-      `Trainer #${this.id} ${this.fullName()}   -   detail's:
+  toConsoleString() {
+    return `Trainer #${this.id} ${this.fullName()}   -   detail's:
       
       -----------------------
       Firstname:  ${this.firstName} 
       Lastname:   ${this.lastName}
       Subjects:   ${this.subjectsId}
       -----------------------
-      Course:     ${this.coursesId}`
-    );
+      Course:     ${this.coursesId}`;
   }
-  
-};
+}
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
@@ -58,6 +54,4 @@ class Trainer extends Person {
 // console.log('\n', petros, '\n\nPETROS-TRAINER-clg------------------------');
 // console.log('\n', petros.toConsoleString(), '\n\nPETROS-TRAINER-toString( )----------------\n\n');
 
-
 module.exports = { Trainer };
-

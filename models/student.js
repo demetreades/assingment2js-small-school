@@ -1,5 +1,5 @@
-const Person     = require('./person').Person;
-const Fees       = require('./fees').Fees;
+const { Person } = require('./person');
+const { Fees } = require('./fees');
 
 const validation = require('./utilities/validation');
 
@@ -27,15 +27,19 @@ class Student extends Person {
   get dateOfBirth() {
     return _dateOfBirth.get(this);
   }
-  
+
   set dateOfBirth(value) {
-    validation.rangeChecker(value, this.dateUtil.minMaxBirthdate(55), this.dateUtil.minMaxBirthdate(18), `student's date of birth`)
+    validation.isInRange(
+      value,
+      this.dateUtil.minMaxBirthdate(55),
+      this.dateUtil.minMaxBirthdate(18),
+      `student's date of birth`
+    );
     _dateOfBirth.set(this, value);
   }
 
-  toConsoleString = () => {
-    return (
-    `Student #${this.id} ${this.fullName()}   -   detail's:
+  toConsoleString() {
+    return `Student #${this.id} ${this.fullName()}   -   detail's:
     
     ---------------------
     Firstname:    ${this.firstName}
@@ -43,16 +47,14 @@ class Student extends Person {
     ---------------------
     Tuition fees: ${this.tuitionFees.total}€
     Discount:     ${this.tuitionFees.discount}%
-    Birthdate:    ${this.dateOfBirth}`
-    );
+    Birthdate:    ${this.dateOfBirth}`;
   }
-};
+}
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
 // const paulos = new Student(33, "paULOs", "pauLOPoulos", 2500, 10, '01/04/1984');
 // console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
 // console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
-
 
 module.exports = { Student };
