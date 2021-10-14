@@ -1,4 +1,4 @@
-# Express CRUD small school project
+# Express CRUD small school
 
 <br>
 
