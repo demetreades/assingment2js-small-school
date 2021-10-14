@@ -2,7 +2,7 @@
 
 <br>
 
-PORT: `4000`
+PORT: `5000`
 
 Generated with [express-generator](https://expressjs.com/en/starter/generator.html).
 
@@ -42,21 +42,17 @@ Generated with [express-generator](https://expressjs.com/en/starter/generator.ht
 
 If you cloned the repo you need to install dependencies first as listed in the `package.json`.
 
-    npm i or yarn
+    npm i
 
 <br>
 
 ## 3. Generate database
 
-- Firstly fill your local credentials into `/database/seeder.js`
+- Fill your local mysql credentials in `/database/credentials.js`
 
        npm run DATA:import
 
   Run `DATA:import` script to generate, use schema, create and populate tables.
-
-<br>
-
-- You also need to fill again your local credentials at `/database/credentials.js` for the main connection with the newly created database, for the server to start properly via start script.
 
 <br>
 
@@ -72,11 +68,18 @@ List of current active endpoints:
 
 <br>
 
-| URLs                                                        | Endpoints |
-| :---------------------------------------------------------- | :-------- |
-| [localhost:4000](http://localhost:4000)                     | /         |
-| [localhost:4000/students/](http://localhost:4000/students/) | students/ |
-| [localhost:4000/trainers/](http://localhost:4000/trainers/) | trainers/ |
+| URLs                                                                              | Endpoints            |
+| :-------------------------------------------------------------------------------- | :------------------- |
+| [localhost:5000](http://localhost:5000)                                           | /                    |
+| [localhost:5000/students/](http://localhost:5000/students/)                       | students/            |
+| [localhost:5000/students/update/](http://localhost:5000/students/update/)         | students/update      |
+| [localhost:5000/students/update/:id/](http://localhost:5000/students/update/:id/) | students/update/:id/ |
+| [localhost:5000/students/delete/:id/](http://localhost:5000/students/delete/:id/) | students/delete/:id/ |
+|                                                                                   |                      |
+| [localhost:5000/trainers/](http://localhost:5000/trainers/)                       | trainers/            |
+| [localhost:5000/trainer/update/](http://localhost:5000/trainer/update/)           | trainer/update/      |
+| [localhost:5000/trainer/update/:id/](http://localhost:5000/trainer/update/:id/)   | trainer/update/:id/  |
+| [localhost:5000/trainer/delete/:id/](http://localhost:5000/trainer/delete/:id/)   | trainer/delete/:id/  |
 
 <br>
 
