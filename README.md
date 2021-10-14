@@ -48,11 +48,11 @@ If you cloned the repo you need to install dependencies first as listed in the `
 
 ## 3. Generate database
 
-- Fill your local mysql credentials in `/database/credentials.js`
+Fill your local mysql credentials in `/database/credentials.js`
 
        npm run DATA:import
 
-  Run `DATA:import` script to generate, use schema, create and populate tables.
+Run `DATA:import` script to generate, use schema, create and populate tables.
 
 <br>
 
