@@ -1,9 +1,11 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
-
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express CRUD small project', course: 'Javascríptà No Time' });
+router.get('/', function (req, res) {
+  res.render('index', {
+    title: 'Express CRUD small project',
+    course: 'Javascríptà No Time',
+  });
 });
 
 module.exports = router;
