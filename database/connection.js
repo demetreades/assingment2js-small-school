@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
-const { credentials } = require('./credentials');
+const credentials = require('./credentials');
 
 async function sqlConnection(sql) {
   const con = mysql.createConnection(credentials);
-  return await new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     con.connect((err) => {
       if (err)
         console.log(
