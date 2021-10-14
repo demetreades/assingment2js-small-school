@@ -1,5 +1,5 @@
 {
-  "name": "private-school-express",
+  "name": "assingment2js-small-school",
   "version": "0.3.0",
   "private": true,
   "scripts": {
@@ -27,7 +27,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/demetreades/myapp.git"
+    "url": "git+https://github.com/demetreades/assingment2js-small-school.git"
   },
   "keywords": [
     "crud",
@@ -39,7 +39,7 @@
   "author": "quorum",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/demetreades/myapp/issues"
+    "url": "https://github.com/demetreades/assingment2js-small-school/issues"
   },
-  "homepage": "https://github.com/demetreades/myapp#readme"
+  "homepage": "https://github.com/demetreades/assingment2js-small-school#readme"
 }
