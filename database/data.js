@@ -1,4 +1,4 @@
-const SQL_DATA = {
+module.exports = {
   schema: [
     'DROP DATABASE IF EXISTS `small_school`;',
     'CREATE DATABASE `small_school`;',
@@ -37,5 +37,3 @@ const SQL_DATA = {
     "INSERT INTO `small_school`.`trainers`(`first_name`, `last_name`, `subjects_id`, `courses_id`) VALUES ('Don', 'Buchla',1 , 1),('Sai', 'Baba',2 , 1),('Marcelus', 'Wallace',3 , 1),('Costas', 'Simitis',1 , 2),('Marcellus','Wallace',2 , 2);",
   ],
 };
-
-module.exports = { SQL_DATA };
