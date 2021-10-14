@@ -31,7 +31,7 @@ async function insert(trainer) {
 }
 
 async function remove(id) {
-  const sql = `DEconstE FROM small_school.trainers WHERE id = ${id};`;
+  const sql = `DELETE FROM small_school.trainers WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
   const result = await sqlConnection(sql);
   return result;
