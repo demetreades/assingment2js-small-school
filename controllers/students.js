@@ -1,7 +1,9 @@
+/* eslint-disable eqeqeq */
+
 const express = require('express');
 
 const studentService = require('../services/studentService');
-const { DateUtil } = require('../models/utilities/dateutil');
+const DateUtil = require('../models/utilities/dateutil');
 
 const router = express.Router();
 
