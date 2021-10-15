@@ -1,11 +1,9 @@
 const express = require('express');
 
-const router = express.Router();
-
 const studentService = require('../services/studentService');
-
 const { DateUtil } = require('../models/utilities/dateutil');
-const { Student } = require('../models/student');
+
+const router = express.Router();
 
 router.get('/', (req, res) => {
   studentService.readAll().then((result) => {
@@ -40,14 +38,8 @@ router.get('/update/:id', (req, res) => {
 });
 
 router.post('/update', (req, res) => {
-  const student = new Student(
-    req.body.id,
-    req.body.first_name,
-    req.body.last_name,
-    req.body.tuition_fees,
-    req.body.discount,
-    req.body.date_of_birth
-  );
+  const student = studentService.newStudent(req);
+
   console.log('/update', student.toConsoleString());
   studentService.update(student).then((result) => {
     if (result.affectedRows === 1) {
@@ -57,14 +49,8 @@ router.post('/update', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const student = new Student(
-    req.body.id,
-    req.body.first_name,
-    req.body.last_name,
-    req.body.tuition_fees,
-    req.body.discount,
-    req.body.date_of_birth
-  );
+  const student = studentService.newStudent(req);
+
   studentService.insert(student).then((result) => {
     if (result.affectedRows === 1) {
       res.redirect('/students');

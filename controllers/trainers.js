@@ -1,11 +1,10 @@
 const express = require('express');
-const router = express.Router();
 
 const trainerService = require('../services/trainerService');
 const courseService = require('../services/courseService');
 const subjectService = require('../services/subjectService');
 
-const { Trainer } = require('../models/trainer');
+const router = express.Router();
 
 router.get('/', (req, res) => {
   trainerService.view().then((result) => {
@@ -56,13 +55,8 @@ router.get('/update/:id', (req, res) => {
 });
 
 router.post('/update', (req, res) => {
-  const trainer = new Trainer(
-    req.body.id,
-    req.body.first_name,
-    req.body.last_name,
-    req.body.subjects,
-    req.body.courses
-  );
+  const trainer = trainerService.newTrainer(req);
+
   trainerService.update(trainer).then((result) => {
     if (result.affectedRows === 1) {
       res.redirect('/trainers');
@@ -71,13 +65,8 @@ router.post('/update', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const trainer = new Trainer(
-    req.body.id,
-    req.body.first_name,
-    req.body.last_name,
-    req.body.subjects,
-    req.body.courses
-  );
+  const trainer = trainerService.newTrainer(req);
+
   trainerService.insert(trainer).then((result) => {
     if (result.affectedRows === 1) {
       res.redirect('/trainers');
