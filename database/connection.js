@@ -10,7 +10,7 @@ module.exports = async (sql) => {
       if (err) {
         console.log('\nERROR : Connecting to database\n\n', err);
       } else {
-        con.query(sql, (errCon, result) => {
+        con.query(sql, (err, result) => {
           if (err) {
             console.log('MySQL CONNECTION ERROR: ', err);
             throw err;
