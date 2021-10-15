@@ -19,7 +19,7 @@ module.exports = class Fees {
 
   set amount(value) {
     validation.isNumber(value, 'fees amount');
-    validation.isInRange(value, 0, null, 'fees amount');
+    validation.isInRange(value, 0, 2500, 'fees amount');
     _amount.set(this, value);
   }
 
@@ -49,7 +49,7 @@ module.exports = class Fees {
 
   set total(value) {
     validation.isNumber(value, 'total fees');
-    // validation.isInRange(value, 0, null, 'total fees');
+    validation.isInRange(value, 0, null, 'total fees');
     _total.set(this, value);
   }
 
@@ -63,6 +63,3 @@ module.exports = class Fees {
       Total fees:       ${this.total}€`;
   }
 };
-
-// const fees = new Fees(2500, 10)
-// console.log(fees.toConsoleString());
