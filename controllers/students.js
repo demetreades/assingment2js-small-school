@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 
 router.get('/new', (req, res) => {
   const dateUtil = new DateUtil();
+
   res.render('students/new', { title: 'Student insert', dateUtil });
 });
 
@@ -44,7 +45,7 @@ router.post('/update', (req, res) => {
 
   console.log('/update', student.toConsoleString());
   studentService.update(student).then((result) => {
-    if (result.affectedRows === 1) {
+    if (result.affectedRows == 1) {
       res.redirect('/students');
     }
   });
@@ -54,7 +55,7 @@ router.post('/', (req, res) => {
   const student = studentService.newStudent(req);
 
   studentService.insert(student).then((result) => {
-    if (result.affectedRows === 1) {
+    if (result.affectedRows == 1) {
       res.redirect('/students');
     } else {
       res.render('/students/new');
