@@ -1,34 +1,28 @@
 const mysql = require('mysql2');
 const credentials = require('./credentials');
 
-async function sqlConnection(sql) {
+module.exports = async (sql) => {
   const con = mysql.createConnection(credentials);
   return new Promise((resolve, reject) => {
     con.connect((err) => {
-      if (err)
-        console.log(
-          '\n-------------------- Error Connecting! --------------------\n\n',
-          err
-        );
-      else {
-        console.log(
-          '\n--------------------- SQL Connected ----------------------\n'
-        );
+      if (err) {
+        console.log('\nERROR : Connecting to database\n\n', err);
+      } else {
         con.query(sql, (err, result) => {
-          if (err) throw err;
-          console.log('SQL CONNECTION ERROR: ', err);
+          if (err) {
+            console.log('MySQL CONNECTION ERROR: ', err);
+            throw err;
+          }
           resolve(result);
         });
         con.end((err) => {
-          if (err) throw err;
-          console.log('SQL CONNECTION-END ERROR: ', err);
-          console.log(
-            '-------------------- SQL Disconnected --------------------\n'
-          );
+          if (err) {
+            console.log('MySQL CONNECTION-END ERROR: ', err);
+            throw err;
+          }
+          console.log('MySQL Disconnection\n');
         });
       }
     });
   });
-}
-
-module.exports = { sqlConnection };
+};
