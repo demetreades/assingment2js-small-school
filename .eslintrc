@@ -11,5 +11,7 @@
     "parserOptions": {
         "ecmaVersion": 2021
     },
-    "rules": {}
+    "rules": {
+        "class-methods-use-this": "off"
+    }
 }
