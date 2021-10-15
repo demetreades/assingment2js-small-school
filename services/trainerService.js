@@ -43,6 +43,7 @@ async function insert(trainer) {
   console.log(
     `\nQuery: \tINSERT INTO small_school.trainers(${trainer.firstName}, ${trainer.lastName}, ${trainer.subjectsId}, ${trainer.coursesId})`
   );
+
   const result = await sqlConnection(sql);
 
   return result;
@@ -51,6 +52,7 @@ async function insert(trainer) {
 async function remove(id) {
   const sql = `DELETE FROM small_school.trainers WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
 
   return result;
@@ -59,7 +61,9 @@ async function remove(id) {
 async function find(id) {
   const sql = `SELECT * FROM small_school.trainers WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
+
   const trainer = new Trainer(
     result[0].id,
     result[0].first_name,
@@ -79,6 +83,7 @@ async function update(trainer) {
   courses_id='${trainer.coursesId}'
   WHERE id=${trainer.id};`;
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
 
   return result;

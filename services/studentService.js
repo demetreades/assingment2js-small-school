@@ -19,6 +19,7 @@ async function readAll() {
   const sql =
     "SELECT id, first_name, last_name, total, discount, DATE_FORMAT(date_of_birth, '%d-%m-%Y') AS date_of_birth  FROM students;";
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
 
   return result;
@@ -46,6 +47,7 @@ async function insert(student) {
 async function remove(id) {
   const sql = `DELETE FROM students WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
 
   return result;
@@ -54,6 +56,7 @@ async function remove(id) {
 async function find(id) {
   const sql = `SELECT * FROM students WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
 
   const student = new Student(
@@ -79,6 +82,7 @@ async function update(student) {
   date_of_birth='${student.dateOfBirth}' 
   WHERE id=${student.id};`;
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
 
   return result;
