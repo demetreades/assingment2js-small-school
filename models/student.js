@@ -18,9 +18,7 @@ module.exports = class Student extends Person {
   }
 
   set tuitionFees(value) {
-    if (!(value instanceof Fees)) {
-      throw new Error("Invalid student's tuition fees");
-    }
+    validation.isInstanceOf(value, Fees, 'Fees');
     _tuitionFees.set(this, value);
   }
 
@@ -50,9 +48,3 @@ module.exports = class Student extends Person {
     Birthdate:    ${this.dateOfBirth}`;
   }
 };
-
-// console.log('\n\n----------------------------------');
-// console.log('----------------------------------');
-// const paulos = new Student(33, "paULOs", "pauLOPoulos", 2500, 10, '01/04/1984');
-// console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
-// console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
