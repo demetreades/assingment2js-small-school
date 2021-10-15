@@ -1,6 +1,18 @@
-const { sqlConnection } = require('../database/connection');
+const sqlConnection = require('../database/connection');
 
-const { Student } = require('../models/student');
+const Student = require('../models/student');
+
+function newStudent(req) {
+  const result = new Student(
+    req.body.id,
+    req.body.first_name,
+    req.body.last_name,
+    req.body.tuition_fees,
+    req.body.discount,
+    req.body.date_of_birth
+  );
+  return result;
+}
 
 async function readAll() {
   const sql =
@@ -21,13 +33,15 @@ async function insert(student) {
       '${student.tuitionFees.total}',
       '${student.dateOfBirth}'
     );`;
-  console.log('\nQuery: \t', sql);
+  console.log(
+    `\nQuery: \tINSERT INTO students(first_name, last_name, tuition_fees, discount, total, date_of_birth) VALUES(${student.firstName}, ${student.lastName}, ${student.tuitionFees.amount}, ${student.tuitionFees.discount}, ${student.tuitionFees.total}, ${student.dateOfBirth})`
+  );
   const result = await sqlConnection(sql);
   return result;
 }
 
 async function remove(id) {
-  const sql = `DEconstE FROM students WHERE id = ${id};`;
+  const sql = `DELETE FROM students WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
   const result = await sqlConnection(sql);
   return result;
@@ -65,6 +79,7 @@ async function update(student) {
 }
 
 module.exports = {
+  newStudent,
   readAll,
   insert,
   remove,
