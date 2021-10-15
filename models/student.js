@@ -6,7 +6,7 @@ const validation = require('./utilities/validation');
 const _tuitionFees = new WeakMap();
 const _dateOfBirth = new WeakMap();
 
-class Student extends Person {
+module.exports = class Student extends Person {
   constructor(id, firstName, lastName, fees, discount, dateOfBirth) {
     super(id, firstName, lastName);
     this.tuitionFees = new Fees(fees, discount);
@@ -49,12 +49,10 @@ class Student extends Person {
     Discount:     ${this.tuitionFees.discount}%
     Birthdate:    ${this.dateOfBirth}`;
   }
-}
+};
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
 // const paulos = new Student(33, "paULOs", "pauLOPoulos", 2500, 10, '01/04/1984');
 // console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
 // console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
-
-module.exports = Student;

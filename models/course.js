@@ -9,7 +9,7 @@ const _type = new WeakMap();
 const _startDate = new WeakMap();
 const _endDate = new WeakMap();
 
-class Course extends Entity {
+module.exports = class Course extends Entity {
   constructor(id, title, stream, type, startDate, endDate) {
     super(id);
     this.title = title;
@@ -84,12 +84,10 @@ class Course extends Entity {
       Starts:  ${this.startDate}
       Ends:    ${this.endDate}`;
   }
-}
+};
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
 // const CB69 = new Course(24, 'cb69', 'javaScrIPTA', 'no TIMe',  '2021/1/1', '2021/9/1');
 // console.log('\n', CB69, '\n\nCB69-clg------------------------');
 // console.log('\n', CB69.toConsoleString(), '\n\nCB69-toString( )----------------\n\n');
-
-module.exports = Course;

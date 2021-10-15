@@ -5,7 +5,7 @@ const _discount = new WeakMap();
 const _discountAmount = new WeakMap();
 const _total = new WeakMap();
 
-class Fees {
+module.exports = class Fees {
   constructor(amount, discount) {
     this.amount = amount;
     this.discount = discount;
@@ -62,9 +62,7 @@ class Fees {
       -----------------------
       Total fees:       ${this.total}€`;
   }
-}
+};
 
 // const fees = new Fees(2500, 10)
 // console.log(fees.toConsoleString());
-
-module.exports = Fees;

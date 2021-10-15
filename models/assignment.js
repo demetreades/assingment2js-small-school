@@ -10,7 +10,7 @@ const _oralMark = new WeakMap();
 const _assignmentMark = new WeakMap();
 const _totalMarks = new WeakMap();
 
-class Assignment extends Entity {
+module.exports = class Assignment extends Entity {
   constructor(id, title, description, subDateTime, oralMark, assignmentMark) {
     super(id);
     this.title = title;
@@ -26,7 +26,7 @@ class Assignment extends Entity {
   }
 
   set title(value) {
-    validation.isInRange(value.length, 2, 25, `assignment's title`);
+    validation.isInRange(value.length, 2, 25, "assignment's title");
     _title.set(this, properCase(value));
   }
 
@@ -36,7 +36,7 @@ class Assignment extends Entity {
 
   set description(value) {
     if (this.description !== undefined) {
-      validation.isInRange(value, 2, 100, `assignment's description`);
+      validation.isInRange(value, 2, 100, "assignment's description");
     }
     _description.set(this, properCase(value));
   }
@@ -111,12 +111,10 @@ class Assignment extends Entity {
       ------------------------
       Total marks          ${this.totalMarks}`;
   }
-}
+};
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const landing = new Assignment(24, "create a landing page", "please add description", '6/18/2021 23:59:20', 100, 80);
+// const landing = new Assignment(24, "WebPage", "Add description", '6/18/2021 23:59:20', 100, 80);
 // console.log('\n', landing, '\n\nlanding-clg------------------------');
 // console.log('\n', landing.toConsoleString(), '\n\nlanding-toString( )----------------\n\n');
-
-module.exports = Assignment;

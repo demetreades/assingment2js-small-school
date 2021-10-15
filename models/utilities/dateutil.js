@@ -1,4 +1,4 @@
-class DateUtil {
+module.exports = class DateUtil {
   constructor() {
     this.today = this.dateFormatter(new Date());
   }
@@ -27,7 +27,7 @@ class DateUtil {
       new Date().getFullYear() - age
     );
   }
-}
+};
 
 // const dateUtil = new DateUtil();
 // console.log(dateUtil.dateFormatter(new Date('1999/01/01')));
@@ -36,5 +36,3 @@ class DateUtil {
 // console.log(dateUtil.dateFormatter(dateUtil.today));
 // console.log('\n--------------------------------------\n');
 // console.log('\n', dateUtil);
-
-module.exports = { DateUtil };

@@ -8,7 +8,7 @@ const _details = new WeakMap();
 const _startDate = new WeakMap();
 const _endDate = new WeakMap();
 
-class Subject extends Entity {
+module.exports = class Subject extends Entity {
   constructor(id, title, details, startDate, endDate) {
     super(id);
     this.title = title;
@@ -74,12 +74,10 @@ class Subject extends Entity {
       Starts:       ${this.startDate}
       Ends:         ${this.endDate}`;
   }
-}
+};
 
 // console.log('\n\n----------------------------------');
 // console.log('----------------------------------');
-// const OOP = new Subject(24, 'Object Oriented Programming', 'Please ADD details', '2021/1/1', '2021/1/8');
+// const OOP = new Subject(24, 'OOP Subject', 'Please ADD details', '2021/1/1', '2021/1/8');
 // console.log('\n', OOP, '\n\nSub-OOP-clg------------------------');
 // console.log('\n', OOP.toConsoleString(), '\n\nSub-OOP-toString( )----------------\n\n');
-
-module.exports = Subject;

@@ -6,7 +6,7 @@ const validation = require('./utilities/validation');
 const _firstName = new WeakMap();
 const _lastName = new WeakMap();
 
-class Person extends Entity {
+module.exports = class Person extends Entity {
   constructor(id, firstName, lastName) {
     super(id);
     this.firstName = firstName;
@@ -36,6 +36,4 @@ class Person extends Entity {
   fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
-}
-
-module.exports = Person;
+};

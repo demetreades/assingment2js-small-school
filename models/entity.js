@@ -5,7 +5,7 @@ const validation = require('./utilities/validation');
 const _id = new WeakMap();
 const _dateUtil = new WeakMap();
 
-class Entity {
+module.exports = class Entity {
   constructor(id) {
     this.id = id;
     this.dateUtil = new DateUtil();
@@ -30,6 +30,4 @@ class Entity {
     }
     _id.set(this, value);
   }
-}
-
-module.exports = Entity;
+};
