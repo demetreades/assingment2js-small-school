@@ -67,7 +67,6 @@ async function find(id) {
     result[0].discount,
     result[0].date_of_birth
   );
-  console.log(result[0].date_of_birth);
 
   return student;
 }
