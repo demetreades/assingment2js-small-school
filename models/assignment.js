@@ -112,9 +112,3 @@ module.exports = class Assignment extends Entity {
       Total marks          ${this.totalMarks}`;
   }
 };
-
-// console.log('\n\n----------------------------------');
-// console.log('----------------------------------');
-// const landing = new Assignment(24, "WebPage", "Add description", '6/18/2021 23:59:20', 100, 80);
-// console.log('\n', landing, '\n\nlanding-clg------------------------');
-// console.log('\n', landing.toConsoleString(), '\n\nlanding-toString( )----------------\n\n');
