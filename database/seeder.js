@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-const SQL_DATA = require('./data');
+const SQL_DATA = require('./DATA');
 const credentials = require('./credentials');
 
 const con = mysql.createConnection(credentials);
