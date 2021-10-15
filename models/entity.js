@@ -1,4 +1,4 @@
-const { DateUtil } = require('./utilities/dateutil');
+const DateUtil = require('./utilities/dateutil');
 
 const validation = require('./utilities/validation');
 
@@ -32,4 +32,4 @@ class Entity {
   }
 }
 
-module.exports = { Entity };
+module.exports = Entity;

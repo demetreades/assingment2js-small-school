@@ -1,6 +1,6 @@
-const Entity = require('./entity').Entity;
+const Entity = require('./entity');
 
-const { properCase } = require('./utilities/textutil');
+const properCase = require('./utilities/textutil');
 const validation = require('./utilities/validation');
 
 const _firstName = new WeakMap();
@@ -38,4 +38,4 @@ class Person extends Entity {
   }
 }
 
-module.exports = { Person };
+module.exports = Person;

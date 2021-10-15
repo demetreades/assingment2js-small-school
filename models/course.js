@@ -1,6 +1,6 @@
-const { Entity } = require('./entity');
+const Entity = require('./entity');
 
-const { properCase } = require('./utilities/textutil');
+const properCase = require('./utilities/textutil');
 const validation = require('./utilities/validation');
 
 const _title = new WeakMap();
@@ -24,7 +24,7 @@ class Course extends Entity {
   }
 
   set title(value) {
-    validation.isInRange(value.length, 2, 25, `course's title`);
+    validation.isInRange(value.length, 2, 25, "course's title");
     _title.set(this, value.toUpperCase());
   }
 
@@ -33,7 +33,7 @@ class Course extends Entity {
   }
 
   set stream(value) {
-    validation.isInRange(value.length, 2, 25, `course's stream`);
+    validation.isInRange(value.length, 2, 25, "course's stream");
     _stream.set(this, properCase(value));
   }
 
@@ -42,7 +42,7 @@ class Course extends Entity {
   }
 
   set type(value) {
-    validation.isInRange(value.length, 2, 25, `course's type`);
+    validation.isInRange(value.length, 2, 25, "course's type");
     _type.set(this, properCase(value));
   }
 
@@ -55,7 +55,7 @@ class Course extends Entity {
       value,
       null,
       this.dateUtil.today,
-      `course's start date`
+      "course's start date"
     );
     _startDate.set(this, value);
   }
@@ -65,7 +65,7 @@ class Course extends Entity {
   }
 
   set endDate(value) {
-    validation.isInRange(value, this.dateUtil.today, null, `course's end date`);
+    validation.isInRange(value, this.dateUtil.today, null, "course's end date");
     _endDate.set(this, value);
   }
 
@@ -92,4 +92,4 @@ class Course extends Entity {
 // console.log('\n', CB69, '\n\nCB69-clg------------------------');
 // console.log('\n', CB69.toConsoleString(), '\n\nCB69-toString( )----------------\n\n');
 
-module.exports = { Course };
+module.exports = Course;

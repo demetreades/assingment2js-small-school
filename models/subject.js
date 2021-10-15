@@ -1,6 +1,6 @@
-const { Entity } = require('./entity');
+const Entity = require('./entity');
 
-const { properCase } = require('./utilities/textutil');
+const properCase = require('./utilities/textutil');
 const validation = require('./utilities/validation');
 
 const _title = new WeakMap();
@@ -22,7 +22,7 @@ class Subject extends Entity {
   }
 
   set title(value) {
-    validation.isInRange(value, 2, 25, `subject's title`);
+    validation.isInRange(value, 2, 25, "subject's title");
     _title.set(this, properCase(value));
   }
 
@@ -31,7 +31,7 @@ class Subject extends Entity {
   }
 
   set details(value) {
-    validation.isInRange(value, 2, 100, `subject's details`);
+    validation.isInRange(value, 2, 100, "subject's details");
     _details.set(this, properCase(value));
   }
 
@@ -44,7 +44,7 @@ class Subject extends Entity {
       value,
       null,
       this.dateUtil.today,
-      `subject's start date`
+      "subject's start date"
     );
     _startDate.set(this, value);
   }
@@ -58,7 +58,7 @@ class Subject extends Entity {
       value,
       this.startDate,
       this.dateUtil.today,
-      `subject's end date`
+      "subject's end date"
     );
     _endDate.set(this, value);
   }
@@ -82,4 +82,4 @@ class Subject extends Entity {
 // console.log('\n', OOP, '\n\nSub-OOP-clg------------------------');
 // console.log('\n', OOP.toConsoleString(), '\n\nSub-OOP-toString( )----------------\n\n');
 
-module.exports = { Subject };
+module.exports = Subject;

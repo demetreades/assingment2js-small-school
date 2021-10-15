@@ -1,5 +1,5 @@
-const { Person } = require('./person');
-const { Fees } = require('./fees');
+const Person = require('./person');
+const Fees = require('./fees');
 
 const validation = require('./utilities/validation');
 
@@ -19,7 +19,7 @@ class Student extends Person {
 
   set tuitionFees(value) {
     if (!(value instanceof Fees)) {
-      throw new Error(`Invalid tuition fees`);
+      throw new Error("Invalid student's tuition fees");
     }
     _tuitionFees.set(this, value);
   }
@@ -33,7 +33,7 @@ class Student extends Person {
       value,
       this.dateUtil.minMaxBirthdate(55),
       this.dateUtil.minMaxBirthdate(18),
-      `student's date of birth`
+      "student's date of birth"
     );
     _dateOfBirth.set(this, value);
   }
@@ -57,4 +57,4 @@ class Student extends Person {
 // console.log('\n', paulos, '\n\nPAULOS-clg------------------------');
 // console.log('\n', paulos.toConsoleString(), '\n\nPAULOS-toString( )----------------\n\n');
 
-module.exports = { Student };
+module.exports = Student;

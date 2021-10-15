@@ -1,4 +1,4 @@
-const { Person } = require('./person');
+const Person = require('./person');
 
 const validation = require('./utilities/validation');
 
@@ -54,4 +54,4 @@ class Trainer extends Person {
 // console.log('\n', petros, '\n\nPETROS-TRAINER-clg------------------------');
 // console.log('\n', petros.toConsoleString(), '\n\nPETROS-TRAINER-toString( )------------\n\n');
 
-module.exports = { Trainer };
+module.exports = Trainer;

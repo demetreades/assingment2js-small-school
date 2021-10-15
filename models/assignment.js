@@ -1,6 +1,6 @@
-const { Entity } = require('./entity');
+const Entity = require('./entity');
 
-const { properCase } = require('./utilities/textutil');
+const properCase = require('./utilities/textutil');
 const validation = require('./utilities/validation');
 
 const _title = new WeakMap();
@@ -61,8 +61,8 @@ class Assignment extends Entity {
 
   set oralMark(value) {
     if (value !== undefined) {
-      validation.isNumber(value, `assignment's oral mark`);
-      validation.isInRange(value, 0, 100, `assignment's oral mark`);
+      validation.isNumber(value, "assignment's oral mark");
+      validation.isInRange(value, 0, 100, "assignment's oral mark");
     }
     _oralMark.set(this, value);
   }
@@ -73,8 +73,8 @@ class Assignment extends Entity {
 
   set assignmentMark(value) {
     if (value !== undefined) {
-      validation.isNumber(value, `assignment's project mark`);
-      validation.isInRange(value, 0, 100, `assignment's project mark`);
+      validation.isNumber(value, "assignment's project mark");
+      validation.isInRange(value, 0, 100, "assignment's project mark");
     }
     _assignmentMark.set(this, value);
   }
@@ -85,8 +85,8 @@ class Assignment extends Entity {
 
   set totalMarks(value) {
     if (value !== undefined) {
-      validation.isNumber(value, `assignment's total mark`);
-      validation.isInRange(value, 0, 100, `assignment's total mark`);
+      validation.isNumber(value, "assignment's total mark");
+      validation.isInRange(value, 0, 100, "assignment's total mark");
     }
     _totalMarks.set(this, value);
   }
@@ -119,4 +119,4 @@ class Assignment extends Entity {
 // console.log('\n', landing, '\n\nlanding-clg------------------------');
 // console.log('\n', landing.toConsoleString(), '\n\nlanding-toString( )----------------\n\n');
 
-module.exports = { Assignment };
+module.exports = Assignment;
