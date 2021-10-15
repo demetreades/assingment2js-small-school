@@ -17,10 +17,9 @@ module.exports = class Trainer extends Person {
   }
 
   set subjectsId(value) {
-    if (value !== undefined) {
-      validation.isNumber(value, "trainer's subject id");
-      validation.isInRange(value, 1, null, "trainer's subject id");
-    }
+    validation.isEmpty(value, "trainer's subject id");
+    validation.isNumber(value, "trainer's subject id");
+    validation.isInRange(value, 1, null, "trainer's subject id");
     _subjectsId.set(this, value);
   }
 
@@ -29,10 +28,9 @@ module.exports = class Trainer extends Person {
   }
 
   set coursesId(value) {
-    if (value !== undefined) {
-      validation.isNumber(value, "trainer's course id");
-      validation.isInRange(value, 1, null, "trainer's course id");
-    }
+    validation.isEmpty(value, "trainer's course id");
+    validation.isNumber(value, "trainer's course id");
+    validation.isInRange(value, 1, null, "trainer's course id");
     _coursesId.set(this, value);
   }
 
