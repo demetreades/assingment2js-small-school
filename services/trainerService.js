@@ -1,18 +1,32 @@
-const { sqlConnection } = require('../database/connection');
+const sqlConnection = require('../database/connection');
+const Trainer = require('../models/trainer');
 
-const { Trainer } = require('../models/trainer');
+function newTrainer(req) {
+  const result = new Trainer(
+    req.body.id,
+    req.body.first_name,
+    req.body.last_name,
+    req.body.subjects,
+    req.body.courses
+  );
+  return result;
+}
 
 async function view() {
   const sql = 'SELECT * FROM small_school.all_trainers;';
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
+
   return result;
 }
 
 async function readAll() {
   const sql = 'SELECT * FROM small_school.trainers;';
   console.log('\nQuery: \t', sql);
+
   const result = await sqlConnection(sql);
+
   return result;
 }
 
@@ -25,8 +39,11 @@ async function insert(trainer) {
       '${trainer.subjectsId}',
       '${trainer.coursesId}'
     );`;
-  console.log('\nQuery: \t', sql);
+  console.log(
+    `\nQuery: \tINSERT INTO small_school.trainers(${trainer.firstName}, ${trainer.lastName}, ${trainer.subjectsId}, ${trainer.coursesId})`
+  );
   const result = await sqlConnection(sql);
+
   return result;
 }
 
@@ -64,6 +81,7 @@ async function update(trainer) {
 }
 
 module.exports = {
+  newTrainer,
   view,
   readAll,
   insert,
