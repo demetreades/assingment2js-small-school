@@ -12,8 +12,9 @@ const isEmpty = (value, text) => {
 };
 
 const isNumber = (value, text) => {
-  // typeof value !== 'number';
+  // eslint-disable-next-line no-restricted-globals
   if (isNaN(value)) {
+    // typeof value !== 'number';
     throw new Error(`Invalid ${text} value: ${value} not a number`);
   }
 };

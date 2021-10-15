@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 const express = require('express');
 
 const trainerService = require('../services/trainerService');

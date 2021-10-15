@@ -11,6 +11,7 @@ function newStudent(req) {
     req.body.discount,
     req.body.date_of_birth
   );
+
   return result;
 }
 
@@ -19,6 +20,7 @@ async function readAll() {
     "SELECT id, first_name, last_name, total, discount, DATE_FORMAT(date_of_birth, '%d-%m-%Y') AS date_of_birth  FROM students;";
   console.log('\nQuery: \t', sql);
   const result = await sqlConnection(sql);
+
   return result;
 }
 
@@ -37,6 +39,7 @@ async function insert(student) {
     `\nQuery: \tINSERT INTO students(first_name, last_name, tuition_fees, discount, total, date_of_birth) VALUES(${student.firstName}, ${student.lastName}, ${student.tuitionFees.amount}, ${student.tuitionFees.discount}, ${student.tuitionFees.total}, ${student.dateOfBirth})`
   );
   const result = await sqlConnection(sql);
+
   return result;
 }
 
@@ -44,6 +47,7 @@ async function remove(id) {
   const sql = `DELETE FROM students WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
   const result = await sqlConnection(sql);
+
   return result;
 }
 
@@ -61,6 +65,7 @@ async function find(id) {
     result[0].date_of_birth
   );
   console.log(result[0].date_of_birth);
+
   return student;
 }
 
@@ -75,6 +80,7 @@ async function update(student) {
   WHERE id=${student.id};`;
   console.log('\nQuery: \t', sql);
   const result = await sqlConnection(sql);
+
   return result;
 }
 

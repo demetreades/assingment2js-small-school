@@ -9,6 +9,7 @@ function newTrainer(req) {
     req.body.subjects,
     req.body.courses
   );
+
   return result;
 }
 
@@ -51,6 +52,7 @@ async function remove(id) {
   const sql = `DELETE FROM small_school.trainers WHERE id = ${id};`;
   console.log('\nQuery: \t', sql);
   const result = await sqlConnection(sql);
+
   return result;
 }
 
@@ -65,6 +67,7 @@ async function find(id) {
     result[0].subjects_id,
     result[0].courses_id
   );
+
   return trainer;
 }
 
@@ -77,6 +80,7 @@ async function update(trainer) {
   WHERE id=${trainer.id};`;
   console.log('\nQuery: \t', sql);
   const result = await sqlConnection(sql);
+
   return result;
 }
 

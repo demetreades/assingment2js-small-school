@@ -1,26 +1,28 @@
 const mysql = require('mysql2');
+
 const credentials = require('./credentials');
 
 module.exports = async (sql) => {
   const con = mysql.createConnection(credentials);
+  // eslint-disable-next-line no-unused-vars
   return new Promise((resolve, reject) => {
     con.connect((err) => {
       if (err) {
         console.log('\nERROR : Connecting to database\n\n', err);
       } else {
-        con.query(sql, (err, result) => {
-          if (err) {
+        con.query(sql, (errCon, result) => {
+          if (errCon) {
             console.log('MySQL CONNECTION ERROR: ', err);
             throw err;
           }
           resolve(result);
         });
-        con.end((err) => {
-          if (err) {
+        con.end((errEnd) => {
+          if (errEnd) {
             console.log('MySQL CONNECTION-END ERROR: ', err);
             throw err;
           }
-          console.log('MySQL Disconnection\n');
+          console.log('\tMySQL Disconnection');
         });
       }
     });
