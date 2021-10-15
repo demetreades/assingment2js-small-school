@@ -24,9 +24,10 @@ module.exports = class Entity {
   }
 
   set id(value) {
-    validation.isEmpty(value, 'id');
-    validation.isNumber(value, 'id');
-    validation.isInRange(value, 1, null, 'id');
+    if (value !== undefined) {
+      validation.isNumber(value, 'id');
+      validation.isInRange(value, 1, null, 'id');
+    }
     _id.set(this, value);
   }
 };
