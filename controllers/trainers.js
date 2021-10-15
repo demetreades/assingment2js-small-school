@@ -59,13 +59,11 @@ router.get('/update/:id', (req, res) => {
 router.post('/update', (req, res) => {
   const trainer = trainerService.newTrainer(req);
 
-  trainerService.update(
-    trainer.then((result) => {
-      if (result.affectedRows == 1) {
-        res.redirect('/trainers');
-      }
-    })
-  );
+  trainerService.update(trainer).then((result) => {
+    if (result.affectedRows == 1) {
+      res.redirect('/trainers');
+    }
+  });
 });
 
 router.post('/', (req, res) => {
