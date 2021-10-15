@@ -8,13 +8,11 @@ Generated with [express-generator](https://expressjs.com/en/starter/generator.ht
 
 <br>
 
-![sample](./public/img/sample.png)
-<small>View via Firefox for proper styling</small>
+![sample](./public/img/sample.png) <small>View via Firefox for proper styling</small>
 
 <br>
 
-![diagram](./public/img/diagram.png)
-<small>ER diagram</small>
+![diagram](./public/img/diagram.png) <small>ER diagram</small>
 
 <br>
 
@@ -50,7 +48,7 @@ If you cloned the repo you need to install dependencies first as listed in the `
 
 Fill your local mysql credentials in `/database/credentials.js`
 
-       npm run DATA:import
+    npm run DATA:import
 
 Run `DATA:import` script to generate, use schema, create and populate tables.
 
@@ -68,18 +66,18 @@ List of current active endpoints:
 
 <br>
 
-| URLs                                                                              | Endpoints            |
-| :-------------------------------------------------------------------------------- | :------------------- |
-| [localhost:5000](http://localhost:5000)                                           | /                    |
-| [localhost:5000/students/](http://localhost:5000/students/)                       | students/            |
-| [localhost:5000/students/update/](http://localhost:5000/students/update/)         | students/update      |
-| [localhost:5000/students/update/:id/](http://localhost:5000/students/update/:id/) | students/update/:id/ |
-| [localhost:5000/students/delete/:id/](http://localhost:5000/students/delete/:id/) | students/delete/:id/ |
-|                                                                                   |                      |
-| [localhost:5000/trainers/](http://localhost:5000/trainers/)                       | trainers/            |
-| [localhost:5000/trainer/update/](http://localhost:5000/trainer/update/)           | trainer/update/      |
-| [localhost:5000/trainer/update/:id/](http://localhost:5000/trainer/update/:id/)   | trainer/update/:id/  |
-| [localhost:5000/trainer/delete/:id/](http://localhost:5000/trainer/delete/:id/)   | trainer/delete/:id/  |
+| URLs | Endpoints |
+| :-- | :-- |
+| [localhost:5000](http://localhost:5000) | / |
+| [localhost:5000/students](http://localhost:5000/students/) | /students |
+| [localhost:5000/students/new](http://localhost:5000/students/new/) | /students/new |
+| [localhost:5000/students/update/:id](http://localhost:5000/students/update/:id/) | /students/update/:id |
+| [localhost:5000/students/delete/:id](http://localhost:5000/students/delete/:id/) | /students/delete/:id |
+|  |  |
+| [localhost:5000/trainers](http://localhost:5000/trainers/) | /trainers |
+| [localhost:5000/trainer/new](http://localhost:5000/trainer/new/) | /trainer/new |
+| [localhost:5000/trainer/update/:id](http://localhost:5000/trainer/update/:id/) | /trainer/update/:id |
+| [localhost:5000/trainer/delete/:id](http://localhost:5000/trainer/delete/:id/) | /trainer/delete/:id |
 
 <br>
 
