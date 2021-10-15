@@ -39,10 +39,17 @@ const isInRange = (value, min, max, text) => {
   }
 };
 
+const isInstanceOf = (value, Model, text) => {
+  if (!(value instanceof Model)) {
+    throw new Error(`Invalid instanceof ${text}`);
+  }
+};
+
 module.exports = {
   isValidCharacters,
   isNumber,
   isString,
   isInRange,
   isEmpty,
+  isInstanceOf,
 };
