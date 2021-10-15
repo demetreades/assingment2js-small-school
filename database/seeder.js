@@ -33,6 +33,6 @@ databaseInit(SQL_DATA.views);
 databaseInit(SQL_DATA.inserts);
 
 setTimeout(() => {
-  console.log('\nEXIT\n');
+  console.log('\nEXIT -----------------------------------------------\n');
   process.exit(1);
 }, 2000);

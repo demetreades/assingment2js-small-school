@@ -85,9 +85,3 @@ module.exports = class Course extends Entity {
       Ends:    ${this.endDate}`;
   }
 };
-
-// console.log('\n\n----------------------------------');
-// console.log('----------------------------------');
-// const CB69 = new Course(24, 'cb69', 'javaScrIPTA', 'no TIMe',  '2021/1/1', '2021/9/1');
-// console.log('\n', CB69, '\n\nCB69-clg------------------------');
-// console.log('\n', CB69.toConsoleString(), '\n\nCB69-toString( )----------------\n\n');

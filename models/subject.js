@@ -75,9 +75,3 @@ module.exports = class Subject extends Entity {
       Ends:         ${this.endDate}`;
   }
 };
-
-// console.log('\n\n----------------------------------');
-// console.log('----------------------------------');
-// const OOP = new Subject(24, 'OOP Subject', 'Please ADD details', '2021/1/1', '2021/1/8');
-// console.log('\n', OOP, '\n\nSub-OOP-clg------------------------');
-// console.log('\n', OOP.toConsoleString(), '\n\nSub-OOP-toString( )----------------\n\n');

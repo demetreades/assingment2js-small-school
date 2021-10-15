@@ -47,9 +47,3 @@ module.exports = class Trainer extends Person {
       Course:     ${this.coursesId}`;
   }
 };
-
-// console.log('\n\n----------------------------------');
-// console.log('----------------------------------');
-// const petros = new Trainer(24, "petros", "petropoulos", 1, 1);
-// console.log('\n', petros, '\n\nPETROS-TRAINER-clg------------------------');
-// console.log('\n', petros.toConsoleString(), '\n\nPETROS-TRAINER-toString( )------------\n\n');

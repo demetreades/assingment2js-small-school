@@ -28,11 +28,3 @@ module.exports = class DateUtil {
     );
   }
 };
-
-// const dateUtil = new DateUtil();
-// console.log(dateUtil.dateFormatter(new Date('1999/01/01')));
-// console.log(dateUtil.minMaxBirthdate(18));
-// console.log(dateUtil.minMaxBirthdate(55));
-// console.log(dateUtil.dateFormatter(dateUtil.today));
-// console.log('\n--------------------------------------\n');
-// console.log('\n', dateUtil);
