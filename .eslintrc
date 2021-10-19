@@ -14,7 +14,9 @@
     "rules": {
         "class-methods-use-this": "off",
         "no-underscore-dangle": "off",
+        "no-unused-vars": "off",
         "comma-dangle": "off",
+        "no-shadow": "off",
         "no-console": "off",
         "operator-linebreak": "off"
     }
